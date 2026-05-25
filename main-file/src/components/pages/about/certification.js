@@ -1,5 +1,5 @@
 import React from 'react';
-import image from "../../assets/img/page/who-we-are.jpg";
+import image from "../../assets/img/page/who-we-are.png";
 import Count from '../common/count';
 
 const Certification = () => {
