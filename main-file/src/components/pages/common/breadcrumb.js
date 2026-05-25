@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import breadCrumbBg from "../../assets/img/page/breadcrumb.jpg";
 
-const BreadCrumb = ({title, innerTitle}) => {
+const BreadCrumb = ({title, innerTitle, bgImage}) => {
     return (
-        <div className="breadcrumb__area" style={{backgroundImage: `url(${breadCrumbBg})`}}>
+        <div className="breadcrumb__area" style={{backgroundImage: `url(${bgImage || breadCrumbBg})`}}>
             <div className="container">
                 <div className="row">
                     <div className="col-xl-12">

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from "../../assets/img/logo-2.png";
+import Logo from '../logo';
 import MainMenu from './header-menu';
 import Search from './search';
 import { useState } from 'react';
@@ -17,7 +17,7 @@ const HeaderFour = () => {
                     <div className="header__area-menubar">
                         <div className="header__area-menubar-left one">
                             <div className="header__area-menubar-left-logo">
-                                <Link to='/'><img className='one' src={logo} alt='logo'/></Link>
+                                <Logo isLight={true} />
                             </div>
                         </div>
                         <div className="header__area-menubar-center">
