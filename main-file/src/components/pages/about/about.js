@@ -1,42 +1,94 @@
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
 import image from "../../assets/img/about/about-4.jpg";
 import bgImage from "../../assets/img/portfolio/portfolio-8.jpg";
 
+const missionCards = [
+    {
+        icon: "flaticon-networking",
+        title: "CNF & Distributorship",
+        description: "Comprehensive distribution network with reliable supply chain management."
+    },
+    {
+        icon: "fa-sharp fa-light fa-truck",
+        title: "Logistics & Delivery",
+        description: "Efficient logistics solutions ensuring timely delivery to your doorstep."
+    },
+    {
+        icon: "flaticon-consultation",
+        title: "Material Consultancy",
+        description: "Expert guidance on material selection and project requirements."
+    },
+    {
+        icon: "flaticon-handshake",
+        title: "Contractor Connect",
+        description: "Connecting you with verified contractors and construction professionals."
+    }
+];
 
 const AboutMain = () => {
+    const slideControl = {
+        spaceBetween: 25,
+        slidesPerView: 2,
+        speed: 1000,
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            reverseDirection: false,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".mission_next",
+            prevEl: ".mission_prev",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            576: {
+                slidesPerView: 1.5,
+            },
+            992: {
+                slidesPerView: 2,
+            }
+        },
+    };
+
     return (
         <>
             <div className="mission__area section-padding">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-6 lg-mb-25">
+                        <div className="col-lg-5 lg-mb-25">
                             <div className="mission__area-left mr-40 xl-mr-0">
                                 <span className="subtitle wow fadeInLeft" data-wow-delay=".4s">Our Mission</span>
                                 <h2 className="title_split_anim">Dedicated to Delivering Value and Excellence</h2>
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="mission__area-right">
-                                <div className="row">
-                                    <div className="col-md-6 md-mb-25 wow fadeInUp" data-wow-delay=".6s">
-                                        <div className="experience__area-list-item">
-                                            <i className="flaticon-team"></i>
-                                            <div className="experience__area-list-item-content">
-                                                <h4>Project Planning</h4>
-                                                <p>Ensuring every detail is considered designing</p>
-                                            </div>
-                                        </div>
+                                <div className="slider-arrow jc-start lg-jc-start mt-40 wow fadeInLeft" data-wow-delay=".6s">
+                                    <div className="slider-arrow-prev mission_prev">
+                                        <i className="fa-sharp fa-regular fa-arrow-left-long"></i>
                                     </div>
-                                    <div className="col-md-6 wow fadeInUp" data-wow-delay=".9s">
-                                        <div className="experience__area-list-item">
-                                            <i className="flaticon-technology"></i>
-                                            <div className="experience__area-list-item-content">
-                                                <h4>Labor Preparation</h4>
-                                                <p>We take pride in our quality craftsmanship</p>
-                                            </div>
-                                        </div>
+                                    <div className="slider-arrow-next mission_next">
+                                        <i className="fa-sharp fa-regular fa-arrow-right-long"></i>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-7">
+                            <div className="mission__area-right wow fadeInUp" data-wow-delay=".5s">
+                                <Swiper modules={[Autoplay, Navigation]} {...slideControl}>
+                                    {missionCards.map((card, index) => (
+                                        <SwiperSlide key={index}>
+                                            <div className="experience__area-list-item">
+                                                <i className={card.icon}></i>
+                                                <div className="experience__area-list-item-content">
+                                                    <h4>{card.title}</h4>
+                                                    <p>{card.description}</p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                    ))}
+                                </Swiper>
                             </div>
                         </div>
                     </div>
