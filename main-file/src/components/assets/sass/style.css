@@ -8411,34 +8411,28 @@ Responsive Menu Css
   overflow: hidden;
 }
 
-.copyright__custom-content {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.copyright__custom-content .copyright-text {
-  font-size: 13.5px !important;
+.copyright__custom-left .copyright-text {
+  font-size: 13px !important;
   color: rgba(255, 255, 255, 0.55) !important;
   font-weight: 400 !important;
   letter-spacing: 0.3px !important;
   margin: 0 !important;
 }
 
-.copyright__custom-content .copyright-text span {
+.copyright__custom-left .copyright-text span {
   color: #fff !important;
   font-weight: 500 !important;
 }
 
-.copyright__custom-content .designer-text {
-  font-size: 12px !important;
-  color: rgba(255, 255, 255, 0.4) !important;
+.copyright__custom-right .designer-text {
+  font-size: 13px !important;
+  color: rgba(255, 255, 255, 0.55) !important;
   font-weight: 400 !important;
-  letter-spacing: 0.2px !important;
+  letter-spacing: 0.3px !important;
   margin: 0 !important;
 }
 
-.copyright__custom-content .designer-text a {
+.copyright__custom-right .designer-text a {
   color: var(--primary-color-1) !important; /* Yellow theme color */
   text-decoration: none !important;
   font-weight: 600 !important;
@@ -8446,7 +8440,7 @@ Responsive Menu Css
   transition: all 0.3s ease !important;
 }
 
-.copyright__custom-content .designer-text a::after {
+.copyright__custom-right .designer-text a::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -8457,11 +8451,11 @@ Responsive Menu Css
   transition: width 0.3s ease;
 }
 
-.copyright__custom-content .designer-text a:hover {
+.copyright__custom-right .designer-text a:hover {
   color: #fff !important;
 }
 
-.copyright__custom-content .designer-text a:hover::after {
+.copyright__custom-right .designer-text a:hover::after {
   width: 100%;
 }
 

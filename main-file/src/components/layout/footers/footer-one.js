@@ -76,19 +76,18 @@ const FooterOne = () => {
             <div className="copyright__area copyright__custom-area">
                 <div className="container">
                     <div className="row align-items-center">
-                        <div className="col-md-7">
-                            <div className="copyright__custom-content md-t-center md-mb-15">
+                        <div className="col-md-6">
+                            <div className="copyright__custom-left md-t-center md-mb-15">
                                 <p className="copyright-text">
                                     © 2026 <span>Magadh Group of Company</span>. All rights reserved.
                                 </p>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="copyright__custom-right t-right md-t-center">
                                 <p className="designer-text">
                                     Designed & Maintained by <a href="https://www.synergybrandarchitect.in" target="_blank" rel="noopener noreferrer">Synergy Brand Architect</a>
                                 </p>
-                            </div>
-                        </div>
-                        <div className="col-md-5">
-                            <div className="copyright__custom-social t-right md-t-center">
-                                <Social />						
                             </div>
                         </div>
                     </div>
