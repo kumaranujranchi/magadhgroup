@@ -4945,6 +4945,113 @@ Responsive Menu Css
 /*==========================================================================
 * Blog Details CSS
 ==========================================================================*/
+
+/* Markdown rendered content styles */
+.blog__markdown-content {
+  line-height: 1.85;
+  color: var(--body-color);
+}
+.blog__markdown-content h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-heading-color);
+  margin: 35px 0 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border-color-1);
+}
+.blog__markdown-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-heading-color);
+  margin: 28px 0 12px;
+}
+.blog__markdown-content h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-heading-color);
+  margin: 22px 0 10px;
+}
+.blog__markdown-content p {
+  margin-bottom: 18px;
+}
+.blog__markdown-content ul,
+.blog__markdown-content ol {
+  padding-left: 24px;
+  margin-bottom: 18px;
+}
+.blog__markdown-content ul li,
+.blog__markdown-content ol li {
+  margin-bottom: 8px;
+}
+.blog__markdown-content strong {
+  color: var(--text-heading-color);
+  font-weight: 700;
+}
+.blog__markdown-content blockquote {
+  border-left: 4px solid var(--primary-color-1);
+  background: var(--color-2);
+  padding: 18px 24px;
+  margin: 24px 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+.blog__markdown-content blockquote p {
+  margin: 0;
+  color: var(--text-heading-color);
+}
+.blog__markdown-content code {
+  background: var(--color-2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--primary-color-1);
+}
+.blog__markdown-content pre {
+  background: var(--color-7);
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 18px;
+}
+.blog__markdown-content pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+.blog__markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+.blog__markdown-content table th {
+  background: var(--text-heading-color);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+.blog__markdown-content table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border-color-1);
+}
+.blog__markdown-content table tr:nth-child(even) td {
+  background: var(--color-2);
+}
+.blog__markdown-content a {
+  color: var(--primary-color-1);
+  text-decoration: underline;
+}
+.blog__markdown-content a:hover {
+  color: var(--text-heading-color);
+}
+.blog__markdown-content hr {
+  border: none;
+  border-top: 1px solid var(--border-color-1);
+  margin: 30px 0;
+}
+
 .blog__details-area-box {
   background: var(--color-2);
   border: 1px solid var(--border-color-1);
