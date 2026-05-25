@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const CalculatorsMain = () => {
     const [activeCalc, setActiveCalc] = useState(null);
@@ -406,6 +407,23 @@ const CalculatorsMain = () => {
                                                 </div>
                                             </div>
                                         )}
+
+                                        {/* Lead Generation CTA */}
+                                        <div className="row mt-30">
+                                            <div className="col-12">
+                                                <div className="p-30 text-center" style={{ background: '#fff', borderRadius: '8px', border: '1px solid var(--border-color-1)', boxShadow: '0 5px 15px rgba(0,0,0,0.02)' }}>
+                                                    <h5 className="mb-15" style={{ fontSize: '18px', fontWeight: '600', color: 'var(--text-heading-color)' }}>
+                                                        Are you looking for an expert contractor to handle your construction requirement?
+                                                    </h5>
+                                                    <p className="mb-20" style={{ fontSize: '15px', color: '#666', maxWidth: '550px', margin: '0 auto 20px auto' }}>
+                                                        Get in touch with Magadh Group's team of certified experts for professional planning, execution, and high-quality materials.
+                                                    </p>
+                                                    <Link to="/request-quote" className="build_button" style={{ display: 'inline-flex', padding: '10px 25px', borderRadius: '50px' }}>
+                                                        Get a Free Quote <i className="flaticon-right-up"></i>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 )}
                             </div>
