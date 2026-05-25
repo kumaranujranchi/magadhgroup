@@ -854,6 +854,13 @@ p {
   cursor: none;
 }
 
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+}
 .cursor #cursor-ball {
   width: 12px;
   height: 12px;
@@ -862,19 +869,23 @@ p {
   position: absolute;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 999;
+  z-index: 99999;
   transition: width 0.4s ease, height 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .cursor #cursor-text {
   position: absolute;
   transform: translate(-50%, -50%);
   pointer-events: none;
   opacity: 0;
-  z-index: 999;
+  z-index: 99999;
   transition: opacity 300ms ease-in-out;
   color: var(--text-white);
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
 }
 .cursor.no #cursor-text {
   background: var(--color-1);
@@ -3724,6 +3735,38 @@ Responsive Menu Css
   font-weight: 400;
   max-width: 300px;
 }
+.banner__one-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1a1a1a;
+  color: var(--primary-color-1);
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.banner__one-cta-btn span {
+  transition: 0.3s;
+}
+.banner__one-cta-btn i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+.banner__one-cta-btn:hover {
+  background: var(--primary-color-1);
+  color: #1a1a1a;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+.banner__one-cta-btn:hover i {
+  transform: translateX(4px);
+}
 .banner__one-content-award {
   position: absolute;
   bottom: 0;
@@ -6553,9 +6596,11 @@ Responsive Menu Css
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 80px;
-  margin: 0 20px;
+  width: 200px;
+  height: 100px;
+  margin: 0 15px;
+  padding: 6px;
+  box-sizing: border-box;
 }
 .brand__area ul li img {
   max-height: 100%;
@@ -6565,12 +6610,13 @@ Responsive Menu Css
   margin: 0;
   object-fit: contain;
   filter: none;
-  opacity: 0.7;
-  mix-blend-mode: multiply;
+  opacity: 1;
+  mix-blend-mode: normal;
   transition: all 0.3s ease;
 }
 .brand__area ul li img:hover {
-  opacity: 1;
+  opacity: 0.85;
+  transform: scale(1.05);
 }
 
 @media (max-width: 767px) {
@@ -7865,11 +7911,13 @@ Responsive Menu Css
   filter: inherit;
 }
 .dark-mode .brand__area ul li img {
-  filter: invert(1) opacity(0.7);
-  mix-blend-mode: screen;
+  filter: none;
+  opacity: 1;
+  mix-blend-mode: normal;
 }
 .dark-mode .brand__area ul li img:hover {
-  opacity: 1;
+  opacity: 0.85;
+  transform: scale(1.05);
 }
 .dark-mode .industry__four-left-item img {
   filter: invert(1);
