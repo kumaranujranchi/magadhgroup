@@ -78,8 +78,8 @@ const AboutMain = () => {
                             <div className="mission__area-right wow fadeInUp" data-wow-delay=".5s">
                                 <Swiper modules={[Autoplay, Navigation]} {...slideControl}>
                                     {missionCards.map((card, index) => (
-                                        <SwiperSlide key={index}>
-                                            <div className="experience__area-list-item">
+                                        <SwiperSlide key={index} className="h-100">
+                                            <div className="experience__area-list-item h-100">
                                                 <i className={card.icon}></i>
                                                 <div className="experience__area-list-item-content">
                                                     <h4>{card.title}</h4>
