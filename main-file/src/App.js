@@ -30,6 +30,9 @@ import ServicesDetails from './components/pages/services/service-single';
 import PortfolioDetails from './components/pages/portfolio/portfolio-details';
 import BlogDetails from './components/pages/blogs/blog-details';
 
+import ProductsPage from './components/pages/products';
+import ProductDetailPage from './components/pages/products/product-detail';
+
 function App() {
     useEffect(() => {
         setTimeout(() => {
@@ -47,6 +50,8 @@ function App() {
                 <Route path="*" element={<ErrorPage />} />
                 <Route path="/services" element={<ServicePage />} />
                 <Route path="/services/:id" element={<ServicesDetails />} />
+                <Route path="/products" element={<ProductsPage />} />
+                <Route path="/products/:slug" element={<ProductDetailPage />} />
                 <Route path="/testimonial" element={<Testimonial />} />
                 <Route path="/pricing-plans" element={<PricingPages />} />
                 <Route path="/faq" element={<FaqPage />} />

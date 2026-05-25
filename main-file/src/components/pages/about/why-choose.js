@@ -1,5 +1,4 @@
-import React from 'react';
-import Count from '../common/count';
+
 
 const chooseData = [
     {
@@ -49,14 +48,10 @@ const WhyChooseUs = () => {
                 <div className="row justify-content-center">
                     {chooseData.map((card, index) => (
                         <div className="col-lg-4 col-md-6 mt-25 wow fadeInUp" data-wow-delay={`${0.3 + index * 0.1}s`} key={index}>
-                            <div className="choose__three-list-item h-100" style={{ background: '#ffffff', border: '1px solid #eaeaea', borderRadius: '12px', padding: '30px' }}>
-                                <div className="d-flex align-items-center gap-3 mb-20">
-                                    <div className="d-flex align-items-center justify-content-center rounded" style={{ width: '50px', height: '50px', minWidth: '50px', background: '#f4f6fc' }}>
-                                        <i className={card.icon} style={{ fontSize: '20px', color: '#1a365d', marginBottom: '0' }}></i>
-                                    </div>
-                                    <h4 className="mb-0" style={{ fontSize: '18px', fontWeight: '600', lineHeight: '26px' }}>{card.title}</h4>
-                                </div>
-                                <p className="mb-0 text-muted" style={{ fontSize: '14px', lineHeight: '22px' }}>{card.description}</p>
+                            <div className="choose__three-list-item h-100">
+                                <i className={card.icon}></i>
+                                <h4>{card.title}</h4>
+                                <p>{card.description}</p>
                             </div>
                         </div>
                     ))}

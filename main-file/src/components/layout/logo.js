@@ -11,7 +11,7 @@ const Logo = ({ isLight = false }) => {
                 fontFamily: 'var(--heading-font)', 
                 letterSpacing: '-0.5px'
             }}>
-                Magadh <span style={{ color: 'var(--primary-color-1)' }}>Group</span>
+                Magadh <span style={{ color: isLight ? 'var(--primary-color-1)' : '#000000' }}>Group</span>
             </span>
         </Link>
     );

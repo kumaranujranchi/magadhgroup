@@ -1,37 +1,37 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
-import team1 from "../../assets/img/team/team-1.jpg";
-import team2 from "../../assets/img/team/team-2.jpg";
-import team3 from "../../assets/img/team/team-3.jpg";
-import team4 from "../../assets/img/team/team-4.jpg";
-import team5 from "../../assets/img/team/member-1.jpg";
+import imgSiteEngineer from "../../../assets/img/site engineer.png";
+import imgArchitect from "../../../assets/img/architect.png";
+import imgPlumber from "../../../assets/img/Plumber.png";
+import imgPainter from "../../../assets/img/Painter copy.png";
+import imgElectrician from "../../../assets/img/electrician.png";
 
 const contractorTeam = [
     {
         name: "Site Engineer",
         description: "Expert project supervision, structural quality control, and site coordination.",
-        image: team1
+        image: imgSiteEngineer
     },
     {
         name: "Architect",
         description: "Modern residential planning, interior designs, and 3D architectural blueprints.",
-        image: team2
+        image: imgArchitect
     },
     {
         name: "Plumber",
         description: "Professional sanitary fittings, pipeline layouts, and smart drainage installations.",
-        image: team3
+        image: imgPlumber
     },
     {
         name: "Painter",
         description: "High-quality wall painting, exterior coatings, and decorative texture application.",
-        image: team4
+        image: imgPainter
     },
     {
         name: "Electrician",
         description: "Safe residential wiring, lighting setups, panel installations, and repairs.",
-        image: team5
+        image: imgElectrician
     }
 ];
 

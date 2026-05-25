@@ -2,7 +2,7 @@ import React from 'react';
 import bannerBg from "../../../assets/img/shape/banner-shape.png";
 import user from "../../../assets/img/avatar/user.png";
 import award from "../../../assets/img/shape/award.png";
-import image from "../../../assets/img/banner/banner.jpg";
+import image from "../../../../assets/img/homepage-banner.png";
 
 const BannerOne = () => {
     return (

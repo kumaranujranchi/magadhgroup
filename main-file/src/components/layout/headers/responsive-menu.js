@@ -18,6 +18,20 @@ const ResponsiveMenu = () => {
     <>    
     <ul>
         <li><Link to='/'>Home</Link></li>
+        <li className='menu-item-has-children'><Link to='/products'>Products</Link>
+            <ul className='sub-menu' style={activeSubMenu("products")}>
+                <li><Link to='/products'>All Products</Link></li>
+                <li><Link to='/products/tmt-bars'>TMT Bars</Link></li>
+                <li><Link to='/products/cement'>Cement</Link></li>
+                <li><Link to='/products/rmc'>RMC</Link></li>
+                <li><Link to='/products/paints'>Paints</Link></li>
+                <li><Link to='/products/electrical-items'>Electrical Items</Link></li>
+                <li><Link to='/products/doors-windows'>Doors & Windows</Link></li>
+                <li><Link to='/products/lifts'>Lifts & Elevators</Link></li>
+                <li><Link to='/products/home-appliances'>Home Appliances</Link></li>
+            </ul>
+            <a className={`mean-expand ${activeIcon("products")}`} onClick={() => active("products")}></a>
+        </li>
 		<li className='menu-item-has-children'><Link to='/services'>Services</Link>
             <ul className='sub-menu' style={activeSubMenu("services")}>
 				<li><Link to='/services'>Services 01</Link></li>
