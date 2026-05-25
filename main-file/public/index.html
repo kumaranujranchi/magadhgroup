@@ -14,5 +14,34 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- Hidden form declarations for Netlify Forms auto-detection -->
+    <form name="contact-form" data-netlify="true" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+    </form>
+    <form name="request-quote-form" data-netlify="true" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="text" name="phone" />
+      <input type="text" name="company" />
+      <input type="text" name="website" />
+      <input type="checkbox" name="services" />
+      <textarea name="message"></textarea>
+    </form>
+    <form name="product-quote-form" data-netlify="true" hidden>
+      <input type="text" name="name" />
+      <input type="text" name="phone" />
+      <input type="email" name="email" />
+      <input type="text" name="variant" />
+      <input type="text" name="productName" />
+      <input type="text" name="quantity" />
+      <textarea name="message"></textarea>
+    </form>
+    <form name="subscribe-form" data-netlify="true" hidden>
+      <input type="email" name="email" />
+    </form>
   </body>
 </html>

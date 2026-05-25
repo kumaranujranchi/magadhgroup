@@ -1,4 +1,5 @@
 
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../logo';
 import subscribeBg from "../../assets/img/page/banner-video.png";
@@ -6,6 +7,33 @@ import Social from '../../data/social';
 import blogData from '../../data/blog-data';
 
 const FooterTwo = () => {
+    const [email, setEmail] = useState('');
+    const [status, setStatus] = useState(null); // 'sending', 'success', 'error'
+
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!email) return;
+        setStatus('sending');
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "subscribe-form", email })
+        })
+        .then(() => {
+            setStatus('success');
+            setEmail('');
+        })
+        .catch(() => {
+            setStatus('error');
+        });
+    };
+
     return (
         <>
             <div className="footer__two">
@@ -19,10 +47,31 @@ const FooterTwo = () => {
                             </div>
                             <div className="col-lg-6">
                                 <div className="subscribe__area-form wow fadeInUp" data-wow-delay=".4s">
-                                    <form>
-                                        <input type="email" name="email" placeholder="Email address" />
-                                        <button className="build_button" type="submit">Subscribe Now</button>
-                                    </form>
+                                    {status === 'success' ? (
+                                        <div style={{ color: '#ffde59', fontWeight: 'bold', padding: '15px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px', textAlign: 'center' }}>
+                                            Thank you for subscribing!
+                                        </div>
+                                    ) : (
+                                        <form onSubmit={handleSubmit}>
+                                            <input 
+                                                type="email" 
+                                                name="email" 
+                                                placeholder="Email address" 
+                                                required 
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                                disabled={status === 'sending'}
+                                            />
+                                            <button className="build_button" type="submit" disabled={status === 'sending'}>
+                                                {status === 'sending' ? 'Submitting...' : 'Subscribe Now'}
+                                            </button>
+                                        </form>
+                                    )}
+                                    {status === 'error' && (
+                                        <div style={{ color: '#ff6b6b', fontSize: '14px', marginTop: '10px', textAlign: 'center' }}>
+                                            Failed to subscribe. Please try again.
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

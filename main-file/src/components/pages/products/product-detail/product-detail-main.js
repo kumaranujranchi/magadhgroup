@@ -22,14 +22,23 @@ const ProductDetailMain = ({ product }) => {
         }));
     };
 
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsLoading(true);
-        // Simulate API call
-        setTimeout(() => {
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "product-quote-form", ...formData })
+        })
+        .then(() => {
             setIsLoading(false);
             setIsSubmitted(true);
-            // Reset form
             setFormData({
                 name: '',
                 email: '',
@@ -39,7 +48,11 @@ const ProductDetailMain = ({ product }) => {
                 quantity: '',
                 message: ''
             });
-        }, 1200);
+        })
+        .catch(error => {
+            setIsLoading(false);
+            alert("Error sending submission: " + error);
+        });
     };
 
     return (
