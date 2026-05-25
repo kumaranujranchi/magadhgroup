@@ -7,7 +7,6 @@ const CustomCursor = () => {
     useEffect(() => {
         const ball = ballRef.current;
         const cursorText = textRef.current;
-        const hoverAreas = document.querySelectorAll(".data_cursor");
         let mouseX = 0, mouseY = 0;
         let ballX = 0, ballY = 0;
         const speed = 0.1;
@@ -29,47 +28,48 @@ const CustomCursor = () => {
             mouseY = e.clientY;
         };
 
-        const handleHoverEnter = (e) => {
-            // Use currentTarget so we always read from the .data_cursor element, not a child
-            const text = e.currentTarget.getAttribute("data-cursor-text");
-            if (text && cursorText) {
-                cursorText.textContent = text;
-                cursorText.style.opacity = "1";
-            }
-            if (ball) {
-                ball.style.height = "90px";
-                ball.style.width = "90px";
-                ball.style.top = "-35px";
-                ball.style.left = "-25px";
+        const handleMouseOver = (e) => {
+            const hoverArea = e.target.closest(".data_cursor");
+            if (hoverArea) {
+                const text = hoverArea.getAttribute("data-cursor-text");
+                if (text && cursorText) {
+                    cursorText.textContent = text;
+                    cursorText.style.opacity = "1";
+                }
+                if (ball) {
+                    ball.style.height = "90px";
+                    ball.style.width = "90px";
+                    ball.style.top = "-35px";
+                    ball.style.left = "-25px";
+                }
             }
         };
 
-        const handleHoverLeave = () => {
-            if (cursorText) {
-                cursorText.style.opacity = "0";
-            }
-            if (ball) {
-                ball.style.height = "12px";
-                ball.style.width = "12px";
-                ball.style.top = "0";
-                ball.style.left = "0";
+        const handleMouseOut = (e) => {
+            const hoverArea = e.target.closest(".data_cursor");
+            if (hoverArea && (!e.relatedTarget || !hoverArea.contains(e.relatedTarget))) {
+                if (cursorText) {
+                    cursorText.style.opacity = "0";
+                }
+                if (ball) {
+                    ball.style.height = "12px";
+                    ball.style.width = "12px";
+                    ball.style.top = "0";
+                    ball.style.left = "0";
+                }
             }
         };
 
         document.addEventListener("mousemove", handleMouseMove);
-        hoverAreas.forEach((elem) => {
-            elem.addEventListener("mouseenter", handleHoverEnter);
-            elem.addEventListener("mouseleave", handleHoverLeave);
-        });
+        document.addEventListener("mouseover", handleMouseOver);
+        document.addEventListener("mouseout", handleMouseOut);
 
         animFrame = requestAnimationFrame(updateCursor);
 
         return () => {
             document.removeEventListener("mousemove", handleMouseMove);
-            hoverAreas.forEach((elem) => {
-                elem.removeEventListener("mouseenter", handleHoverEnter);
-                elem.removeEventListener("mouseleave", handleHoverLeave);
-            });
+            document.removeEventListener("mouseover", handleMouseOver);
+            document.removeEventListener("mouseout", handleMouseOut);
             cancelAnimationFrame(animFrame);
         };
     }, []);
