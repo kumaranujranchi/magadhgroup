@@ -112,7 +112,7 @@ const AboutMain = () => {
                                     <h3>Building Trust<br/>Since 1995</h3>
                                 </div>
                                 <p className="wow fadeInUp" data-wow-delay=".6s">
-                                    <strong>Magadh Group of Company</strong> is a leading building material supplier with over 30 years of proven expertise in the construction industry. As a trusted partner for builders, contractors, government projects, and individual homeowners, we provide high-quality construction materials including TMT Bars, Cement, Ready Mix Concrete, Paints, Electrical Items, Doors, Windows, Lifts, and Home Appliances — all under one roof.
+                                    <strong>Magadh Group of Company</strong> is a leading building material supplier with over 30 years of proven expertise in the construction industry. As a trusted partner for builders, contractors, government projects, and individual homeowners, we provide high-quality construction materials including TMT Bars, Cement, Ready Mix Concrete, Paints, Electrical Items, Doors, Windows, Lifts, and Home Appliances, all under one roof.
                                 </p>
                                 <p className="wow fadeInUp mt-15" data-wow-delay=".7s">
                                     Established under our flagship ventures, <strong>Magadh Associates</strong> and <strong>Magadh Enterprises</strong>, the Magadh Group has become a pioneer in building material distribution by focusing on service excellence, product quality, competitive pricing, and timely delivery.

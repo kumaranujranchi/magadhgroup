@@ -9,7 +9,7 @@ const FooterThree = () => {
             <div className="container">
                 <div className="row al-center">
                     <div className="col-lg-7 lg-mb-30 lg-t-center title_split_anim">
-                        <h2>Create Your Dream Space — Let’s Get Going!</h2>
+                        <h2>Create Your Dream Space - Let’s Get Going!</h2>
                     </div>
                     <div className="col-lg-5 t-right lg-t-center wow fadeInDown" data-wow-delay="1.2s">
                         <Link className="build_button" to="/contact-us">Book Appointment<i className="flaticon-right-up"></i></Link>
