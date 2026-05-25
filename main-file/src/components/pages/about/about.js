@@ -106,12 +106,17 @@ const AboutMain = () => {
                             <div className="about__five-right ml-70 xl-ml-0">
                                 <div className="about__five-right-title">
                                     <span className="subtitle wow fadeInLeft" data-wow-delay=".4s">About Our Company</span>
-                                    <h2 className="title_split_anim">Trusted Partner in Construction and Design</h2>
+                                    <h2 className="title_split_anim">Trusted Partner in Building Materials</h2>
                                 </div>
                                 <div className="features wow fadeInUp" data-wow-delay=".3s" style={{backgroundImage: `url(${bgImage})`}}>
                                     <h3>Building Trust<br/>Since 1989</h3>
                                 </div>
-                                <p className="wow fadeInUp" data-wow-delay=".6s">Our journey began with a commitment to excellence, and that commitment remains at the core of our operations today. We’ve grown from a small local business into a trusted partner for both residential and commercial.</p>
+                                <p className="wow fadeInUp" data-wow-delay=".6s">
+                                    <strong>Magadh Group of Company</strong> is a leading building material supplier with over 30 years of proven expertise in the construction industry. As a trusted partner for builders, contractors, government projects, and individual homeowners, we provide high-quality construction materials including TMT Bars, Cement, Ready Mix Concrete, Paints, Electrical Items, Doors, Windows, Lifts, and Home Appliances — all under one roof.
+                                </p>
+                                <p className="wow fadeInUp mt-15" data-wow-delay=".7s">
+                                    Established under our flagship ventures, <strong>Magadh Associates</strong> and <strong>Magadh Enterprises</strong>, the Magadh Group has become a pioneer in building material distribution by focusing on service excellence, product quality, competitive pricing, and timely delivery.
+                                </p>
                                 <div className="item_bounce">
                                     <Link className="build_button mt-20" to="/portfolio">See Projects<i className="flaticon-right-up"></i></Link>
                                 </div>
