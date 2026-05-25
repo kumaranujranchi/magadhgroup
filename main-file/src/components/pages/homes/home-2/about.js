@@ -22,16 +22,16 @@ const AboutTwo = () => {
                             <img className="wow img_top_animation" src={image} alt="image" />
                             <div className="counter__one-area mt-35">
                                 <div className="about__two-right-counter">
-                                    <h2><Count number={678}/>+</h2>
-                                    <p>Complete Projects</p>
+                                    <h2><Count number={5000}/>+</h2>
+                                    <p>Trusted Clients</p>
                                 </div>
                                 <div className="about__two-right-counter">
-                                    <h2><Count number={120}/>+</h2>
-                                    <p>Team Members</p>
+                                    <h2><Count number={20}/>+</h2>
+                                    <p>Warehouses</p>
                                 </div>
                                 <div className="about__two-right-counter">
-                                    <h2><Count number={635}/>+</h2>
-                                    <p>Client Reviews</p>
+                                    <h2><Count number={65}/>+</h2>
+                                    <p>Product Portfolio</p>
                                 </div>
                             </div>
                         </div>

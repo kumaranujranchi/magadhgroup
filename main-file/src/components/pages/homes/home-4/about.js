@@ -32,24 +32,24 @@ const AboutFour = () => {
                                 <div className="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
                                     <div className="about__four-counter-item">
                                         <div className="box">
-                                            <h2><Count number={678}/>+</h2>
-                                            <p>Complete Projects</p>
+                                            <h2><Count number={5000}/>+</h2>
+                                            <p>Trusted Clients</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".7s">
                                     <div className="about__four-counter-item borders t-center md-t-left">
                                         <div className="box">
-                                            <h2><Count number={120}/>+</h2>
-                                            <p>Team Members</p>
+                                            <h2><Count number={20}/>+</h2>
+                                            <p>Warehouses</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="1s">
                                     <div className="about__four-counter-item t-right md-t-left">
                                         <div className="box">
-                                            <h2><Count number={635}/>+</h2>
-                                            <p>Client Reviews</p>
+                                            <h2><Count number={65}/>+</h2>
+                                            <p>Product Portfolio</p>
                                         </div>
                                     </div>
                                 </div>

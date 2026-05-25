@@ -10,20 +10,20 @@ const CounterUp = () => {
                         <div className="col-xl-12">
                             <div className="counter__one-area">
                                 <div className="counter__one-area-item item_bounce">
-                                    <h2><Count number={678}/>+</h2>
-                                    <p>Complete Projects</p>
+                                    <h2><Count number={5000}/>+</h2>
+                                    <p>Trusted Clients</p>
                                 </div>
                                 <div className="counter__one-area-item item_bounce">
-                                    <h2><Count number={120}/>+</h2>
-                                    <p>Team Members</p>
+                                    <h2><Count number={20}/>+</h2>
+                                    <p>Warehouses</p>
                                 </div>
                                 <div className="counter__one-area-item item_bounce">
-                                    <h2><Count number={635}/>+</h2>
-                                    <p>Client Reviews</p>
+                                    <h2><Count number={65}/>+</h2>
+                                    <p>Product Portfolio</p>
                                 </div>
                                 <div className="counter__one-area-item item_bounce">
-                                    <h2><Count number={89}/>+</h2>
-                                    <p>Winning Awards</p>
+                                    <h2><Count number={30}/>+</h2>
+                                    <p>Years Experience</p>
                                 </div>
                             </div>
                         </div>
