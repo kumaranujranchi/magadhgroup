@@ -7,7 +7,7 @@ day: "10"
 author: "Magadh Group Team"
 category: "Interior"
 tags: ["Modular Kitchen", "Interior Design", "Home"]
-image: "/blog-images/modular-kitchen.png"
+image: "/blog-images/modular-kitchen.png.webp"
 description: "The modern modular kitchen blends ergonomics, smart storage solutions, and sleek aesthetics. Pull-out pantries, soft-closing drawers, and quartz countertops are transforming cooking spaces."
 ---
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import image from "../../../../assets/img/homepage-4.png";
-import videoBg from "../../../assets/img/shape/shape.png";
+import image from "../../../../assets/img/homepage-4.png.webp";
+import videoBg from "../../../assets/img/shape/shape.png.webp";
 import Count from '../../common/count';
 import { Link } from 'react-router-dom';
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import image1 from '../../../assets/img/about/about-1.jpg';
-import image2 from '../../../assets/img/page/choose-us.jpg';
+import image1 from '../../../assets/img/about/about-1.jpg.webp';
+import image2 from '../../../assets/img/page/choose-us.jpg.webp';
 
 const PortfolioDetailsMain = ({singleData}) => {
     return (

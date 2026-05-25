@@ -7,7 +7,7 @@ day: "22"
 author: "Magadh Group Team"
 category: "Products"
 tags: ["Elevator", "Lift", "Residential", "Commercial"]
-image: "/blog-images/elevator.png"
+image: "/blog-images/elevator.png.webp"
 description: "Selecting the perfect lift for your building involves more than just aesthetics. Factors such as passenger traffic volume, MRL technology, safety certifications, and energy efficiency are essential."
 ---
 

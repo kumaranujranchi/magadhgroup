@@ -1,17 +1,17 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Autoplay, Navigation} from 'swiper/modules';
-import brand1 from "../../../assets/img/brand/brand-1.png";
-import brand2 from "../../../assets/img/brand/brand-2.png";
-import brand3 from "../../../assets/img/brand/brand-3.png";
-import brand4 from "../../../assets/img/brand/brand-4.png";
-import brand5 from "../../../assets/img/brand/brand-5.png";
-import brand6 from "../../../assets/img/brand/brand-6.png";
-import brand7 from "../../../assets/img/brand/brand-7.png";
-import brand8 from "../../../assets/img/brand/brand-8.png";
-import image1 from "../../../assets/img/banner/banner-1.jpg";
-import image2 from "../../../assets/img/banner/banner-2.jpg";
-import image3 from "../../../assets/img/banner/banner-3.jpg"; 
-import banner from "../../../assets/img/service/service-1.jpg"; 
+import brand1 from "../../../assets/img/brand/brand-1.png.webp";
+import brand2 from "../../../assets/img/brand/brand-2.png.webp";
+import brand3 from "../../../assets/img/brand/brand-3.png.webp";
+import brand4 from "../../../assets/img/brand/brand-4.png.webp";
+import brand5 from "../../../assets/img/brand/brand-5.png.webp";
+import brand6 from "../../../assets/img/brand/brand-6.png.webp";
+import brand7 from "../../../assets/img/brand/brand-7.png.webp";
+import brand8 from "../../../assets/img/brand/brand-8.png.webp";
+import image1 from "../../../assets/img/banner/banner-1.jpg.webp";
+import image2 from "../../../assets/img/banner/banner-2.jpg.webp";
+import image3 from "../../../assets/img/banner/banner-3.jpg.webp"; 
+import banner from "../../../assets/img/service/service-1.jpg.webp"; 
 
 const BannerThree = () => {
     const slideControl = {

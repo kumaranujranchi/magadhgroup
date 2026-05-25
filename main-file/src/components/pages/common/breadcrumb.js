@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import breadCrumbBg from "../../../assets/img/homepage-banner.png";
+import breadCrumbBg from "../../../assets/img/homepage-banner.png.webp";
 
 const BreadCrumb = ({title, innerTitle, bgImage}) => {
     return (

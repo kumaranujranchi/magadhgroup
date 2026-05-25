@@ -7,7 +7,7 @@ day: "25"
 author: "Magadh Group Team"
 category: "Construction"
 tags: ["TMT Steel", "Construction", "Structural Engineering"]
-image: "/blog-images/tmt-steel.png"
+image: "/blog-images/tmt-steel.png.webp"
 description: "Thermo Mechanically Treated (TMT) steel bars have revolutionized the construction industry. Their high tensile strength, bendability, and superior seismic resistance make them indispensable for high-rises and bridges."
 ---
 

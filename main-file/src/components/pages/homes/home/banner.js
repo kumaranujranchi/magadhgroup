@@ -1,7 +1,7 @@
 import React from 'react';
-import bannerBg from "../../../assets/img/shape/banner-shape.png";
-import award from "../../../assets/img/shape/award.png";
-import image from "../../../../assets/img/homepage-banner.png";
+import bannerBg from "../../../assets/img/shape/banner-shape.png.webp";
+import award from "../../../assets/img/shape/award.png.webp";
+import image from "../../../../assets/img/homepage-banner.png.webp";
 
 const BannerOne = () => {
     return (

@@ -4,14 +4,14 @@ import { EffectFade, Autoplay, Navigation} from 'swiper/modules';
 import productsData from "../../../data/products-data";
 
 // Placeholder images for products (to be updated later)
-import image1 from "../../../assets/img/portfolio/portfolio-1.png";
-import image2 from "../../../assets/img/portfolio/portfolio-2.png";
-import image3 from "../../../assets/img/portfolio/portfolio-3.png";
-import image4 from "../../../assets/img/portfolio/portfolio-4.png";
-import image5 from "../../../assets/img/portfolio/portfolio-5.png";
-import image6 from "../../../assets/img/portfolio/portfolio-6.png";
-import image7 from "../../../assets/img/portfolio/portfolio-7.png";
-import image8 from "../../../assets/img/portfolio/portfolio-8.png";
+import image1 from "../../../assets/img/portfolio/portfolio-1.png.webp";
+import image2 from "../../../assets/img/portfolio/portfolio-2.png.webp";
+import image3 from "../../../assets/img/portfolio/portfolio-3.png.webp";
+import image4 from "../../../assets/img/portfolio/portfolio-4.png.webp";
+import image5 from "../../../assets/img/portfolio/portfolio-5.png.webp";
+import image6 from "../../../assets/img/portfolio/portfolio-6.png.webp";
+import image7 from "../../../assets/img/portfolio/portfolio-7.png.webp";
+import image8 from "../../../assets/img/portfolio/portfolio-8.png.webp";
 
 const productImages = [image1, image2, image3, image4, image5, image6, image7, image8];
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
-import imgSiteEngineer from "../../../assets/img/site engineer.png";
-import imgArchitect from "../../../assets/img/architect.png";
-import imgPlumber from "../../../assets/img/Plumber.png";
-import imgPainter from "../../../assets/img/Painter copy.png";
-import imgElectrician from "../../../assets/img/electrician.png";
+import imgSiteEngineer from "../../../assets/img/site engineer.png.webp";
+import imgArchitect from "../../../assets/img/architect.png.webp";
+import imgPlumber from "../../../assets/img/Plumber.png.webp";
+import imgPainter from "../../../assets/img/Painter copy.png.webp";
+import imgElectrician from "../../../assets/img/electrician.png.webp";
 
 const contractorTeam = [
     {

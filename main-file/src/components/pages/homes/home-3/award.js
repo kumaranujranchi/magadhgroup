@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import image1 from "../../../assets/img/portfolio/portfolio-1.jpg";
-import image2 from "../../../assets/img/portfolio/portfolio-2.jpg";
-import image3 from "../../../assets/img/portfolio/portfolio-3.jpg";
-import image4 from "../../../assets/img/portfolio/portfolio-4.jpg";
+import image1 from "../../../assets/img/portfolio/portfolio-1.jpg.webp";
+import image2 from "../../../assets/img/portfolio/portfolio-2.jpg.webp";
+import image3 from "../../../assets/img/portfolio/portfolio-3.jpg.webp";
+import image4 from "../../../assets/img/portfolio/portfolio-4.jpg.webp";
 
 const Award = () => {
     const [activeImage, setActiveImage] = useState(2);

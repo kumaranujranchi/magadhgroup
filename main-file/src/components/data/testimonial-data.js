@@ -1,8 +1,8 @@
-import avatar1 from "../assets/img/team/indian-avatar-1.png";
-import avatar2 from "../assets/img/team/indian-avatar-2.png";
-import avatar3 from "../assets/img/team/indian-avatar-3.png";
-import avatar4 from "../assets/img/team/indian-avatar-4.png";
-import avatar5 from "../assets/img/team/indian-avatar-5.png";
+import avatar1 from "../assets/img/team/indian-avatar-1.png.webp";
+import avatar2 from "../assets/img/team/indian-avatar-2.png.webp";
+import avatar3 from "../assets/img/team/indian-avatar-3.png.webp";
+import avatar4 from "../assets/img/team/indian-avatar-4.png.webp";
+import avatar5 from "../assets/img/team/indian-avatar-5.png.webp";
 
 const testimonialData = [
     {

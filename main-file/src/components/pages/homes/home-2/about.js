@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Count from "../../common/count";
-import image from "../../../assets/img/page/who-we-are.jpg";
+import image from "../../../assets/img/page/who-we-are.jpg.webp";
 
 const AboutTwo = () => {
     return (

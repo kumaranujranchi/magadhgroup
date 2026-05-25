@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Count from '../../common/count';
-import image from "../../../assets/img/page/skill.jpg";
+import image from "../../../assets/img/page/skill.jpg.webp";
 
 const Advices = () => {
     return (

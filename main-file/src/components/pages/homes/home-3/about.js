@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
-import image1 from "../../../assets/img/about/about-3.jpg";
-import image2 from "../../../assets/img/about/about-2.jpg";
+import image1 from "../../../assets/img/about/about-3.jpg.webp";
+import image2 from "../../../assets/img/about/about-2.jpg.webp";
 
 const AboutThree = () => {
     const [openVideo, setOpenVideo] = useState(false);

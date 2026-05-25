@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import image from "../../../assets/img/shape/content.png";
-import brand1 from "../../../assets/img/brand/brand-1.png";
-import brand2 from "../../../assets/img/brand/brand-2.png";
-import brand3 from "../../../assets/img/brand/brand-3.png";
-import brand4 from "../../../assets/img/brand/brand-4.png";
-import brand5 from "../../../assets/img/brand/brand-5.png";
-import brand6 from "../../../assets/img/brand/brand-6.png";
-import brand7 from "../../../assets/img/brand/brand-7.png";
-import brand8 from "../../../assets/img/brand/brand-8.png";
+import image from "../../../assets/img/shape/content.png.webp";
+import brand1 from "../../../assets/img/brand/brand-1.png.webp";
+import brand2 from "../../../assets/img/brand/brand-2.png.webp";
+import brand3 from "../../../assets/img/brand/brand-3.png.webp";
+import brand4 from "../../../assets/img/brand/brand-4.png.webp";
+import brand5 from "../../../assets/img/brand/brand-5.png.webp";
+import brand6 from "../../../assets/img/brand/brand-6.png.webp";
+import brand7 from "../../../assets/img/brand/brand-7.png.webp";
+import brand8 from "../../../assets/img/brand/brand-8.png.webp";
 
 const video = "https://buildgo-react.vercel.app/static/media/banner.b1e80eca5dee07cccccd.mp4";
 

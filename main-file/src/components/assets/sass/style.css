@@ -4504,7 +4504,7 @@ Responsive Menu Css
   content: "";
   right: -45px;
   top: 0;
-  background-image: url(../../assets/img/icon/arrow.png);
+  background-image: url(../../assets/img/icon/arrow.png.webp);
   width: 60%;
   height: 100%;
   background-repeat: no-repeat;
@@ -8051,7 +8051,7 @@ Responsive Menu Css
   color: var(--color-1);
 }
 .dark-mode .choose__us-left-counter {
-  background-image: url("../../assets/img/shape/shape-dark.png") !important;
+  background-image: url("../../assets/img/shape/shape-dark.png.webp") !important;
 }
 
 /* Product Portfolio Styles */

@@ -1,7 +1,7 @@
 import React from 'react';
-import image from "../../../assets/img/page/who-we-are.jpg";
-import user1 from "../../../assets/img/avatar/video.png";
-import user2 from "../../../assets/img/avatar/video-dark.png";
+import image from "../../../assets/img/page/who-we-are.jpg.webp";
+import user1 from "../../../assets/img/avatar/video.png.webp";
+import user2 from "../../../assets/img/avatar/video-dark.png.webp";
 
 const Industry = () => {
     return (

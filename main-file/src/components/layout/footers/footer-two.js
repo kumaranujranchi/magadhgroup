@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../logo';
-import subscribeBg from "../../assets/img/page/banner-video.png";
+import subscribeBg from "../../assets/img/page/banner-video.png.webp";
 import Social from '../../data/social';
 import blogData from '../../data/blog-data';
 

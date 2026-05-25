@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Thumbs, Autoplay, EffectFade, Navigation } from 'swiper/modules';
-import banner1 from "../../../assets/img/banner/banner-1.jpg";
-import banner2 from "../../../assets/img/banner/banner-2.jpg";
-import banner3 from "../../../assets/img/banner/banner-3.jpg";
+import banner1 from "../../../assets/img/banner/banner-1.jpg.webp";
+import banner2 from "../../../assets/img/banner/banner-2.jpg.webp";
+import banner3 from "../../../assets/img/banner/banner-3.jpg.webp";
 import { Link } from 'react-router-dom';
 
 const BannerTwo = () => {

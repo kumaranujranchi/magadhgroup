@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Autoplay, Navigation} from 'swiper/modules';
 import servicesData from '../../../data/services-data';
-import image from "../../../assets/img/page/services.jpg";
+import image from "../../../assets/img/page/services.jpg.webp";
 
 const ServicesFour = () => {
     const slideControl = {

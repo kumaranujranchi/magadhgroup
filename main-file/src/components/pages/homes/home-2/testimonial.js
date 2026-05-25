@@ -1,19 +1,19 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay, Navigation} from 'swiper/modules';
 import testimonialData from "../../../data/testimonial-data";
-import brand1 from "../../../../assets/img/brand-logo/1.png";
-import brand2 from "../../../../assets/img/brand-logo/2.png";
-import brand3 from "../../../../assets/img/brand-logo/3.png";
-import brand4 from "../../../../assets/img/brand-logo/4.png";
-import brand5 from "../../../../assets/img/brand-logo/5.png";
-import brand6 from "../../../../assets/img/brand-logo/6.png";
-import brand7 from "../../../../assets/img/brand-logo/7.png";
-import brand8 from "../../../../assets/img/brand-logo/8.png";
-import brand9 from "../../../../assets/img/brand-logo/9.png";
-import brand10 from "../../../../assets/img/brand-logo/10.png";
-import brand11 from "../../../../assets/img/brand-logo/11.png";
-import brand12 from "../../../../assets/img/brand-logo/12.png";
-import brand13 from "../../../../assets/img/brand-logo/13.png";
+import brand1 from "../../../../assets/img/brand-logo/1.png.webp";
+import brand2 from "../../../../assets/img/brand-logo/2.png.webp";
+import brand3 from "../../../../assets/img/brand-logo/3.png.webp";
+import brand4 from "../../../../assets/img/brand-logo/4.png.webp";
+import brand5 from "../../../../assets/img/brand-logo/5.png.webp";
+import brand6 from "../../../../assets/img/brand-logo/6.png.webp";
+import brand7 from "../../../../assets/img/brand-logo/7.png.webp";
+import brand8 from "../../../../assets/img/brand-logo/8.png.webp";
+import brand9 from "../../../../assets/img/brand-logo/9.png.webp";
+import brand10 from "../../../../assets/img/brand-logo/10.png.webp";
+import brand11 from "../../../../assets/img/brand-logo/11.png.webp";
+import brand12 from "../../../../assets/img/brand-logo/12.png.webp";
+import brand13 from "../../../../assets/img/brand-logo/13.png.webp";
 
 const brandLogos = [
     brand1, brand2, brand3, brand4, brand5, brand6, brand7,

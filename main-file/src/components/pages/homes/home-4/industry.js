@@ -1,5 +1,5 @@
 import React from 'react';
-import image from "../../../assets/img/page/image-2.jpg";
+import image from "../../../assets/img/page/image-2.jpg.webp";
 import icon1 from "../../../assets/img/icon/icon-3.svg";
 import icon2 from "../../../assets/img/icon/icon-2.svg";
 import { Link } from 'react-router-dom';

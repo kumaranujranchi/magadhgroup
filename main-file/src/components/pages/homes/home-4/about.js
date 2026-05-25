@@ -1,6 +1,6 @@
 import React from 'react';
-import image1 from "../../../assets/img/about/about-5.jpg";
-import image2 from "../../../assets/img/about/about-6.jpg";
+import image1 from "../../../assets/img/about/about-5.jpg.webp";
+import image2 from "../../../assets/img/about/about-6.jpg.webp";
 import Count from '../../common/count';
 import { Link } from 'react-router-dom';
 

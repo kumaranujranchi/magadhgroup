@@ -7,7 +7,7 @@ day: "18"
 author: "Magadh Group Team"
 category: "Products"
 tags: ["Paint", "Indoor Air Quality", "Eco-Friendly", "VOC"]
-image: "/blog-images/eco-paint.png"
+image: "/blog-images/eco-paint.png.webp"
 description: "Standard wall paints often contain VOCs that degrade indoor air quality for years. Switching to premium low-VOC or zero-VOC paints safeguards your family's health."
 ---
 

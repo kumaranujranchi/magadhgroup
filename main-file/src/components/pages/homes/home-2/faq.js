@@ -1,5 +1,5 @@
 import React from 'react';
-import image from "../../../assets/img/service/services-1.jpg";
+import image from "../../../assets/img/service/services-1.jpg.webp";
 
 const FaqArea = () => {
     return (

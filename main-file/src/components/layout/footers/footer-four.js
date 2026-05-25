@@ -1,7 +1,7 @@
 
 import Logo from '../logo';
 import { Link } from 'react-router-dom';
-import subscribeBg from "../../assets/img/page/subscribe.jpg";
+import subscribeBg from "../../assets/img/page/subscribe.jpg.webp";
 import Social from '../../data/social';
 
 const FooterFour = () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import Count from '../../common/count';
-import image from "../../../assets/img/page/cta.jpg";
+import image from "../../../assets/img/page/cta.jpg.webp";
 import icon from "../../../assets/img/icon/star-dark.svg";
-import content from "../../../assets/img/shape/content-1.png";
+import content from "../../../assets/img/shape/content-1.png.webp";
 
 const TextSlide = () => {
     return (
