@@ -1,11 +1,23 @@
 module.exports = {
     webpack: {
         configure: (webpackConfig) => {
-            // Add raw-loader for .md files so they can be imported as strings
-            webpackConfig.module.rules.push({
-                test: /\.md$/,
-                use: 'raw-loader',
-            });
+            // Find the oneOf rule inside CRA's webpack configuration
+            const oneOfRule = webpackConfig.module.rules.find(
+                (rule) => rule.oneOf !== undefined
+            );
+            if (oneOfRule) {
+                // Add the .md loader inside oneOf, before the fallback loader
+                oneOfRule.oneOf.unshift({
+                    test: /\.md$/,
+                    type: 'asset/source',
+                });
+            } else {
+                // Fallback in case CRA structure changes
+                webpackConfig.module.rules.push({
+                    test: /\.md$/,
+                    type: 'asset/source',
+                });
+            }
             return webpackConfig;
         },
     },
