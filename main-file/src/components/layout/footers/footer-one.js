@@ -80,7 +80,28 @@ const FooterOne = () => {
                     <div className="row al-center">
                         <div className="col-md-7">
                             <div className="copyright__area-content md-t-center md-mb-10">
-                                <p>© 2026 Magadh Group of Company. All rights reserved.<br />Designed and Maintained by <Link to="https://www.synergybrandarchitect.in" target="_blank">Synergy Brand Architect</Link></p>
+                                <p style={{ fontSize: '14px', lineHeight: '22px', color: '#a5a8a5', margin: 0 }}>
+                                    © 2026 Magadh Group of Company. All rights reserved.
+                                    <br />
+                                    <span style={{ fontSize: '13px', opacity: 0.85 }}>
+                                        Designed and Maintained by{' '}
+                                        <a 
+                                            href="https://www.synergybrandarchitect.in" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            style={{ 
+                                                color: 'var(--primary-color-1)', 
+                                                textDecoration: 'none', 
+                                                fontWeight: '600',
+                                                transition: 'color 0.3s ease'
+                                            }}
+                                            onMouseOver={(e) => e.target.style.color = '#ffffff'}
+                                            onMouseOut={(e) => e.target.style.color = 'var(--primary-color-1)'}
+                                        >
+                                            Synergy Brand Architect
+                                        </a>
+                                    </span>
+                                </p>
                             </div>
                         </div>
                         <div className="col-md-5">
