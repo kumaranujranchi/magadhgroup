@@ -18,6 +18,7 @@ const ResponsiveMenu = () => {
     <>    
     <ul>
         <li><Link to='/'>Home</Link></li>
+        <li><Link to='/about-us'>About Us</Link></li>
         <li className='menu-item-has-children'><Link to='/products'>Products</Link>
             <ul className='sub-menu' style={activeSubMenu("products")}>
                 <li><Link to='/products'>All Products</Link></li>
