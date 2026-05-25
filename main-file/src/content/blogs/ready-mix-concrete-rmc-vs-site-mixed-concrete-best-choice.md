@@ -7,7 +7,7 @@ day: "15"
 author: "Magadh Group Team"
 category: "Construction"
 tags: ["Concrete", "RMC", "Construction Materials"]
-image: "/blog-images/rmc-concrete.jpg"
+image: "/blog-images/rmc-concrete.png"
 description: "RMC offers unmatched consistency, speed, and precision compared to manual site mixing. By leveraging batching plants, RMC minimizes wastage, reduces labor costs, and guarantees structural design strength compliance."
 ---
 

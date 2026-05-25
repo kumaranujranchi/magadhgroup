@@ -45,10 +45,21 @@ let _cache = null;
  */
 export function getAllBlogs() {
     if (_cache) return _cache;
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const posts = blogFiles.map((rawContent) => {
         const { frontmatter, content } = parseFrontmatter(rawContent);
+        
+        // Parse date dynamically from frontmatter
+        const d = frontmatter.date ? new Date(frontmatter.date) : new Date();
+        const formattedDay = !isNaN(d.getDate()) ? String(d.getDate()).padStart(2, '0') : (frontmatter.day || '01');
+        const formattedMonth = !isNaN(d.getMonth()) ? monthNames[d.getMonth()] : (frontmatter.month || 'May');
+        const formattedYear = !isNaN(d.getFullYear()) ? String(d.getFullYear()) : '2026';
+
         return {
             ...frontmatter,
+            day: formattedDay,
+            month: formattedMonth,
+            year: formattedYear,
             markdownContent: content,
             // Ensure slug falls back to id
             slug: frontmatter.id || '',

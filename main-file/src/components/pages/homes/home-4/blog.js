@@ -22,8 +22,8 @@ const BlogFour = () => {
                                     <div className="blog__four-item-image">
                                         <Link to={`/blog/${data.id}`}><img src={data.image} alt="blog" /></Link>
                                         <div className="blog__four-item-image-date">
-                                            <h5>{data.date}</h5>
-                                            <h6>Dec</h6>
+                                            <h5>{data.day}</h5>
+                                            <h6>{data.month}</h6>
                                         </div>
                                     </div>
                                     <div className="blog__four-item-content">

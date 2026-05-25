@@ -7,7 +7,7 @@ day: "05"
 author: "Magadh Group Team"
 category: "Construction"
 tags: ["Cement", "Foundation", "Earthquake", "Structural Safety"]
-image: "/blog-images/cement-foundation.jpg"
+image: "/blog-images/cement-foundation.png"
 description: "Foundations bear the entire load of a structure, demanding the highest grade of OPC or PPC cement. High-performance cement acts as the fundamental shield for building durability in active seismic zones."
 ---
 

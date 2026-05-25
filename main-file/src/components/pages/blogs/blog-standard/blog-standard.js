@@ -40,7 +40,7 @@ const BlogStandardMain = ({position}) => {
                                         <div className="blog__standard-item-content-meta">
                                             <ul>
                                                 <li><Link to="#"><i className="fal fa-user"></i>Admin</Link></li>
-                                                <li><Link to="#"><i className="fal fa-calendar-alt"></i>{data.date} {data.month || 'May'} 2026</Link></li>
+                                                <li><Link to="#"><i className="fal fa-calendar-alt"></i>{data.month} {data.day}, {data.year}</Link></li>
                                             </ul>
                                         </div>
                                         <h3><Link to={`/blog/${data.id}`}>{data.title}</Link></h3>

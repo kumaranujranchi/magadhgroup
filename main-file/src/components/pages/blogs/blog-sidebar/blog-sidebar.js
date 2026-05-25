@@ -23,7 +23,7 @@ const BlogSidebar = () => {
                                 <Link to={`/blog/${data.id}`}><img src={data.image} alt="image" /></Link>
                             </div>
                             <div className="post__item-title">
-                                <span><i className="far fa-calendar-alt"></i>{data.month || 'May'} {data.date}, 2026</span>
+                                <span><i className="far fa-calendar-alt"></i>{data.month} {data.day}, {data.year}</span>
                                 <h6><Link to={`/blog/${data.id}`}>{data.title}</Link></h6>
                             </div>
                         </div>

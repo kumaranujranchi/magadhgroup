@@ -52,7 +52,7 @@ const BlogTwo = () => {
                                             <div className="blog__one-item-image">
                                             <Link to={`/blog/${data.id}`}><img src={data.image} alt="blog" /></Link>
                                                 <div className="blog__one-item-image-date">
-                                                    <h6><i className="fa-regular fa-calendar"></i>{data.date} Dec</h6>
+                                                    <h6><i className="fa-regular fa-calendar"></i>{data.month} {data.day}, {data.year}</h6>
                                                 </div>
                                             </div>
                                             <div className="blog__one-item-content">
