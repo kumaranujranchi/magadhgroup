@@ -6,7 +6,7 @@ import Video from "./video";
 import Certification from "./certification";
 import Team from "./team";
 import FooterOne from "../../layout/footers/footer-one";
-import aboutUsBanner from "../../../assets/img/aboutus-banner.png";
+import aboutUsBanner from "../../../assets/img/aboutusbanner.png";
 
 const AboutUs = () => {
     return (
