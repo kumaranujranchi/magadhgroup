@@ -80,7 +80,7 @@ const FooterOne = () => {
                     <div className="row al-center">
                         <div className="col-md-7">
                             <div className="copyright__area-content md-t-center md-mb-10">
-                                <p>All Rights Reserved Magadh Group | Design and Maintained by <Link to="https://www.synergybrandarchitect.in" target="_blank">- Synergy Brand Architect -</Link></p>
+                                <p>© 2026 Magadh Group of Company. All rights reserved.<br />Designed and Maintained by <Link to="https://www.synergybrandarchitect.in" target="_blank">Synergy Brand Architect</Link></p>
                             </div>
                         </div>
                         <div className="col-md-5">
