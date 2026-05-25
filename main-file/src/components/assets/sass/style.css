@@ -8422,6 +8422,21 @@ Responsive Menu Css
   transform: rotate(90deg);
 }
 
+/* Active state for choose__three-list-item when used as calculator selector */
+.choose__three-list-item.active {
+  background: var(--color-1) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+}
+.choose__three-list-item.active i {
+  color: var(--primary-color-1) !important;
+}
+.choose__three-list-item.active h4 {
+  color: var(--text-white) !important;
+}
+.choose__three-list-item.active p {
+  color: var(--color-6) !important;
+}
+
 /* Dark Mode Overrides for Calculators */
 .dark-mode .calc__card {
   background: #15181a !important;

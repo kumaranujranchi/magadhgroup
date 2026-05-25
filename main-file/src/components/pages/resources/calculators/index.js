@@ -1,9 +1,9 @@
 import React from 'react';
-import BreadCrumb from "../../../common/breadcrumb";
-import SEO from "../../../../data/seo";
-import HeaderTwo from "../../../../layout/headers/header-two";
+import BreadCrumb from "../../common/breadcrumb";
+import SEO from "../../../data/seo";
+import HeaderTwo from "../../../layout/headers/header-two";
 import CalculatorsMain from "./calculators-main";
-import FooterOne from "../../../../layout/footers/footer-one";
+import FooterOne from "../../../layout/footers/footer-one";
 
 const CalculatorsPage = () => {
     return (

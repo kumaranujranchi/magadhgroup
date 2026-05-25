@@ -9,49 +9,37 @@ const CalculatorsMain = () => {
             id: 'flooring',
             title: 'Flooring Calculator',
             description: 'Calculate tiles, marble, or flooring material requirements',
-            icon: 'fa-solid fa-house-chimney-window',
-            iconBg: 'rgba(24, 144, 255, 0.1)',
-            iconColor: '#1890ff',
+            icon: 'fa-sharp fa-light fa-grid-horizontal',
         },
         {
             id: 'paint',
             title: 'Paint Calculator',
             description: 'Calculate paint quantity for walls and surfaces',
-            icon: 'fa-solid fa-palette',
-            iconBg: 'rgba(114, 46, 209, 0.1)',
-            iconColor: '#722ed1',
+            icon: 'fa-sharp fa-light fa-paint-roller',
         },
         {
             id: 'electrical',
             title: 'Electrical Load Calculator',
             description: 'Calculate electrical load and wire requirements',
-            icon: 'fa-solid fa-bolt',
-            iconBg: 'rgba(250, 219, 20, 0.1)',
-            iconColor: '#faad14',
+            icon: 'fa-sharp fa-light fa-bolt',
         },
         {
             id: 'rmc',
             title: 'RMC Calculator',
             description: 'Calculate Ready Mix Concrete requirements',
-            icon: 'fa-solid fa-truck-droplet',
-            iconBg: 'rgba(19, 194, 194, 0.1)',
-            iconColor: '#13c2c2',
+            icon: 'fa-sharp fa-light fa-truck-droplet',
         },
         {
             id: 'steel',
             title: 'Steel Calculator',
             description: 'Calculate TMT bar requirements for construction',
-            icon: 'fa-solid fa-cubes-stacked',
-            iconBg: 'rgba(235, 47, 150, 0.1)',
-            iconColor: '#eb2f96',
+            icon: 'fa-sharp fa-light fa-cubes-stacked',
         },
         {
             id: 'ac',
             title: 'AC Load Calculator',
             description: 'Calculate AC tonnage based on room size',
-            icon: 'fa-solid fa-snowflake',
-            iconBg: 'rgba(47, 84, 235, 0.1)',
-            iconColor: '#2f54eb',
+            icon: 'fa-sharp fa-light fa-snowflake',
         }
     ];
 
@@ -65,7 +53,7 @@ const CalculatorsMain = () => {
     };
 
     return (
-        <div className="calculators__page section-padding">
+        <div className="calculators__page section-padding" style={{ background: '#fbfaf7' }}>
             <div className="container">
                 <div className="row justify-content-center mb-50">
                     <div className="col-lg-8 text-center">
@@ -79,30 +67,17 @@ const CalculatorsMain = () => {
                     </div>
                 </div>
 
-                <div className="row">
+                <div className="row justify-content-center">
                     {calculatorsList.map((calc) => (
                         <div className="col-lg-4 col-md-6 mb-30" key={calc.id}>
                             <div 
-                                className={`calc__card ${activeCalc === calc.id ? 'active' : ''}`}
+                                className={`choose__three-list-item h-100 ${activeCalc === calc.id ? 'active' : ''}`}
                                 onClick={() => selectCalculator(calc.id)}
+                                style={{ cursor: 'pointer' }}
                             >
-                                <div className="calc__card-body">
-                                    <div 
-                                        className="calc__card-icon"
-                                        style={{ backgroundColor: calc.iconBg, color: calc.iconColor }}
-                                    >
-                                        <i className={calc.icon}></i>
-                                    </div>
-                                    <div className="calc__card-info">
-                                        <h4>{calc.title}</h4>
-                                        <p>{calc.description}</p>
-                                    </div>
-                                </div>
-                                <div className="calc__card-footer">
-                                    <span className="calc__btn">
-                                        <i className="fa-solid fa-calculator"></i> Calculate Now
-                                    </span>
-                                </div>
+                                <i className={calc.icon}></i>
+                                <h4>{calc.title}</h4>
+                                <p>{calc.description}</p>
                             </div>
                         </div>
                     ))}
