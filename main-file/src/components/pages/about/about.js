@@ -109,7 +109,7 @@ const AboutMain = () => {
                                     <h2 className="title_split_anim">Trusted Partner in Building Materials</h2>
                                 </div>
                                 <div className="features wow fadeInUp" data-wow-delay=".3s" style={{backgroundImage: `url(${bgImage})`}}>
-                                    <h3>Building Trust<br/>Since 1989</h3>
+                                    <h3>Building Trust<br/>Since 1995</h3>
                                 </div>
                                 <p className="wow fadeInUp" data-wow-delay=".6s">
                                     <strong>Magadh Group of Company</strong> is a leading building material supplier with over 30 years of proven expertise in the construction industry. As a trusted partner for builders, contractors, government projects, and individual homeowners, we provide high-quality construction materials including TMT Bars, Cement, Ready Mix Concrete, Paints, Electrical Items, Doors, Windows, Lifts, and Home Appliances — all under one roof.
