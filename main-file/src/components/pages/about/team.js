@@ -10,27 +10,27 @@ import team5 from "../../assets/img/team/member-1.jpg";
 const contractorTeam = [
     {
         name: "Site Engineer",
-        position: "On Contract Basis",
+        description: "Expert project supervision, structural quality control, and site coordination.",
         image: team1
     },
     {
         name: "Architect",
-        position: "On Contract Basis",
+        description: "Modern residential planning, interior designs, and 3D architectural blueprints.",
         image: team2
     },
     {
         name: "Plumber",
-        position: "On Contract Basis",
+        description: "Professional sanitary fittings, pipeline layouts, and smart drainage installations.",
         image: team3
     },
     {
         name: "Painter",
-        position: "On Contract Basis",
+        description: "High-quality wall painting, exterior coatings, and decorative texture application.",
         image: team4
     },
     {
         name: "Electrician",
-        position: "On Contract Basis",
+        description: "Safe residential wiring, lighting setups, panel installations, and repairs.",
         image: team5
     }
 ];
@@ -96,7 +96,9 @@ const Team = () => {
                                         <img className="img_full" src={data.image} alt="image" />
                                         <div className="team__area-item-content t-center pt-20">
                                             <h5>{data.name}</h5>
-                                            <span>{data.position}</span>
+                                            <p className="mt-10 mb-0 text-muted" style={{ fontSize: '14px', lineHeight: '22px' }}>
+                                                {data.description}
+                                            </p>
                                         </div>
                                     </div>
                                 </SwiperSlide>
