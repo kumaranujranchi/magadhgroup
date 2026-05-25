@@ -37,8 +37,8 @@ const FooterOne = () => {
                                         <div className="footer__one-widget address">
                                             <h4>Address</h4>
                                             <div className="footer__one-widget-address">
-                                                <h6><Link to="https://www.google.com/maps">3891 Ranch view Richardson, California 62639</Link></h6>
-                                                <h4><Link to="tel:+12320(256)205682058">+123 (256) 568 58</Link></h4>
+                                                <h6><Link to="https://www.google.com/maps">Kanti Factory Road, Kankarbagh, 800020, Patna</Link></h6>
+                                                <h4><Link to="tel:+919234718187">+91 92347 18187</Link></h4>
                                             </div>
                                         </div>
                                     </div>

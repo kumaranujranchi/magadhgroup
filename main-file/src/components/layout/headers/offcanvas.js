@@ -19,7 +19,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
                         </div>
                         <div className="header__area-menubar-right-sidebar-popup-contact-item-content">
                             <span>Phone:</span>
-                            <h6><Link to="tel:+123 (256) 568 58">+123 (256) 568 58</Link></h6>
+                            <h6><Link to="tel:+919234718187">+91 92347 18187</Link></h6>
                         </div>
                     </div>
                     <div className="header__area-menubar-right-sidebar-popup-contact-item">
@@ -28,7 +28,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
                         </div>
                         <div className="header__area-menubar-right-sidebar-popup-contact-item-content">
                             <span>Email Address:</span>
-                            <h6><Link to="mailto:needhelp@gmail.com">needhelp@gmail.com</Link></h6>
+                            <h6><Link to="mailto:info@magadhgroup.com">info@magadhgroup.com</Link></h6>
                         </div>
                     </div>
                     <div className="header__area-menubar-right-sidebar-popup-contact-item">
@@ -37,7 +37,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
                         </div>
                         <div className="header__area-menubar-right-sidebar-popup-contact-item-content">
                             <span>Location:</span>
-                            <h6><Link to="https://google.com/maps" target="_blank">2464 Royal Ln. Mesa, New Jersey 45463</Link></h6>
+                            <h6><Link to="https://google.com/maps" target="_blank">Kanti Factory Road, Kankarbagh, 800020, Patna</Link></h6>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,6 @@
 
+import Logo from '../logo';
 import { Link } from 'react-router-dom';
-import logo1 from "../../assets/img/logo-3.png";
-import logo2 from "../../assets/img/logo-2.png";
 import subscribeBg from "../../assets/img/page/subscribe.jpg";
 import Social from '../../data/social';
 
@@ -32,16 +31,16 @@ const FooterFour = () => {
                                 <div className="row">
                                     <div className="col-lg-4 col-sm-6">
                                         <div className="footer__four-widget mr-40">
-                                            <Link className="logo" to="/"><img className='dark-n' src={logo1} alt="image" /><img className='light-n' src={logo2} alt="image" /></Link>
-                                            <h5>We’re Solutions for all construction</h5>
+                                            <Logo isLight={false} />
+                                            <h5 style={{ marginTop: '25px' }}>We’re Solutions for all construction</h5>
                                         </div>
                                     </div>
                                     <div className="col-lg-3 col-sm-6 sm-mt-30">
                                         <div className="footer__four-widget address">
                                             <h4>Address</h4>
                                             <div className="footer__four-widget-address">
-                                                <h6><Link to="https://www.google.com/maps">3891 Ranch view Richardson, California 62639</Link></h6>
-                                                <h4><Link to="tel:+123%20(256)%20568%2058">+123 (256) 568 58</Link></h4>
+                                                <h6><Link to="https://www.google.com/maps">Kanti Factory Road, Kankarbagh, 800020, Patna</Link></h6>
+                                                <h4><Link to="tel:+919234718187">+91 92347 18187</Link></h4>
                                             </div>
                                         </div>
                                     </div>
@@ -80,7 +79,28 @@ const FooterFour = () => {
                     <div className="row al-center">
                         <div className="col-md-7">
                             <div className="copyright__area-content md-t-center md-mb-10">
-                                <p>Copyright 2025 – All Rights Reserved By <Link to="https://themeforest.net/user/wpcodify" target="_blank">wpCodify</Link></p>
+                                <p style={{ fontSize: '14px', lineHeight: '22px', color: 'var(--body-color)', margin: 0 }}>
+                                    © 2026 Magadh Group of Company. All rights reserved.
+                                    <br />
+                                    <span style={{ fontSize: '13px', opacity: 0.85 }}>
+                                        Designed and Maintained by{' '}
+                                        <a 
+                                            href="https://www.synergybrandarchitect.in" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            style={{ 
+                                                color: 'var(--primary-color-1)', 
+                                                textDecoration: 'none', 
+                                                fontWeight: '600',
+                                                transition: 'color 0.3s ease'
+                                            }}
+                                            onMouseOver={(e) => e.target.style.color = 'var(--text-heading-color)'}
+                                            onMouseOut={(e) => e.target.style.color = 'var(--primary-color-1)'}
+                                        >
+                                            Synergy Brand Architect
+                                        </a>
+                                    </span>
+                                </p>
                             </div>
                         </div>
                         <div className="col-md-5">

@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import logo from "../../assets/img/logo-2.png";
+import Logo from '../logo';
 import subscribeBg from "../../assets/img/page/banner-video.png";
 import Social from '../../data/social';
 import blogData from '../../data/blog-data';
@@ -33,8 +33,8 @@ const FooterTwo = () => {
                         <div className="col-xl-4 col-lg-4 col-md-6">
                             <div className="footer__two-widget">
                                 <div className="footer__two-widget-about">
-                                    <Link to="/"><img src={logo} alt="image" /></Link>
-                                    <p>Redefining the construction industry with innovative solutions, cuttin-edge technology and sustainable practices</p>
+                                    <Logo isLight={true} />
+                                    <p style={{ marginTop: '25px' }}>Redefining the construction industry with innovative solutions, cuttin-edge technology and sustainable practices</p>
                                     <div className="footer__two-widget-about-social">
                                         <Social />
                                     </div>							
@@ -50,7 +50,7 @@ const FooterTwo = () => {
                                             <i className="flaticon-location"></i>
                                         </div>
                                         <div className="footer__two-widget-location-item-info">
-                                            <Link to="https://www.google.com/maps">1234 Elm Street Springfield, IL 62704</Link>
+                                            <Link to="https://www.google.com/maps">Kanti Factory Road, Kankarbagh, 800020, Patna</Link>
                                         </div>
                                     </div>
                                     <h6>Branch Office</h6>
@@ -59,7 +59,7 @@ const FooterTwo = () => {
                                             <i className="flaticon-location"></i>
                                         </div>
                                         <div className="footer__two-widget-location-item-info">
-                                            <Link to="https://www.google.com/maps">2464 Royal Ln. Mesa, New Jersey 45463</Link>
+                                            <Link to="https://www.google.com/maps">Kanti Factory Road, Kankarbagh, 800020, Patna</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -90,8 +90,29 @@ const FooterTwo = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-                            <div className="copyright__area-content t-center">
-                                <p>Copyright 2025 – All Rights Reserved By <Link to="https://themeforest.net/user/wpcodify" target="_blank">wpCodify</Link></p>
+                            <div className="copyright__area-content t-center" style={{ display: 'flex', justifyContent: 'center' }}>
+                                <p style={{ fontSize: '14px', lineHeight: '22px', color: '#a5a8a5', margin: 0 }}>
+                                    © 2026 Magadh Group of Company. All rights reserved.
+                                    <br />
+                                    <span style={{ fontSize: '13px', opacity: 0.85 }}>
+                                        Designed and Maintained by{' '}
+                                        <a 
+                                            href="https://www.synergybrandarchitect.in" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            style={{ 
+                                                color: 'var(--primary-color-1)', 
+                                                textDecoration: 'none', 
+                                                fontWeight: '600',
+                                                transition: 'color 0.3s ease'
+                                            }}
+                                            onMouseOver={(e) => e.target.style.color = '#ffffff'}
+                                            onMouseOut={(e) => e.target.style.color = 'var(--primary-color-1)'}
+                                        >
+                                            Synergy Brand Architect
+                                        </a>
+                                    </span>
+                                </p>
                             </div>
                         </div>
                     </div>
