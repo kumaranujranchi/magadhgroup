@@ -36,13 +36,13 @@ const RequestQuoteMain = () => {
 									<div className="col-md-6 mt-30">
 										<div className="request__quote-item">
 											<label>Company/Organization<span> *</span></label>
-											<input type="text" placeholder="Envato" />
+											<input type="text" placeholder="e.g., Magadh Group" />
 										</div>
 									</div>
 									<div className="col-md-6 mt-30">
 										<div className="request__quote-item">
 											<label>Website<span> *</span></label>
-											<input type="text" placeholder="http://envato.com" />
+											<input type="text" placeholder="e.g., www.magadhgroup.com" />
 										</div>
 									</div>
 									<div className="col-md-12 mt-30">
@@ -50,23 +50,20 @@ const RequestQuoteMain = () => {
 										<div className="row">
 											<div className="col-md-4">
 												<div className="request__quote-services">
-													<label><input className="mr-10" type="checkbox" />Optimization (SEO)</label>
-													<label><input className="mr-10" type="checkbox" />Web Design</label>
-													<label><input className="mr-10" type="checkbox" />Web Hosting / Maintenance</label>
+													<label><input className="mr-10" type="checkbox" />Flooring Installation</label>
+													<label><input className="mr-10" type="checkbox" />Building Architecture</label>
 												</div>
 											</div>
 											<div className="col-md-4">
 												<div className="request__quote-services">
-													<label><input className="mr-10" type="checkbox" />Content Writing</label>
-													<label><input className="mr-10" type="checkbox" />Search Engine Marketing</label>
-													<label><input className="mr-10" type="checkbox" />Social Media</label>
+													<label><input className="mr-10" type="checkbox" />Interior Design</label>
+													<label><input className="mr-10" type="checkbox" />House Renovation</label>
 												</div>
 											</div>
 											<div className="col-md-4">
 												<div className="request__quote-services">
-													<label><input className="mr-10" type="checkbox" />ADA Compliance</label>
-													<label><input className="mr-10" type="checkbox" />Photography / Video</label>
-													<label><input className="mr-10" type="checkbox" />Email Marketing</label>
+													<label><input className="mr-10" type="checkbox" />Foundation Repair</label>
+													<label><input className="mr-10" type="checkbox" />Construction Planning</label>
 												</div>
 											</div>
 										</div>
