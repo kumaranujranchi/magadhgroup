@@ -4,6 +4,7 @@ import HeaderTwo from "../../layout/headers/header-two";
 import AboutMain from "./about";
 import Video from "./video";
 import Certification from "./certification";
+import WhyChooseUs from "./why-choose";
 import Team from "./team";
 import FooterOne from "../../layout/footers/footer-one";
 import aboutUsBanner from "../../../assets/img/aboutusbanner.png";
@@ -17,6 +18,7 @@ const AboutUs = () => {
             <AboutMain />
             <Video />
             <Certification />
+            <WhyChooseUs />
             <Team />
             <FooterOne />
         </>
