@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
-import image from "../../assets/img/about/about-4.jpg";
+import image from "../../assets/img/about/about-4.png";
 import bgImage from "../../assets/img/portfolio/portfolio-8.jpg";
 
 const missionCards = [
