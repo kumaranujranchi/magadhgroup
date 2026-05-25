@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import ModalVideo from 'react-modal-video';
 import portfolioData from '../../data/portfolio-data';
-import videoBg from "../../assets/img/service/service-1.jpg";
+import aboutUsVideo from '../../../assets/video/aboutus-video.mp4';
 import icon2 from '../../assets/img/icon/star-dark.svg';
 
 const Video = () => {
-    const [openVideo, setOpenVideo] = useState(false);
-    const openVideoModal = () => {
-        setOpenVideo(true);
-    };
     return (
         <>
-            <div className="video__two" style={{backgroundImage: `url(${videoBg})`}}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xl-12">
-                            <div className="video__two-icon item_bounce">
-                                <div className="video video-pulse">
-                                <span onClick={openVideoModal}><i className="fas fa-play"></i></span>
-                                </div>						
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div className="video__two">
+                <video 
+                    src={aboutUsVideo} 
+                    loop
+                    muted
+                    autoPlay
+                    playsInline
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        zIndex: -2
+                    }}
+                />
                 <div className="scroll__slider">
                     <div className="text-slide">
                         <div className="sliders text_scroll">
@@ -43,7 +43,6 @@ const Video = () => {
                     </div>
                 </div>
             </div>
-            <ModalVideo className='video-modal' channel="youtube" autoplay isOpen={openVideo} videoId="SZEflIVnhH8" onClose={() => setOpenVideo(false)} />
         </>
     );
 };
