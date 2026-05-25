@@ -4664,6 +4664,9 @@ Responsive Menu Css
   border-top: 0;
   border-radius: 10px;
   margin-bottom: 25px;
+  height: calc(100% - 25px);
+  display: flex;
+  flex-direction: column;
 }
 .blog__one-item-image {
   position: relative;
@@ -4692,6 +4695,12 @@ Responsive Menu Css
 }
 .blog__one-item-content {
   padding: 20px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.blog__one-item-content h4 {
+  flex-grow: 1;
 }
 .blog__one-item-content h4 a:hover {
   color: var(--primary-color-1);
@@ -4899,6 +4908,14 @@ Responsive Menu Css
 }
 .blog__standard-item-image img {
   width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 767px) {
+  .blog__standard-item-image img {
+    height: 280px;
+  }
 }
 .blog__standard-item-content {
   background: var(--color-2);

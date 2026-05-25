@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import servicesData from '../../../data/services-data';
-import ctaImage from '../../../assets/img/page/cta-1.jpg';
-import image1 from '../../../assets/img/portfolio/portfolio-5.jpg';
-import image2 from '../../../assets/img/portfolio/portfolio-8.jpg';
+import ctaImage from '../../../assets/img/banner/banner-highrise.png';
+import image1 from '../../../assets/img/portfolio/portfolio-5.png';
+import image2 from '../../../assets/img/portfolio/portfolio-8.png';
 
 const ServicesSingleMain = ({singleData}) => {
     return (

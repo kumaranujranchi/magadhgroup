@@ -61,7 +61,6 @@ const FooterOne = () => {
                                             <div className="footer-widget-menu">
                                                 <ul>
                                                     <li><Link to="/services">Services</Link></li>
-                                                    <li><Link to="/team">Teams</Link></li>
                                                     <li><Link to="/request-quote">Request Quote</Link></li>
                                                     <li><Link to="/contact-us">Contact Us</Link></li>
                                                 </ul>

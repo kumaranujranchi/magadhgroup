@@ -1,9 +1,9 @@
-import image1 from "../assets/img/service/services-1.jpg";
-import image2 from "../assets/img/service/services-2.jpg";
-import image3 from "../assets/img/service/services-3.jpg";
-import image4 from "../assets/img/service/services-4.jpg";
-import image5 from "../assets/img/service/services-5.jpg";
-import image6 from "../assets/img/service/services-6.jpg";
+import image1 from "../assets/img/service/services-1.png";
+import image2 from "../assets/img/service/services-2.png";
+import image3 from "../assets/img/service/services-3.png";
+import image4 from "../assets/img/service/services-4.png";
+import image5 from "../assets/img/service/services-5.png";
+import image6 from "../assets/img/service/services-6.png";
 
 const servicesData = [
     {
