@@ -150,16 +150,27 @@
 }
 .brand__area {
 	background: var(--color-2);
-	ul li img {
+	.scroll__slider ul li {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 140px;
 		height: 80px;
+		margin: 0 20px;
+	}
+	ul li img {
+		max-height: 100%;
+		max-width: 100%;
 		width: auto;
-		max-width: 180px;
+		height: auto;
+		margin: 0;
 		object-fit: contain;
-		filter: grayscale(100%) opacity(0.7);
+		filter: none;
+		opacity: 0.7;
 		mix-blend-mode: multiply;
 		transition: all 0.3s ease;
 		&:hover {
-			filter: grayscale(0%) opacity(1);
+			opacity: 1;
 		}
 	}
 }
@@ -174,9 +185,14 @@
 		max-width: 40px;
 	}
 	.brand__area {
-		.scroll__slider ul li img {
+		.scroll__slider ul li {
+			width: 90px;
 			height: 50px;
-			max-width: 120px;
+			margin: 0 10px;
+		}
+		.scroll__slider ul li img {
+			margin: 0;
+			max-width: 100%;
 		}
 	}
 }
