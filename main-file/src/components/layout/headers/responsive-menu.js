@@ -33,6 +33,15 @@ const ResponsiveMenu = () => {
             </ul>
             <a className={`mean-expand ${activeIcon("products")}`} onClick={() => active("products")}></a>
         </li>
+        <li className='menu-item-has-children'><Link to='#'>Resources</Link>
+            <ul className='sub-menu' style={activeSubMenu("resources")}>
+                <li><Link to='/resources/calculators'>Calculators</Link></li>
+                <li><Link to='/resources/news'>News</Link></li>
+                <li><Link to='/resources/price-trend'>Price Trend</Link></li>
+                <li><Link to='/resources/cost-estimator'>Cost Estimator</Link></li>
+            </ul>
+            <a className={`mean-expand ${activeIcon("resources")}`} onClick={() => active("resources")}></a>
+        </li>
 		<li className='menu-item-has-children'><Link to='/services'>Services</Link>
             <ul className='sub-menu' style={activeSubMenu("services")}>
 				<li><Link to='/services'>Services 01</Link></li>

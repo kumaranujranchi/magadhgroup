@@ -19,6 +19,14 @@ const MainMenu = () => {
                         <li><Link to='/products/home-appliances'>Home Appliances</Link></li>
                     </ul>
                 </li>
+                <li className='menu-item-has-children'><Link to='#'>Resources</Link>
+                    <ul className='sub-menu'>
+                        <li><Link to='/resources/calculators'>Calculators</Link></li>
+                        <li><Link to='/resources/news'>News</Link></li>
+                        <li><Link to='/resources/price-trend'>Price Trend</Link></li>
+                        <li><Link to='/resources/cost-estimator'>Cost Estimator</Link></li>
+                    </ul>
+                </li>
                 <li><Link to='/blog'>Blog</Link></li>
                 <li><Link to='/contact-us'>Contact Us</Link></li>      
             </ul>  
