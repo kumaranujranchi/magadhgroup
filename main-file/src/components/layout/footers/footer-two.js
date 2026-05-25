@@ -86,32 +86,16 @@ const FooterTwo = () => {
                     </div>
                 </div>	
             </div>
-            <div className="copyright__area">
+            <div className="copyright__area copyright__custom-area">
                 <div className="container">
-                    <div className="row">
+                    <div className="row align-items-center">
                         <div className="col-lg-12">
-                            <div className="copyright__area-content t-center" style={{ display: 'flex', justifyContent: 'center' }}>
-                                <p style={{ fontSize: '14px', lineHeight: '22px', color: '#a5a8a5', margin: 0 }}>
-                                    © 2026 Magadh Group of Company. All rights reserved.
-                                    <br />
-                                    <span style={{ fontSize: '13px', opacity: 0.85 }}>
-                                        Designed and Maintained by{' '}
-                                        <a 
-                                            href="https://www.synergybrandarchitect.in" 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            style={{ 
-                                                color: 'var(--primary-color-1)', 
-                                                textDecoration: 'none', 
-                                                fontWeight: '600',
-                                                transition: 'color 0.3s ease'
-                                            }}
-                                            onMouseOver={(e) => e.target.style.color = '#ffffff'}
-                                            onMouseOut={(e) => e.target.style.color = 'var(--primary-color-1)'}
-                                        >
-                                            Synergy Brand Architect
-                                        </a>
-                                    </span>
+                            <div className="copyright__custom-content t-center" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                <p className="copyright-text">
+                                    © 2026 <span>Magadh Group of Company</span>. All rights reserved.
+                                </p>
+                                <p className="designer-text">
+                                    Designed & Maintained by <a href="https://www.synergybrandarchitect.in" target="_blank" rel="noopener noreferrer">Synergy Brand Architect</a>
                                 </p>
                             </div>
                         </div>
