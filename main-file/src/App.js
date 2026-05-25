@@ -64,8 +64,8 @@ function App() {
                 <Route path="/portfolio/3-columns" element={<PortfolioThreeColumns />} />
                 <Route path="/portfolio/4-columns" element={<PortfolioFourColumns />} />
                 <Route path="/portfolio/:id" element={<PortfolioDetails />} />
-                <Route path="/blog" element={<BlogGrid />} />
-                <Route path="/blog-standard" element={<BlogStandardPage />} />
+                <Route path="/blog-grid" element={<BlogGrid />} />
+                <Route path="/blog" element={<BlogStandardPage />} />
                 <Route path="/blog/:id" element={<BlogDetails />} />
                 <Route path="/contact-us" element={<ContactUs />} />
             </Routes></Router>

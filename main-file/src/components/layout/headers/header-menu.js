@@ -19,13 +19,7 @@ const MainMenu = () => {
                         <li><Link to='/products/home-appliances'>Home Appliances</Link></li>
                     </ul>
                 </li>
-                <li className='menu-item-has-children'><Link to='/blog'>Blog</Link>
-                    <ul className='sub-menu'>
-                        <li><Link to='/blog'>Blog Grid</Link></li>
-                        <li><Link to='/blog-standard'>Blog Standard</Link></li>
-                        <li><Link to='/blog/key-steps-to-ensure-a-smooth-building-process'>Blog Details</Link></li>
-                    </ul>
-                </li>
+                <li><Link to='/blog'>Blog</Link></li>
                 <li><Link to='/contact-us'>Contact Us</Link></li>      
             </ul>  
     );
