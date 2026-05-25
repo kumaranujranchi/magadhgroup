@@ -7,14 +7,14 @@ import Certification from "./certification";
 import WhyChooseUs from "./why-choose";
 import Team from "./team";
 import FooterOne from "../../layout/footers/footer-one";
-import aboutUsBanner from "../../../assets/img/aboutusbanner.png";
+
 
 const AboutUs = () => {
     return (
         <>
             <SEO pageTitle="About Us" />
             <HeaderTwo />
-            <BreadCrumb title="About Us" innerTitle="About Us" bgImage={aboutUsBanner} />
+            <BreadCrumb title="About Us" innerTitle="About Us" />
             <AboutMain />
             <Video />
             <Certification />
