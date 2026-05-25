@@ -8299,4 +8299,148 @@ Responsive Menu Css
   box-shadow: 0 5px 15px rgba(255, 193, 7, 0.25);
 }
 
+/* Premium Construction Calculators Styles */
+.calc__card {
+  background: var(--bg-white, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.calc__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  border-color: var(--primary-color-1);
+}
+
+.calc__card.active {
+  border-color: var(--primary-color-1);
+  box-shadow: 0 12px 30px rgba(255, 193, 7, 0.08);
+}
+
+.calc__card-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.calc__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.calc__card-info {
+  flex-grow: 1;
+}
+
+.calc__card-info h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-heading-color);
+  transition: color 0.3s ease;
+}
+
+.calc__card:hover .calc__card-info h4 {
+  color: var(--primary-color-1);
+}
+
+.calc__card-info p {
+  font-size: 14.5px;
+  color: var(--body-color);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.calc__card-footer {
+  margin-top: 25px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 18px;
+}
+
+.calc__btn {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1b84ff; /* Slate blue */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.calc__card:hover .calc__btn {
+  color: var(--primary-color-1);
+  transform: translateX(4px);
+}
+
+/* Form Wrapper Styling */
+.calc__form-wrapper {
+  background: var(--bg-white, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.04);
+}
+
+.calc__form-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-heading-color);
+  margin: 0;
+}
+
+.btn-close-calc {
+  background: rgba(0, 0, 0, 0.03);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--body-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-close-calc:hover {
+  background: #f1416c;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* Dark Mode Overrides for Calculators */
+.dark-mode .calc__card {
+  background: #15181a !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.dark-mode .calc__card-footer {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.dark-mode .calc__form-wrapper {
+  background: #15181a !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+.dark-mode .btn-close-calc {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+}
+
 /*# sourceMappingURL=style.css.map */

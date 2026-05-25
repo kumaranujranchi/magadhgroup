@@ -32,6 +32,7 @@ import BlogDetails from './components/pages/blogs/blog-details';
 
 import ProductsPage from './components/pages/products';
 import ProductDetailPage from './components/pages/products/product-detail';
+import CalculatorsPage from './components/pages/resources/calculators';
 
 function App() {
     useEffect(() => {
@@ -52,6 +53,7 @@ function App() {
                 <Route path="/services/:id" element={<ServicesDetails />} />
                 <Route path="/products" element={<ProductsPage />} />
                 <Route path="/products/:slug" element={<ProductDetailPage />} />
+                <Route path="/resources/calculators" element={<CalculatorsPage />} />
                 <Route path="/testimonial" element={<Testimonial />} />
                 <Route path="/pricing-plans" element={<PricingPages />} />
                 <Route path="/faq" element={<FaqPage />} />
