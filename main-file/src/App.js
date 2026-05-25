@@ -43,9 +43,10 @@ function App() {
     return (
         <>
             <CustomCursor />
-            <SwitchTab />
-            <Router><Routes>
-                <Route path="/" element={<HomeOne />} />
+            <Router>
+                <SwitchTab />
+                <Routes>
+                    <Route path="/" element={<HomeOne />} />
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/history" element={<History />} />
                 <Route path="*" element={<ErrorPage />} />

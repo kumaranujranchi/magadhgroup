@@ -42,7 +42,7 @@ const FooterOne = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-2 col-sm-6 lg-mt-30">
+                                    <div className="col-lg-3 col-sm-6 lg-mt-30">
                                         <div className="footer__one-widget ml-40 lg-ml-0">
                                             <h4>Quick links</h4>
                                             <div className="footer-widget-menu">
@@ -55,20 +55,7 @@ const FooterOne = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-2 col-sm-6 lg-mt-30">
-                                        <div className="footer__one-widget address">
-                                            <h4>Portfolio</h4>
-                                            <div className="footer-widget-menu">
-                                                <ul>
-                                                    <li><Link to="/gallery">Filterable Gallery</Link></li>
-                                                    <li><Link to="/portfolio/2-columns">Project 2 Columns</Link></li>
-                                                    <li><Link to="/portfolio/3-columns">Project 3 Columns</Link></li>
-                                                    <li><Link to="/portfolio/4-columns">Project 4 Columns</Link></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-2 col-sm-6 lg-mt-30">
+                                    <div className="col-lg-3 col-sm-6 lg-mt-30">
                                         <div className="footer__one-widget address">
                                             <h4>Support</h4>
                                             <div className="footer-widget-menu">

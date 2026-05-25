@@ -74,37 +74,37 @@ const CalculatorsMain = () => {
             id: 'flooring',
             title: 'Flooring Calculator',
             description: 'Calculate tiles, marble, or flooring material requirements',
-            icon: 'fa-sharp fa-light fa-grid-horizontal',
+            icon: 'fa-solid fa-border-all',
         },
         {
             id: 'paint',
             title: 'Paint Calculator',
             description: 'Calculate paint quantity for walls and surfaces',
-            icon: 'fa-sharp fa-light fa-paint-roller',
+            icon: 'fa-solid fa-paint-roller',
         },
         {
             id: 'electrical',
             title: 'Electrical Load Calculator',
             description: 'Calculate electrical load and wire requirements',
-            icon: 'fa-sharp fa-light fa-bolt',
+            icon: 'fa-solid fa-bolt',
         },
         {
             id: 'rmc',
             title: 'RMC Calculator',
             description: 'Calculate Ready Mix Concrete requirements',
-            icon: 'fa-sharp fa-light fa-truck-droplet',
+            icon: 'fa-solid fa-truck-moving',
         },
         {
             id: 'steel',
             title: 'Steel Calculator',
             description: 'Calculate TMT bar requirements for construction',
-            icon: 'fa-sharp fa-light fa-cubes-stacked',
+            icon: 'fa-solid fa-cubes-stacked',
         },
         {
             id: 'ac',
             title: 'AC Load Calculator',
             description: 'Calculate AC tonnage based on room size',
-            icon: 'fa-sharp fa-light fa-snowflake',
+            icon: 'fa-solid fa-snowflake',
         }
     ];
 
@@ -508,19 +508,40 @@ const CalculatorsMain = () => {
                 </div>
 
                 <div className="row justify-content-center">
-                    {calculatorsList.map((calc) => (
-                        <div className="col-lg-4 col-md-6 mb-30" key={calc.id}>
-                            <div 
-                                className={`choose__three-list-item h-100 ${activeCalc === calc.id ? 'active' : ''}`}
-                                onClick={() => selectCalculator(calc.id)}
-                                style={{ cursor: 'pointer' }}
-                            >
-                                <i className={calc.icon}></i>
-                                <h4>{calc.title}</h4>
-                                <p>{calc.description}</p>
+                    {calculatorsList.map((calc) => {
+                        const isActive = activeCalc === calc.id;
+                        return (
+                            <div className="col-lg-4 col-md-6 mb-30" key={calc.id}>
+                                <div 
+                                    className={`product__card ${isActive ? 'active' : ''}`}
+                                    onClick={() => selectCalculator(calc.id)}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    <div className="product__card-icon">
+                                        <i className={calc.icon}></i>
+                                    </div>
+                                    
+                                    <h4 className="product__card-title" style={{ marginTop: '0px' }}>
+                                        {calc.title}
+                                    </h4>
+                                    
+                                    <div className="product__card-subtitle">
+                                        Estimate Requirements
+                                    </div>
+                                    
+                                    <p className="product__card-description">
+                                        {calc.description}
+                                    </p>
+                                    
+                                    <div className="product__card-footer">
+                                        <span className="product__card-link">
+                                            {isActive ? 'Active Calculator' : 'Calculate Now'} <i className="fa-regular fa-arrow-right-long"></i>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
                 {/* Form Wrapper Section */}

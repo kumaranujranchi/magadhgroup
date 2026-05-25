@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import content from "../../../assets/img/shape/content.png";
-import image from "../../../assets/img/page/image-1.jpg";
+import image from "../../../../assets/img/homepage-5.png";
 
 const Experience = () => {
     return (

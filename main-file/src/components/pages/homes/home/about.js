@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ModalVideo from "react-modal-video";
-import image1 from "../../../assets/img/about/about-1.jpg";
+import image1 from "../../../../assets/img/Homepage-3.png";
 import image2 from "../../../assets/img/about/about-2.jpg";
 
 const About = () => {

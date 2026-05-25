@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SwitchTab() {
     const [switchOpen, setSwitchOpen] = useState(false);
@@ -43,6 +44,9 @@ export default function SwitchTab() {
                     <div className="switch__tab-close" onClick={() => setSwitchOpen(false)}>
                         <i className="fal fa-times"></i>
                     </div>
+                    <Link to="/request-quote" className="sticky-quote-btn">
+                        Get Quote
+                    </Link>
                 </div>
                 <div className="switch__tab-area">
                     <div className="switch__tab-area-item">

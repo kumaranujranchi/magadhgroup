@@ -1,5 +1,5 @@
 import React from 'react';
-import image from "../../../assets/img/page/experience.jpg";
+import image from "../../../../assets/img/homepage-4.png";
 import videoBg from "../../../assets/img/shape/shape.png";
 import Count from '../../common/count';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ const ChooseUs = () => {
                         <div className="choose__us-left t-right mr-40 xl-mr-0">
                             <img className="wow img_left_animation" src={image} alt="image" />
                             <div className="choose__us-left-counter bounce_x" style={{backgroundImage: `url(${videoBg})`}}>
-                                <h2><Count number={156}/>k</h2>
+                                <h2><Count number={50}/>+</h2>
                                 <p>Project Completed</p>
                             </div>
                         </div>

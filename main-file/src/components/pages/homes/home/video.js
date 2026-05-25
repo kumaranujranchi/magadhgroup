@@ -1,29 +1,30 @@
-import { useState } from "react";
-import ModalVideo from "react-modal-video";
-import videoBg from "../../../assets/img/page/video.jpg";
+import React from "react";
+import videoFile from "../../../../assets/video/homepage-video-1.mp4";
 
 const Video = () => {
-    const [openVideo, setOpenVideo] = useState(false);
-    const openVideoModal = () => {
-        setOpenVideo(true);
-    };
     return (
-        <>
-        <div className="video__area" style={{backgroundImage: `url(${videoBg})`}}>
-            <div className="container">
-                <div className="row">
-                    <div className="col-xl-12">
-                        <div className="video__area-icon wow fadeInDown" data-wow-delay="0.8s">
-                            <div className="video video-pulse">
-                                <span onClick={openVideoModal}><i className="fas fa-play"></i></span>
-                            </div>						
+        <div className="video__area-direct">
+            <video 
+                src={videoFile} 
+                loop
+                muted
+                autoPlay
+                playsInline
+                className="video-direct-player"
+            />
+            <div className="video__area-overlay"></div>
+            <div className="container video__area-content-container">
+                <div className="row justify-content-center">
+                    <div className="col-lg-8 text-center">
+                        <div className="video__area-content">
+                            <span className="subtitle">BUILDING THE FUTURE</span>
+                            <h2>We Deliver Quality Construction Materials & Services</h2>
+                            <p>Magadh Group represents three decades of trust, excellence, and premium distribution across Eastern India.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>    
-        <ModalVideo className='video-modal' channel="youtube" autoplay isOpen={openVideo} videoId="SZEflIVnhH8" onClose={() => setOpenVideo(false)} />        
-        </>
     );
 };
 

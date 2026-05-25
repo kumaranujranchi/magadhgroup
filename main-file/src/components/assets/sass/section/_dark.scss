@@ -102,9 +102,15 @@
     .services__two .services__one-item:hover > i {
         color: var(--primary-color-1);
     }
-    .banner__four-brand .scroll__slider ul li img,
-    .brand__area ul li img {
+    .banner__four-brand .scroll__slider ul li img {
         filter: inherit;
+    }
+    .brand__area ul li img {
+        filter: invert(1) grayscale(100%) opacity(0.7);
+        mix-blend-mode: screen;
+        &:hover {
+            filter: invert(1) grayscale(0%) opacity(1);
+        }
     }
     .industry__four-left-item img {
         filter: invert(1);

@@ -1,14 +1,24 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay, Navigation} from 'swiper/modules';
 import testimonialData from "../../../data/testimonial-data";
-import brand1 from "../../../assets/img/brand/brand-1.png";
-import brand2 from "../../../assets/img/brand/brand-2.png";
-import brand3 from "../../../assets/img/brand/brand-3.png";
-import brand4 from "../../../assets/img/brand/brand-4.png";
-import brand5 from "../../../assets/img/brand/brand-5.png";
-import brand6 from "../../../assets/img/brand/brand-6.png";
-import brand7 from "../../../assets/img/brand/brand-7.png";
-import brand8 from "../../../assets/img/brand/brand-8.png";
+import brand1 from "../../../../assets/img/brand-logo/acc.webp";
+import brand2 from "../../../../assets/img/brand-logo/asian paint.webp";
+import brand3 from "../../../../assets/img/brand-logo/burger.webp";
+import brand4 from "../../../../assets/img/brand-logo/dulux.webp";
+import brand5 from "../../../../assets/img/brand-logo/haveels.webp";
+import brand6 from "../../../../assets/img/brand-logo/magadh.webp";
+import brand7 from "../../../../assets/img/brand-logo/novuco.webp";
+import brand8 from "../../../../assets/img/brand-logo/pather.webp";
+import brand9 from "../../../../assets/img/brand-logo/rungta.webp";
+import brand10 from "../../../../assets/img/brand-logo/sail.webp";
+import brand11 from "../../../../assets/img/brand-logo/tata-parvesh.webp";
+import brand12 from "../../../../assets/img/brand-logo/tata-tiscon.webp";
+import brand13 from "../../../../assets/img/brand-logo/ultrateck.webp";
+
+const brandLogos = [
+    brand1, brand2, brand3, brand4, brand5, brand6, brand7,
+    brand8, brand9, brand10, brand11, brand12, brand13
+];
 
 const TestimonialTwo = () => {
 
@@ -52,26 +62,16 @@ const TestimonialTwo = () => {
                             <div className="text-slide">
                                 <div className="sliders text_scroll">
                                     <ul>
-                                        <li><img src={brand1} alt="image" /></li>
-                                        <li><img src={brand2} alt="image" /></li>
-                                        <li><img src={brand3} alt="image" /></li>
-                                        <li><img src={brand4} alt="image" /></li>
-                                        <li><img src={brand5} alt="image" /></li>
-                                        <li><img src={brand6} alt="image" /></li>
-                                        <li><img src={brand7} alt="image" /></li>
-                                        <li><img src={brand8} alt="image" /></li>
+                                        {brandLogos.map((logo, index) => (
+                                            <li key={index}><img src={logo} alt="brand logo" /></li>
+                                        ))}
                                     </ul>
                                 </div>
                                 <div className="sliders text_scroll">
                                     <ul>
-                                        <li><img src={brand1} alt="image" /></li>
-                                        <li><img src={brand2} alt="image" /></li>
-                                        <li><img src={brand3} alt="image" /></li>
-                                        <li><img src={brand4} alt="image" /></li>
-                                        <li><img src={brand5} alt="image" /></li>
-                                        <li><img src={brand6} alt="image" /></li>
-                                        <li><img src={brand7} alt="image" /></li>
-                                        <li><img src={brand8} alt="image" /></li>
+                                        {brandLogos.map((logo, index) => (
+                                            <li key={index}><img src={logo} alt="brand logo" /></li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>

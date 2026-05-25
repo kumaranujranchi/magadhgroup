@@ -1,9 +1,25 @@
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Autoplay, Navigation} from 'swiper/modules';
-import portfolioData from "../../../data/portfolio-data";
+import productsData from "../../../data/products-data";
 
-const portfolioItem = portfolioData.slice(0, 5);
+// Placeholder images for products (to be updated later)
+import image1 from "../../../assets/img/portfolio/portfolio-1.png";
+import image2 from "../../../assets/img/portfolio/portfolio-2.png";
+import image3 from "../../../assets/img/portfolio/portfolio-3.png";
+import image4 from "../../../assets/img/portfolio/portfolio-4.png";
+import image5 from "../../../assets/img/portfolio/portfolio-5.png";
+import image6 from "../../../assets/img/portfolio/portfolio-6.png";
+import image7 from "../../../assets/img/portfolio/portfolio-7.png";
+import image8 from "../../../assets/img/portfolio/portfolio-8.png";
+
+const productImages = [image1, image2, image3, image4, image5, image6, image7, image8];
+
+const productItems = productsData.map((prod, idx) => ({
+    ...prod,
+    image: productImages[idx % productImages.length]
+}));
+
 const slideControl = {
     spaceBetween: 25,
     slidesPerView: 4,
@@ -42,8 +58,8 @@ const Portfolio = () => {
                 <div className="row al-end">
                     <div className="col-lg-7">
                         <div className="portfolio__one-title lg-t-center lg-mb-20">
-                            <span className="subtitle wow fadeInLeft" data-wow-delay=".4s">Our Portfolio</span>
-                            <h2 className="wow fadeInRight" data-wow-delay=".6s">Discover Our Builds</h2>
+                            <span className="subtitle wow fadeInLeft" data-wow-delay=".4s">Product Portfolio</span>
+                            <h2 className="wow fadeInRight" data-wow-delay=".6s">Explore Our Product Range</h2>
                         </div>
                     </div>
                     <div className="col-lg-5 wow fadeInDown" data-wow-delay=".4s">
@@ -60,13 +76,13 @@ const Portfolio = () => {
                 <div className="row mt-60 wow fadeInUp data_cursor" data-wow-delay=".5s" data-cursor-text="Drag">
                     <div className="col-xl-12">
                         <Swiper className='portfolio_slide' modules={[EffectFade, Autoplay, Navigation]} {...slideControl} >
-                            {portfolioItem?.map((data, id) => (
+                            {productItems?.map((data, id) => (
                                 <SwiperSlide key={id}>
                                     <div className="portfolio__one-item">
                                         <img src={data.image} alt="image" />
                                         <div className="portfolio__one-item-content">
                                             <span>{data.subtitle}</span>
-                                            <h4><Link to={`/portfolio/${data.id}`}>{data.title}</Link></h4>
+                                            <h4><Link to={`/products/${data.id}`}>{data.title}</Link></h4>
                                         </div>
                                     </div>
                                 </SwiperSlide>
