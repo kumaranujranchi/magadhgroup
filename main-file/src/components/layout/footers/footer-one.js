@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import Logo from '../logo';
-import Social from '../../data/social';
 
 const FooterOne = () => {
     return (
@@ -49,7 +48,6 @@ const FooterOne = () => {
                                                 <ul>
                                                     <li><Link to="/history">Company History</Link></li>
                                                     <li><Link to="/testimonial">Testimonials</Link></li>
-                                                    <li><Link to="/pricing-plans">Price Plans</Link></li>
                                                     <li><Link to="/faq">FAQ's</Link></li>
                                                 </ul>
                                             </div>

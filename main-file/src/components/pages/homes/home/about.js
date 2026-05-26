@@ -1,14 +1,8 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import ModalVideo from "react-modal-video";
 import image1 from "../../../../assets/img/Homepage-3.png.webp";
-import image2 from "../../../assets/img/about/about-2.jpg.webp";
+import image2 from "../../../../assets/img/homeoage-hero.png";
 
 const About = () => {
-    const [openVideo, setOpenVideo] = useState(false);
-    const openVideoModal = () => {
-      setOpenVideo(true);
-    }; 
     return (
         <>
             <div className="about__one section-padding">
@@ -23,10 +17,7 @@ const About = () => {
                                 <div className="row al-center mt-45">
                                     <div className="col-md-4 md-mb-25">
                                         <div className="about__one-left-image wow fadeInLeft" data-wow-delay=".4s">
-                                            <img className="md_img_full" src={image2} alt="image" />
-                                            <div className="video video-pulse">
-                                                <span onClick={openVideoModal}><i className="fas fa-play"></i></span>
-                                            </div>
+                                            <img className="md_img_full" src={image2} alt="Construction Engineer" />
                                         </div>
                                     </div>
                                     <div className="col-md-8 pl-50 xl-pl-10">
@@ -55,13 +46,12 @@ const About = () => {
                         </div>
                         <div className="col-lg-5">
                             <div className="about__one-right t-right">
-                                <img className="wow img_right_animation lg_img_full" src={image1} alt="image" />
+                                <img className="wow img_right_animation lg_img_full" src={image1} alt="Building Construction" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <ModalVideo className='video-modal' channel="youtube" autoplay isOpen={openVideo} videoId="SZEflIVnhH8" onClose={() => setOpenVideo(false)} />
         </>
     );
 };
