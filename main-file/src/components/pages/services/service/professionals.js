@@ -336,7 +336,7 @@ const ProfessionalsSection = () => {
                                                         required
                                                         style={{
                                                             width: '100%',
-                                                            background: 'rgba(30,40,70,0.95)',
+                                                            background: 'rgba(50,50,50,0.98)',
                                                             border: '1px solid rgba(255,255,255,0.15)',
                                                             borderRadius: '10px',
                                                             padding: '14px 18px',
