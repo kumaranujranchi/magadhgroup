@@ -148,7 +148,7 @@ const ProfessionalsSection = () => {
             <div
                 id="book-professional-form"
                 style={{
-                    background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+                    background: 'var(--color-1)',
                     padding: '80px 0'
                 }}
             >
@@ -186,9 +186,9 @@ const ProfessionalsSection = () => {
                             <div
                                 className="quote-form__wrapper"
                                 style={{
-                                    background: 'rgba(255,255,255,0.04)',
+                                    background: 'rgba(255,255,255,0.05)',
                                     backdropFilter: 'blur(20px)',
-                                    border: '1px solid rgba(255,255,255,0.1)',
+                                    border: '1px solid rgba(255,255,255,0.08)',
                                     borderRadius: '20px',
                                     padding: '48px 40px'
                                 }}
