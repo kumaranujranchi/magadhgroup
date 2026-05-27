@@ -1,6 +1,45 @@
 import React, { useState } from 'react';
+import { brandLogosMap } from '../../../data/products-data';
 
 const ProductDetailMain = ({ product }) => {
+    // Lightbox Gallery State
+    const [lightbox, setLightbox] = useState({
+        isOpen: false,
+        images: [],
+        currentIndex: 0,
+        title: ''
+    });
+
+    const openLightbox = (images, title, index = 0) => {
+        if (!images || images.length === 0) return;
+        setLightbox({
+            isOpen: true,
+            images: images,
+            currentIndex: index,
+            title: title
+        });
+    };
+
+    const closeLightbox = () => {
+        setLightbox(prev => ({ ...prev, isOpen: false }));
+    };
+
+    const nextImage = (e) => {
+        e.stopPropagation();
+        setLightbox(prev => ({
+            ...prev,
+            currentIndex: (prev.currentIndex + 1) % prev.images.length
+        }));
+    };
+
+    const prevImage = (e) => {
+        e.stopPropagation();
+        setLightbox(prev => ({
+            ...prev,
+            currentIndex: (prev.currentIndex - 1 + prev.images.length) % prev.images.length
+        }));
+    };
+
     // State for the Get Quote Form
     const [formData, setFormData] = useState({
         name: '',
@@ -123,15 +162,42 @@ const ProductDetailMain = ({ product }) => {
                     </div>
                     
                     <div className="row g-4">
-                        {product.variants.map((v, idx) => (
-                            <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${0.2 + (idx % 4) * 0.1}s`} key={idx}>
-                                <div className="variant__card">
-                                    <span className="variant__card-num">Option 0{idx + 1}</span>
-                                    <h4 className="variant__card-title">{v.name}</h4>
-                                    <p>{v.details}</p>
+                        {product.variants.map((v, idx) => {
+                            const hasImages = v.images && v.images.length > 0;
+                            const firstImage = hasImages ? v.images[0] : 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80';
+                            
+                            return (
+                                <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${0.2 + (idx % 4) * 0.1}s`} key={idx}>
+                                    <div 
+                                        className="variant__card"
+                                        onClick={() => hasImages && openLightbox(v.images, v.name)}
+                                        style={{ cursor: hasImages ? 'pointer' : 'default' }}
+                                    >
+                                        <div className="variant__card-image-wrapper mb-20 position-relative" style={{ overflow: 'hidden', borderRadius: '6px', height: '180px', background: '#f5f5f5' }}>
+                                            <img 
+                                                src={firstImage} 
+                                                alt={v.name} 
+                                                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
+                                                className="variant-img"
+                                            />
+                                            {hasImages && v.images.length > 1 && (
+                                                <div className="variant__card-image-badge" style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0,0,0,0.6)', color: '#fff', fontSize: '12px', padding: '3px 8px', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                                                    <i className="fa-solid fa-images"></i> {v.images.length}
+                                                </div>
+                                            )}
+                                            {hasImages && (
+                                                <div className="variant__card-hover-overlay" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.2)', opacity: 0, transition: 'opacity 0.3s ease', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                    <i className="fa-solid fa-magnifying-glass-plus text-white" style={{ fontSize: '24px' }}></i>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <span className="variant__card-num">Option 0{idx + 1}</span>
+                                        <h4 className="variant__card-title">{v.name}</h4>
+                                        <p>{v.details}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </div>
@@ -142,12 +208,33 @@ const ProductDetailMain = ({ product }) => {
                     <div className="col-lg-10 wow fadeInUp" data-wow-delay=".3s">
                         <h3 className="brand-showcase__title">Authorized Brands We Deal In</h3>
                         <div className="brand-showcase__grid">
-                            {product.brands.map((brand, bIdx) => (
-                                <div className="brand-showcase__item" key={bIdx}>
-                                    <i className="fa-solid fa-star text-warning me-2" style={{ fontSize: '12px' }}></i>
-                                    {brand}
-                                </div>
-                            ))}
+                            {product.brands.map((brand, bIdx) => {
+                                const brandName = typeof brand === 'object' ? brand.name : brand;
+                                const brandLogo = typeof brand === 'object' && brand.logo ? brand.logo : brandLogosMap[brandName];
+
+                                return (
+                                    <div 
+                                        className={`brand-showcase__item ${brandLogo ? 'brand-showcase__item--logo' : ''}`} 
+                                        key={bIdx}
+                                        title={brandName}
+                                    >
+                                        {brandLogo ? (
+                                            <div className="brand-showcase__logo-wrapper">
+                                                <img 
+                                                    src={brandLogo} 
+                                                    alt={`${brandName} Logo`} 
+                                                    className="brand-showcase__logo-img" 
+                                                />
+                                            </div>
+                                        ) : (
+                                            <>
+                                                <i className="fa-solid fa-star text-warning me-2" style={{ fontSize: '12px' }}></i>
+                                                {brandName}
+                                            </>
+                                        )}
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -286,6 +373,145 @@ const ProductDetailMain = ({ product }) => {
                     </div>
                 </div>
             </div>
+
+            {/* Premium Lightbox Modal */}
+            {lightbox.isOpen && (
+                <div 
+                    className="custom-lightbox-modal"
+                    onClick={closeLightbox}
+                    style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        background: 'rgba(0, 0, 0, 0.95)',
+                        zIndex: 99999,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        animation: 'fadeIn 0.25s ease'
+                    }}
+                >
+                    {/* Close Button */}
+                    <button 
+                        onClick={closeLightbox}
+                        style={{
+                            position: 'absolute',
+                            top: '25px',
+                            right: '25px',
+                            background: 'none',
+                            border: 'none',
+                            color: '#fff',
+                            fontSize: '36px',
+                            cursor: 'pointer',
+                            transition: 'transform 0.2s ease',
+                            zIndex: 100000
+                        }}
+                        className="lightbox-close"
+                    >
+                        <i className="fa-solid fa-xmark"></i>
+                    </button>
+
+                    {/* Left Arrow */}
+                    {lightbox.images.length > 1 && (
+                        <button 
+                            onClick={prevImage}
+                            style={{
+                                position: 'absolute',
+                                left: '30px',
+                                background: 'rgba(255,255,255,0.05)',
+                                border: 'none',
+                                color: '#fff',
+                                width: '60px',
+                                height: '60px',
+                                borderRadius: '50%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: '24px',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s ease',
+                                zIndex: 100000
+                            }}
+                            className="lightbox-arrow"
+                        >
+                            <i className="fa-solid fa-chevron-left"></i>
+                        </button>
+                    )}
+
+                    {/* Image Frame */}
+                    <div 
+                        style={{
+                            maxWidth: '85%',
+                            maxHeight: '75%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            position: 'relative'
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <img 
+                            src={lightbox.images[lightbox.currentIndex]} 
+                            alt={lightbox.title} 
+                            style={{
+                                maxWidth: '100%',
+                                maxHeight: '100%',
+                                objectFit: 'contain',
+                                borderRadius: '4px',
+                                boxShadow: '0 10px 40px rgba(0,0,0,0.5)',
+                                animation: 'zoomIn 0.3s ease'
+                            }}
+                        />
+                    </div>
+
+                    {/* Right Arrow */}
+                    {lightbox.images.length > 1 && (
+                        <button 
+                            onClick={nextImage}
+                            style={{
+                                position: 'absolute',
+                                right: '30px',
+                                background: 'rgba(255,255,255,0.05)',
+                                border: 'none',
+                                color: '#fff',
+                                width: '60px',
+                                height: '60px',
+                                borderRadius: '50%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: '24px',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s ease',
+                                zIndex: 100000
+                            }}
+                            className="lightbox-arrow"
+                        >
+                            <i className="fa-solid fa-chevron-right"></i>
+                        </button>
+                    )}
+
+                    {/* Caption / Title */}
+                    <div 
+                        style={{
+                            marginTop: '25px',
+                            textAlign: 'center',
+                            color: '#fff',
+                            zIndex: 100000
+                        }}
+                    >
+                        <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: '600', marginBottom: '5px' }}>{lightbox.title}</h4>
+                        {lightbox.images.length > 1 && (
+                            <span style={{ fontSize: '14px', color: '#b0b8c3' }}>
+                                Image {lightbox.currentIndex + 1} of {lightbox.images.length}
+                            </span>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

@@ -47,11 +47,14 @@ const ProductsMain = () => {
                                     </p>
                                     
                                     <div className="product__card-brands">
-                                        {data.brands.slice(0, 4).map((brand, bIdx) => (
-                                            <span key={bIdx} className="product__card-brand-tag">
-                                                {brand}
-                                            </span>
-                                        ))}
+                                        {data.brands.slice(0, 4).map((brand, bIdx) => {
+                                            const brandName = typeof brand === 'object' ? brand.name : brand;
+                                            return (
+                                                <span key={bIdx} className="product__card-brand-tag">
+                                                    {brandName}
+                                                </span>
+                                            );
+                                        })}
                                         {data.brands.length > 4 && (
                                             <span className="product__card-brand-tag" style={{ opacity: 0.7 }}>
                                                 +{data.brands.length - 4} More
