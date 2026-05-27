@@ -13,6 +13,13 @@ import brandLogo11 from '../../assets/img/brand-logo/11.png.webp';
 import brandLogo12 from '../../assets/img/brand-logo/12.png.webp';
 import brandLogo13 from '../../assets/img/brand-logo/13.png.webp';
 
+// Import New Paints Brand Logos
+import paintLogoAsian from '../../assets/img/brand-logo/paints-brand-logo/Asian.png';
+import paintLogoBerger from '../../assets/img/brand-logo/paints-brand-logo/Berger.png';
+import paintLogoBirlaOpus from '../../assets/img/brand-logo/paints-brand-logo/Birla Opus.png';
+import paintLogoDulux from '../../assets/img/brand-logo/paints-brand-logo/Dulux.png';
+import paintLogoNerolac from '../../assets/img/brand-logo/paints-brand-logo/Nerolac.png';
+
 export const brandLogosMap = {
     'TATA TMT': brandLogo1,
     'TATA Structura': brandLogo1,
@@ -23,10 +30,11 @@ export const brandLogosMap = {
     'Ambuja Cement': brandLogo4,
     'Birla Gold': brandLogo5,
     'Dalmia Cement': brandLogo6,
-    'Asian Paints': brandLogo7,
-    'Berger Paints': brandLogo8,
-    'Dulux Paint': brandLogo9,
-    'Nerolac Paints': brandLogo10,
+    'Asian Paints': paintLogoAsian,
+    'Berger Paints': paintLogoBerger,
+    'Birla Opus': paintLogoBirlaOpus,
+    'Dulux Paint': paintLogoDulux,
+    'Nerolac Paints': paintLogoNerolac,
     'Havells': brandLogo11,
     'Polycab Wires': brandLogo12,
     'Finolex Cables': brandLogo13,
@@ -374,7 +382,7 @@ const productsData = [
         icon: <i className="fa-solid fa-paint-roller"></i>,
         variantCount: '4 Categories',
         variantLabel: 'Categories',
-        brands: ['Asian Paints', 'Berger Paints', 'Dulux Paint', 'Nerolac Paints'],
+        brands: ['Asian Paints', 'Berger Paints', 'Birla Opus', 'Dulux Paint', 'Nerolac Paints'],
         description: 'Stunning aesthetics, weather protection, and anti-fungal properties for interior and exterior walls.',
         heroDescription: 'Elevate the beauty of your residential or commercial projects with premium interior and exterior paints. Offering a rich palette of colors, superior washable finishes, dust-resistant tech, and environment-friendly low VOC formulations that keep your walls looking pristine for years.',
         variants: [

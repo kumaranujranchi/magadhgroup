@@ -17,6 +17,13 @@ import cementLogoBirlaShakti from '../../../../assets/img/brand-logo/cement-bran
 import cementLogoACC from '../../../../assets/img/brand-logo/cement-brand-logo/AAC Cement.png';
 import cementLogoAmbuja from '../../../../assets/img/brand-logo/cement-brand-logo/Ambuja Cement.png';
 
+// Import Paints Brand Logos
+import paintLogoAsian from '../../../../assets/img/brand-logo/paints-brand-logo/Asian.png';
+import paintLogoBerger from '../../../../assets/img/brand-logo/paints-brand-logo/Berger.png';
+import paintLogoBirlaOpus from '../../../../assets/img/brand-logo/paints-brand-logo/Birla Opus.png';
+import paintLogoDulux from '../../../../assets/img/brand-logo/paints-brand-logo/Dulux.png';
+import paintLogoNerolac from '../../../../assets/img/brand-logo/paints-brand-logo/Nerolac.png';
+
 const brandDetailsData = {
     tata: {
         name: 'TATA Tiscon',
@@ -289,6 +296,91 @@ const brandDetailsData = {
             'NABL-accredited laboratory checking ensuring peak performance standards.',
             'Eco-friendly slag and pozzolana compositions for sustainable structures.'
         ]
+    },
+    'asian-paints': {
+        name: 'Asian Paints',
+        logo: paintLogoAsian,
+        tagline: 'Har Ghar Kuch Kehta Hai',
+        description: 'Asian Paints is India’s leading paint company, recognized globally for its high-quality home decor solutions, innovative washable emulsions, and state-of-the-art color mixing services.',
+        knownFor: [
+            'Apex Ultima Protek: Premium exterior paint with a 10-year waterproofing warranty.',
+            'Royale Luxury Emulsion: High-washability interior paint with a smooth Teflon finish.',
+            'Royale Play: Beautiful textured finishes designed by professional artists.'
+        ],
+        history: 'Founded in 1942, Asian Paints has grown from a small partnership into India\'s largest and most trusted paint manufacturing brand.',
+        whyTrust: [
+            'Advanced color matching system offering over 2,200 shades.',
+            'Eco-friendly, lead-free, and low VOC paints safe for kids and pets.',
+            'Longest durability and color retention in all tropical weather conditions.'
+        ]
+    },
+    'berger-paints': {
+        name: 'Berger Paints',
+        logo: paintLogoBerger,
+        tagline: 'Paint Your Imagination',
+        description: 'Berger Paints is one of the fastest-growing paint companies in India, pioneering luxury interior finishes, dust-resistant exterior protection, and automated painting services.',
+        knownFor: [
+            'Silk Glamor: Luxury interior emulsion offering an ultra-smooth silk finish.',
+            'WeatherCoat Anti-Dust: Exterior paint that prevents dust particles from sticking to walls.',
+            'Easy Clean: Highly washable interior paint that removes stubborn stains easily.'
+        ],
+        history: 'Tracing its legacy back to 1760 in the UK, Berger Paints India is a household name trusted for industrial and residential coatings.',
+        whyTrust: [
+            'Dust-guard technology keeps exterior walls looking clean for years.',
+            'Highly resilient elasticity protects walls against hairline cracks.',
+            'Certified green products with zero health hazards.'
+        ]
+    },
+    'birla-opus': {
+        name: 'Birla Opus',
+        logo: paintLogoBirlaOpus,
+        tagline: 'Make Your Walls Sing',
+        description: 'Birla Opus is the premium new-age paint brand launched by the Aditya Birla Group, bringing next-generation technological innovation, unmatched washability, and superior finish options to the Indian market.',
+        knownFor: [
+            'Opus One Luxury Emulsion: Premium high-sheen interior paint with active stain guard.',
+            'Opus All-Weather: High-elasticity exterior shield resisting extreme heat and heavy rains.',
+            'Eco-conscious formulations: Zero VOC and organic base options for healthier spaces.'
+        ],
+        history: 'Launched in 2024 by Aditya Birla Group with one of the largest industrial setups, Birla Opus aims to redefine painting standards in India.',
+        whyTrust: [
+            'Backed by the trust and heritage of the Aditya Birla Group.',
+            'State-of-the-art paint technology ensuring unmatched coverage and wall brightness.',
+            'Anti-fungal, anti-algal, and stain-resistant protections built-in.'
+        ]
+    },
+    'dulux-paint': {
+        name: 'Dulux Paint',
+        logo: paintLogoDulux,
+        tagline: 'Let\'s Colour',
+        description: 'Dulux is a world-class premium paint brand from AkzoNobel, celebrated for its advanced color science, velvet finishes, and environment-friendly sustainable building products.',
+        knownFor: [
+            'Dulux Velvet Touch: Premium interior emulsion offering an exquisite velvet-like finish.',
+            'Weathershield Max: Ultimate exterior protection with active crack-bridging technology.',
+            'Dulux Promise: High coverage and budget-friendly durable finishes.'
+        ],
+        history: 'Originally established in the UK, Dulux has become a premier global brand under AkzoNobel, known for defining international color trends.',
+        whyTrust: [
+            'Global standard quality control and advanced color durability.',
+            'Superior coverage means less paint is needed per square foot.',
+            'Breathable paint film prevents moisture trapping and dampness.'
+        ]
+    },
+    'nerolac-paints': {
+        name: 'Nerolac Paints',
+        logo: paintLogoNerolac,
+        tagline: 'Kuch Khas Hai',
+        description: 'Kansai Nerolac Paints is the second-largest coating company in India and a market leader in industrial and automotive coatings, offering premium healthy home paints with Japanese technology support.',
+        knownFor: [
+            'Nerolac Beauty Gold: High-coverage, smooth matte emulsion for interior walls.',
+            'Excel Everlast: Premium exterior paint with self-cleaning properties.',
+            'Nerolac Impression: Premium high-gloss interior emulsion with low odor.'
+        ],
+        history: 'Established in 1920 in Mumbai, Nerolac has partnered with Kansai Paint Japan to bring cutting-edge coating technologies to India.',
+        whyTrust: [
+            'Lead-free, low VOC, and low-odor formulations prioritizing family health.',
+            'Strongest anti-bacterial and anti-viral properties certified by independent labs.',
+            'Highly durable formulations adapted from heavy-duty automotive paint technology.'
+        ]
     }
 };
 
@@ -411,6 +503,14 @@ const ProductDetailMain = ({ product }) => {
         'Ambuja Concrete': 'M25'
     });
 
+    const [selectedPaintCategories, setSelectedPaintCategories] = useState({
+        'Asian Paints': 'Interior',
+        'Berger Paints': 'Interior',
+        'Birla Opus': 'Interior',
+        'Dulux Paint': 'Interior',
+        'Nerolac Paints': 'Interior'
+    });
+
     const [detailsModal, setDetailsModal] = useState({
         isOpen: false,
         brandId: ''
@@ -441,6 +541,14 @@ const ProductDetailMain = ({ product }) => {
         { id: 'ambuja-rmc', name: 'Ambuja Concrete', logo: cementLogoAmbuja, grades: ['M20', 'M25', 'M30', 'M40 & Higher'] }
     ];
 
+    const paintBrands = [
+        { id: 'asian-paints', name: 'Asian Paints', logo: paintLogoAsian, categories: ['Interior', 'Exterior', 'Primer & Putty', 'Wood & Metal'] },
+        { id: 'berger-paints', name: 'Berger Paints', logo: paintLogoBerger, categories: ['Interior', 'Exterior', 'Primer & Putty', 'Wood & Metal'] },
+        { id: 'birla-opus', name: 'Birla Opus', logo: paintLogoBirlaOpus, categories: ['Interior', 'Exterior', 'Primer & Putty', 'Wood & Metal'] },
+        { id: 'dulux-paint', name: 'Dulux Paint', logo: paintLogoDulux, categories: ['Interior', 'Exterior', 'Primer & Putty', 'Wood & Metal'] },
+        { id: 'nerolac-paints', name: 'Nerolac Paints', logo: paintLogoNerolac, categories: ['Interior', 'Exterior', 'Primer & Putty', 'Wood & Metal'] }
+    ];
+
     const changeSelectedSize = (brandName, size) => {
         setSelectedSizes(prev => ({
             ...prev,
@@ -459,6 +567,13 @@ const ProductDetailMain = ({ product }) => {
         setSelectedRmcGrades(prev => ({
             ...prev,
             [brandName]: grade
+        }));
+    };
+
+    const changeSelectedPaintCategory = (brandName, category) => {
+        setSelectedPaintCategories(prev => ({
+            ...prev,
+            [brandName]: category
         }));
     };
 
@@ -538,7 +653,7 @@ const ProductDetailMain = ({ product }) => {
             {/* Variants Section */}
             <div className="bg-light-gray py-5 my-5 section-padding-two" style={{ background: '#f8f9fa' }}>
                 <div className="container">
-                    {product.id === 'tmt-bars' || product.id === 'cement' || product.id === 'rmc' ? (
+                    {product.id === 'tmt-bars' || product.id === 'cement' || product.id === 'rmc' || product.id === 'paints' ? (
                         <>
                             <div className="row justify-content-center text-center mb-50">
                                 <div className="col-lg-8">
@@ -553,14 +668,28 @@ const ProductDetailMain = ({ product }) => {
                             </div>
                             
                             <div className="row g-4 justify-content-center">
-                                {(product.id === 'tmt-bars' ? tmtBrands : (product.id === 'cement' ? cementBrands : rmcBrands)).map((brand, idx) => {
+                                {(product.id === 'tmt-bars' 
+                                    ? tmtBrands 
+                                    : (product.id === 'cement' 
+                                        ? cementBrands 
+                                        : (product.id === 'rmc' ? rmcBrands : paintBrands)
+                                      )
+                                 ).map((brand, idx) => {
                                     const selectedSpec = product.id === 'tmt-bars' 
                                         ? (selectedSizes[brand.name] || '12mm')
                                         : (product.id === 'cement' 
                                             ? (selectedGrades[brand.name] || 'PPC')
-                                            : (selectedRmcGrades[brand.name] || 'M25'));
-                                    const specs = product.id === 'tmt-bars' ? brand.sizes : brand.grades;
-                                    const specsLabel = product.id === 'tmt-bars' ? 'Available Sizes' : 'Available Grades';
+                                            : (product.id === 'rmc' 
+                                                ? (selectedRmcGrades[brand.name] || 'M25')
+                                                : (selectedPaintCategories[brand.name] || 'Interior')
+                                              )
+                                          );
+                                    const specs = product.id === 'tmt-bars' 
+                                        ? brand.sizes 
+                                        : (product.id === 'cement' || product.id === 'rmc' ? brand.grades : brand.categories);
+                                    const specsLabel = product.id === 'tmt-bars' 
+                                        ? 'Available Sizes' 
+                                        : (product.id === 'cement' || product.id === 'rmc' ? 'Available Grades' : 'Available Categories');
                                     
                                     return (
                                         <div className="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay={`${0.1 + (idx * 0.05)}s`} key={brand.id}>
@@ -582,8 +711,10 @@ const ProductDetailMain = ({ product }) => {
                                                                         changeSelectedSize(brand.name, spec);
                                                                     } else if (product.id === 'cement') {
                                                                         changeSelectedGrade(brand.name, spec);
-                                                                    } else {
+                                                                    } else if (product.id === 'rmc') {
                                                                         changeSelectedRmcGrade(brand.name, spec);
+                                                                    } else {
+                                                                        changeSelectedPaintCategory(brand.name, spec);
                                                                     }
                                                                 }}
                                                             >
@@ -668,7 +799,7 @@ const ProductDetailMain = ({ product }) => {
                     <div className="col-lg-10 wow fadeInUp" data-wow-delay=".3s">
                         <h3 className="brand-showcase__title">Authorized Brands We Deal In</h3>
                         
-                        {product.id === 'tmt-bars' || product.id === 'cement' || product.id === 'rmc' ? (
+                        {product.id === 'tmt-bars' || product.id === 'cement' || product.id === 'rmc' || product.id === 'paints' ? (
                             <div className="tmt-brand-marquee">
                                 <div className="tmt-brand-marquee__inner">
                                     <div className="tmt-brand-marquee__group">
@@ -676,7 +807,10 @@ const ProductDetailMain = ({ product }) => {
                                             ? [tmtLogo1, tmtLogo2, tmtLogo3, tmtLogo5, tmtLogo6, tmtLogo7] 
                                             : (product.id === 'cement'
                                                 ? [cementLogoNuvoco, cementLogoUltraTech, cementLogoPrism, cementLogoBirlaShakti, cementLogoACC, cementLogoAmbuja]
-                                                : [cementLogoNuvoco, cementLogoUltraTech, cementLogoACC, cementLogoAmbuja]
+                                                : (product.id === 'rmc'
+                                                    ? [cementLogoNuvoco, cementLogoUltraTech, cementLogoACC, cementLogoAmbuja]
+                                                    : [paintLogoAsian, paintLogoBerger, paintLogoBirlaOpus, paintLogoDulux, paintLogoNerolac]
+                                                  )
                                               )
                                         ).map((logo, idx) => (
                                             <div className="tmt-brand-marquee__item" key={idx}>
@@ -689,7 +823,10 @@ const ProductDetailMain = ({ product }) => {
                                             ? [tmtLogo1, tmtLogo2, tmtLogo3, tmtLogo5, tmtLogo6, tmtLogo7] 
                                             : (product.id === 'cement'
                                                 ? [cementLogoNuvoco, cementLogoUltraTech, cementLogoPrism, cementLogoBirlaShakti, cementLogoACC, cementLogoAmbuja]
-                                                : [cementLogoNuvoco, cementLogoUltraTech, cementLogoACC, cementLogoAmbuja]
+                                                : (product.id === 'rmc'
+                                                    ? [cementLogoNuvoco, cementLogoUltraTech, cementLogoACC, cementLogoAmbuja]
+                                                    : [paintLogoAsian, paintLogoBerger, paintLogoBirlaOpus, paintLogoDulux, paintLogoNerolac]
+                                                  )
                                               )
                                         ).map((logo, idx) => (
                                             <div className="tmt-brand-marquee__item" key={`dup-${idx}`}>
