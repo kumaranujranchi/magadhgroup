@@ -5,39 +5,23 @@ const CalculatorsMain = () => {
     const [activeCalc, setActiveCalc] = useState(null);
     const formRef = useRef(null);
 
-    // 1. Flooring Calculator States
-    const [roomLength, setRoomLength] = useState('');
-    const [roomWidth, setRoomWidth] = useState('');
-    const [flooringType, setFlooringType] = useState('ceramic');
-    const [tileLength, setTileLength] = useState('12');
-    const [tileWidth, setTileWidth] = useState('12');
-    const [wastage, setWastage] = useState('10');
-    const [materialPrice, setMaterialPrice] = useState('');
-    const [flooringResults, setFlooringResults] = useState(null);
+    // 1. Cement Calculator States
+    const [cementType, setCementType] = useState('concrete');
+    const [cementLength, setCementLength] = useState('');
+    const [cementWidth, setCementWidth] = useState('');
+    const [cementThick, setCementThick] = useState('6');
+    const [cementMixRatio, setCementMixRatio] = useState('M20');
+    const [cementPrice, setCementPrice] = useState('');
+    const [cementResults, setCementResults] = useState(null);
 
-    // 2. Paint Calculator States
-    const [paintWallLength, setPaintWallLength] = useState('');
-    const [paintWallHeight, setPaintWallHeight] = useState('');
-    const [paintWallCount, setPaintWallCount] = useState('4');
-    const [paintDoors, setPaintDoors] = useState('1');
-    const [paintWindows, setPaintWindows] = useState('1');
-    const [paintCoats, setPaintCoats] = useState('2');
-    const [paintCoverage, setPaintCoverage] = useState('100');
-    const [paintPrice, setPaintPrice] = useState('');
-    const [paintResults, setPaintResults] = useState(null);
+    // 2. Steel Calculator States
+    const [steelDia, setSteelDia] = useState('12');
+    const [steelUnit, setSteelUnit] = useState('rods');
+    const [steelQty, setSteelQty] = useState('');
+    const [steelPrice, setSteelPrice] = useState('');
+    const [steelResults, setSteelResults] = useState(null);
 
-    // 3. Electrical Load Calculator States
-    const [elecLights, setElecLights] = useState('');
-    const [elecFans, setElecFans] = useState('');
-    const [elecAcs, setElecAcs] = useState('');
-    const [elecFridges, setElecFridges] = useState('');
-    const [elecTvs, setElecTvs] = useState('');
-    const [elecGeysers, setElecGeysers] = useState('');
-    const [elecHeavy, setElecHeavy] = useState('');
-    const [elecVoltage, setElecVoltage] = useState('220');
-    const [elecResults, setElecResults] = useState(null);
-
-    // 4. RMC Calculator States
+    // 3. RMC Calculator States
     const [rmcShape, setRmcShape] = useState('slab');
     const [rmcSlabLength, setRmcSlabLength] = useState('');
     const [rmcSlabWidth, setRmcSlabWidth] = useState('');
@@ -53,58 +37,75 @@ const CalculatorsMain = () => {
     const [rmcPrice, setRmcPrice] = useState('');
     const [rmcResults, setRmcResults] = useState(null);
 
-    // 5. Steel Calculator States
-    const [steelDia, setSteelDia] = useState('12');
-    const [steelUnit, setSteelUnit] = useState('rods');
-    const [steelQty, setSteelQty] = useState('');
-    const [steelPrice, setSteelPrice] = useState('');
-    const [steelResults, setSteelResults] = useState(null);
+    // 4. Brick Calculator States
+    const [brickWallLength, setBrickWallLength] = useState('');
+    const [brickWallHeight, setBrickWallHeight] = useState('');
+    const [brickWallThick, setBrickWallThick] = useState('5');
+    const [brickSize, setBrickSize] = useState('standard');
+    const [brickMix, setBrickMix] = useState('1:6');
+    const [brickWastage, setBrickWastage] = useState('10');
+    const [brickPrice, setBrickPrice] = useState('');
+    const [brickCementPrice, setBrickCementPrice] = useState('');
+    const [brickResults, setBrickResults] = useState(null);
 
-    // 6. AC Load Calculator States
-    const [acLength, setAcLength] = useState('');
-    const [acWidth, setAcWidth] = useState('');
-    const [acHeight, setAcHeight] = useState('10');
-    const [acSun, setAcSun] = useState('medium');
-    const [acPeople, setAcPeople] = useState('2');
-    const [acAppliances, setAcAppliances] = useState('1');
-    const [acResults, setAcResults] = useState(null);
+    // 5. Electrical Load Calculator States
+    const [elecLights, setElecLights] = useState('');
+    const [elecFans, setElecFans] = useState('');
+    const [elecAcs, setElecAcs] = useState('');
+    const [elecFridges, setElecFridges] = useState('');
+    const [elecTvs, setElecTvs] = useState('');
+    const [elecGeysers, setElecGeysers] = useState('');
+    const [elecHeavy, setElecHeavy] = useState('');
+    const [elecVoltage, setElecVoltage] = useState('220');
+    const [elecResults, setElecResults] = useState(null);
+
+    // 6. Paint Calculator States
+    const [paintWallLength, setPaintWallLength] = useState('');
+    const [paintWallHeight, setPaintWallHeight] = useState('');
+    const [paintWallCount, setPaintWallCount] = useState('4');
+    const [paintDoors, setPaintDoors] = useState('1');
+    const [paintWindows, setPaintWindows] = useState('1');
+    const [paintCoats, setPaintCoats] = useState('2');
+    const [paintCoverage, setPaintCoverage] = useState('100');
+    const [paintPrice, setPaintPrice] = useState('');
+    const [paintResults, setPaintResults] = useState(null);
 
     const calculatorsList = [
         {
-            id: 'flooring',
-            title: 'Flooring Calculator',
-            description: 'Calculate tiles, marble, or flooring material requirements',
-            icon: 'fa-solid fa-border-all',
-        },
-        {
-            id: 'paint',
-            title: 'Paint Calculator',
-            description: 'Calculate paint quantity for walls and surfaces',
-            icon: 'fa-solid fa-paint-roller',
-        },
-        {
-            id: 'electrical',
-            title: 'Electrical Load Calculator',
-            description: 'Calculate electrical load and wire requirements',
-            icon: 'fa-solid fa-bolt',
-        },
-        {
-            id: 'rmc',
-            title: 'RMC Calculator',
-            description: 'Calculate Ready Mix Concrete requirements',
-            icon: 'fa-solid fa-truck-moving',
+            id: 'cement',
+            title: 'Cement Calculator',
+            description: 'Estimate cement bags, sand, and aggregate requirements for concrete and plastering',
+            icon: 'fa-solid fa-trowel-bricks',
         },
         {
             id: 'steel',
             title: 'Steel Calculator',
-            description: 'Calculate TMT bar requirements for construction',
+            description: 'Calculate TMT bar weight and cost based on length and diameter',
             icon: 'fa-solid fa-cubes-stacked',
         },
         {
-            id: 'ac',
-            title: 'AC Load Calculator',
-            description: 'Calculate AC tonnage based on room size',
-            icon: 'fa-solid fa-snowflake',
+            id: 'rmc',
+            title: 'RMC Calculator',
+            description: 'Calculate Ready Mix Concrete volume and cement requirements',
+            icon: 'fa-solid fa-truck-moving',
+        },
+        {
+            id: 'brick',
+            title: 'Brick Calculator',
+            description: 'Estimate bricks, cement, and sand quantity for wall masonry',
+            icon: 'fa-solid fa-cubes',
+        },
+        {
+            id: 'electrical',
+            title: 'Electrical Load Calculator',
+            description: 'Calculate total load, amperes, MCB rating, and recommended wire size',
+            icon: 'fa-solid fa-bolt',
+        },
+        {
+            id: 'paint',
+            title: 'Paint Calculator',
+            description: 'Calculate paint quantity and costing for walls and ceiling surfaces',
+            icon: 'fa-solid fa-paint-roller',
         }
     ];
 
@@ -112,34 +113,18 @@ const CalculatorsMain = () => {
         setActiveCalc(id);
         
         // Reset all inputs and results
-        setFlooringResults(null);
-        setRoomLength('');
-        setRoomWidth('');
-        setFlooringType('ceramic');
-        setTileLength('12');
-        setTileWidth('12');
-        setWastage('10');
-        setMaterialPrice('');
+        setCementResults(null);
+        setCementLength('');
+        setCementWidth('');
+        setCementThick('6');
+        setCementMixRatio('M20');
+        setCementPrice('');
 
-        setPaintResults(null);
-        setPaintWallLength('');
-        setPaintWallHeight('');
-        setPaintWallCount('4');
-        setPaintDoors('1');
-        setPaintWindows('1');
-        setPaintCoats('2');
-        setPaintCoverage('100');
-        setPaintPrice('');
-
-        setElecResults(null);
-        setElecLights('');
-        setElecFans('');
-        setElecAcs('');
-        setElecFridges('');
-        setElecTvs('');
-        setElecGeysers('');
-        setElecHeavy('');
-        setElecVoltage('220');
+        setSteelResults(null);
+        setSteelDia('12');
+        setSteelUnit('rods');
+        setSteelQty('');
+        setSteelPrice('');
 
         setRmcResults(null);
         setRmcShape('slab');
@@ -156,19 +141,35 @@ const CalculatorsMain = () => {
         setRmcWastage('10');
         setRmcPrice('');
 
-        setSteelResults(null);
-        setSteelDia('12');
-        setSteelUnit('rods');
-        setSteelQty('');
-        setSteelPrice('');
+        setBrickResults(null);
+        setBrickWallLength('');
+        setBrickWallHeight('');
+        setBrickWallThick('5');
+        setBrickSize('standard');
+        setBrickMix('1:6');
+        setBrickWastage('10');
+        setBrickPrice('');
+        setBrickCementPrice('');
 
-        setAcResults(null);
-        setAcLength('');
-        setAcWidth('');
-        setAcHeight('10');
-        setAcSun('medium');
-        setAcPeople('2');
-        setAcAppliances('1');
+        setElecResults(null);
+        setElecLights('');
+        setElecFans('');
+        setElecAcs('');
+        setElecFridges('');
+        setElecTvs('');
+        setElecGeysers('');
+        setElecHeavy('');
+        setElecVoltage('220');
+
+        setPaintResults(null);
+        setPaintWallLength('');
+        setPaintWallHeight('');
+        setPaintWallCount('4');
+        setPaintDoors('1');
+        setPaintWindows('1');
+        setPaintCoats('2');
+        setPaintCoverage('100');
+        setPaintPrice('');
         
         setTimeout(() => {
             if (formRef.current) {
@@ -177,153 +178,109 @@ const CalculatorsMain = () => {
         }, 100);
     };
 
-    // 1. Flooring Calculation
-    const calculateFlooring = (e) => {
+    // 1. Cement Calculation
+    const calculateCement = (e) => {
         e.preventDefault();
-        const length = parseFloat(roomLength);
-        const width = parseFloat(roomWidth);
-        const wastePercent = parseFloat(wastage) || 0;
-        const price = parseFloat(materialPrice) || 0;
-        
+        const length = parseFloat(cementLength);
+        const width = parseFloat(cementWidth);
+        const thick = parseFloat(cementThick);
+        const price = parseFloat(cementPrice) || 0;
+
         if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
             alert("Please enter valid positive dimensions.");
             return;
         }
-        
-        const totalArea = length * width;
-        const wasteArea = totalArea * (wastePercent / 100);
-        const areaWithWaste = totalArea + wasteArea;
-        
-        let result = {
-            totalArea: totalArea.toFixed(2),
-            wastePercent: wastePercent,
-            wasteArea: wasteArea.toFixed(2),
-            areaWithWaste: areaWithWaste.toFixed(2),
-            flooringType: flooringType,
-            price: price
-        };
-        
-        if (flooringType === 'ceramic' || flooringType === 'vitrified') {
-            const tLength = parseFloat(tileLength);
-            const tWidth = parseFloat(tileWidth);
-            
-            if (isNaN(tLength) || isNaN(tWidth) || tLength <= 0 || tWidth <= 0) {
-                alert("Please enter valid tile dimensions.");
-                return;
+
+        const volumeCFT = length * width * (thick / 12);
+        const volumeCUM = volumeCFT * 0.0283168;
+
+        let dryVolume = 0;
+        let cementBags = 0;
+        let sandCFT = 0;
+        let aggregateCFT = 0;
+
+        if (cementType === 'concrete') {
+            dryVolume = volumeCFT * 1.54; // Compaction & wastage factor
+            let cementPart = 1, sandPart = 1.5, aggregatePart = 3;
+            if (cementMixRatio === 'M15') {
+                cementPart = 1; sandPart = 2; aggregatePart = 4;
+            } else if (cementMixRatio === 'M20') {
+                cementPart = 1; sandPart = 1.5; aggregatePart = 3;
+            } else if (cementMixRatio === 'M25') {
+                cementPart = 1; sandPart = 1; aggregatePart = 2;
             }
-            
-            const tileAreaSqIn = tLength * tWidth;
-            const tileAreaSqFt = tileAreaSqIn / 144;
-            const totalTiles = Math.ceil(areaWithWaste / tileAreaSqFt);
-            
-            let tilesPerBox = 10;
-            if (tLength === 24 && tWidth === 24) {
-                tilesPerBox = 4;
-            } else if (tLength === 12 && tWidth === 12) {
-                tilesPerBox = 10;
-            } else {
-                const targetCoverage = 15;
-                tilesPerBox = Math.max(1, Math.round(targetCoverage / tileAreaSqFt));
+            const totalParts = cementPart + sandPart + aggregatePart;
+            const cementCFT = dryVolume * (cementPart / totalParts);
+            cementBags = Math.ceil(cementCFT / 1.226);
+            sandCFT = dryVolume * (sandPart / totalParts);
+            aggregateCFT = dryVolume * (aggregatePart / totalParts);
+        } else { // plaster or screed
+            dryVolume = volumeCFT * 1.33; // Dry shrinkage & waste factor
+            let cementPart = 1, sandPart = 6;
+            if (cementMixRatio === '1:3') {
+                cementPart = 1; sandPart = 3;
+            } else if (cementMixRatio === '1:4') {
+                cementPart = 1; sandPart = 4;
+            } else if (cementMixRatio === '1:6') {
+                cementPart = 1; sandPart = 6;
             }
-            
-            const boxCoverage = tilesPerBox * tileAreaSqFt;
-            const totalBoxes = Math.ceil(areaWithWaste / boxCoverage);
-            
-            result = {
-                ...result,
-                isTile: true,
-                tileLength: tLength,
-                tileWidth: tWidth,
-                totalTiles: totalTiles,
-                tilesPerBox: tilesPerBox,
-                boxCoverage: boxCoverage.toFixed(2),
-                totalBoxes: totalBoxes,
-                totalCost: price > 0 ? (totalBoxes * price).toFixed(2) : null
-            };
-        } else {
-            result = {
-                ...result,
-                isTile: false,
-                totalCost: price > 0 ? (areaWithWaste * price).toFixed(2) : null
-            };
+            const totalParts = cementPart + sandPart;
+            const cementCFT = dryVolume * (cementPart / totalParts);
+            cementBags = Math.ceil(cementCFT / 1.226);
+            sandCFT = dryVolume * (sandPart / totalParts);
         }
-        
-        setFlooringResults(result);
+
+        setCementResults({
+            netCFT: volumeCFT.toFixed(2),
+            netCUM: volumeCUM.toFixed(2),
+            dryVolume: dryVolume.toFixed(2),
+            cementBags: cementBags,
+            sandCFT: sandCFT.toFixed(2),
+            aggregateCFT: aggregateCFT > 0 ? aggregateCFT.toFixed(2) : null,
+            totalCost: price > 0 ? (cementBags * price).toFixed(2) : null,
+            cementPrice: price,
+            cementType: cementType,
+            cementMixRatio: cementMixRatio
+        });
     };
 
-    // 2. Paint Calculation
-    const calculatePaint = (e) => {
+    // 2. Steel Calculation
+    const calculateSteel = (e) => {
         e.preventDefault();
-        const length = parseFloat(paintWallLength);
-        const height = parseFloat(paintWallHeight);
-        const count = parseFloat(paintWallCount) || 4;
-        const doors = parseFloat(paintDoors) || 0;
-        const windows = parseFloat(paintWindows) || 0;
-        const coats = parseFloat(paintCoats) || 2;
-        const coverage = parseFloat(paintCoverage) || 100;
-        const price = parseFloat(paintPrice) || 0;
+        const dia = parseFloat(steelDia);
+        const qty = parseFloat(steelQty);
+        const price = parseFloat(steelPrice) || 0;
 
-        if (isNaN(length) || isNaN(height) || length <= 0 || height <= 0) {
-            alert("Please enter valid wall dimensions.");
+        if (isNaN(qty) || qty <= 0) {
+            alert("Please enter a valid quantity.");
             return;
         }
 
-        const totalArea = length * height * count;
-        const deductionArea = (doors * 20) + (windows * 15);
-        const netArea = Math.max(0, totalArea - deductionArea);
-        const totalCoatsArea = netArea * coats;
-        const paintRequired = Math.ceil(totalCoatsArea / coverage);
+        const unitWeight = (dia * dia) / 162;
+        let totalLengthMeters = 0;
 
-        setPaintResults({
-            totalArea: totalArea.toFixed(2),
-            deductionArea: deductionArea.toFixed(2),
-            netArea: netArea.toFixed(2),
-            coats: coats,
-            paintRequired: paintRequired,
-            totalCost: price > 0 ? (paintRequired * price).toFixed(2) : null
-        });
-    };
-
-    // 3. Electrical Load Calculation
-    const calculateElectrical = (e) => {
-        e.preventDefault();
-        const lights = parseFloat(elecLights) || 0;
-        const fans = parseFloat(elecFans) || 0;
-        const acs = parseFloat(elecAcs) || 0;
-        const fridge = parseFloat(elecFridges) || 0;
-        const tv = parseFloat(elecTvs) || 0;
-        const geyser = parseFloat(elecGeysers) || 0;
-        const heavy = parseFloat(elecHeavy) || 0;
-        const volt = parseFloat(elecVoltage) || 220;
-
-        const totalWatts = (lights * 15) + (fans * 75) + (acs * 1500) + (fridge * 400) + (tv * 150) + (geyser * 2000) + (heavy * 1000);
-        const totalKW = totalWatts / 1000;
-        const totalKVA = totalKW / 0.8;
-        const amps = totalWatts / volt;
-        const mcb = Math.ceil(amps * 1.25);
-
-        let wireSize = '2.5';
-        if (totalKW <= 2) {
-            wireSize = '2.5';
-        } else if (totalKW <= 5) {
-            wireSize = '4.0';
-        } else if (totalKW <= 10) {
-            wireSize = '6.0';
+        if (steelUnit === 'meters') {
+            totalLengthMeters = qty;
+        } else if (steelUnit === 'feet') {
+            totalLengthMeters = qty * 0.3048;
         } else {
-            wireSize = '10.0';
+            totalLengthMeters = qty * 12; // rods (approx 12 meters per rod)
         }
 
-        setElecResults({
-            totalWatts: totalWatts,
-            totalKW: totalKW.toFixed(2),
-            totalKVA: totalKVA.toFixed(2),
-            amps: amps.toFixed(1),
-            mcb: mcb,
-            wireSize: wireSize
+        const totalWeightKg = totalLengthMeters * unitWeight;
+        const totalWeightTons = totalWeightKg / 1000;
+
+        setSteelResults({
+            unitWeight: unitWeight.toFixed(3),
+            totalLength: totalLengthMeters.toFixed(2),
+            totalWeightKg: totalWeightKg.toFixed(2),
+            totalWeightTons: totalWeightTons.toFixed(3),
+            price: price,
+            totalCost: price > 0 ? (totalWeightKg * price).toFixed(2) : null
         });
     };
 
-    // 4. RMC Calculation
+    // 3. RMC Calculation
     const calculateRMC = (e) => {
         e.preventDefault();
         const wastagePercent = parseFloat(rmcWastage) || 10;
@@ -381,95 +338,144 @@ const CalculatorsMain = () => {
         });
     };
 
-    // 5. Steel Calculation
-    const calculateSteel = (e) => {
+    // 4. Brick Calculation
+    const calculateBrick = (e) => {
         e.preventDefault();
-        const dia = parseFloat(steelDia);
-        const qty = parseFloat(steelQty);
-        const price = parseFloat(steelPrice) || 0;
+        const length = parseFloat(brickWallLength);
+        const height = parseFloat(brickWallHeight);
+        const thick = parseFloat(brickWallThick);
+        const wastagePercent = parseFloat(brickWastage) || 10;
+        const bPrice = parseFloat(brickPrice) || 0;
+        const cPrice = parseFloat(brickCementPrice) || 0;
 
-        if (isNaN(qty) || qty <= 0) {
-            alert("Please enter a valid quantity.");
+        if (isNaN(length) || isNaN(height) || length <= 0 || height <= 0) {
+            alert("Please enter valid wall dimensions.");
             return;
         }
 
-        const unitWeight = (dia * dia) / 162;
-        let totalLengthMeters = 0;
+        const wallVolumeCFT = length * height * (thick / 12);
 
-        if (steelUnit === 'meters') {
-            totalLengthMeters = qty;
-        } else if (steelUnit === 'feet') {
-            totalLengthMeters = qty * 0.3048;
-        } else {
-            totalLengthMeters = qty * 12;
+        let brickLengthInches = 9;
+        let brickWidthInches = 4.5;
+        let brickHeightInches = 3;
+
+        if (brickSize === 'modular') {
+            brickLengthInches = 7.5;
+            brickWidthInches = 3.5;
+            brickHeightInches = 3.5;
         }
 
-        const totalWeightKg = totalLengthMeters * unitWeight;
-        const totalWeightTons = totalWeightKg / 1000;
+        // Brick volume without mortar (CFT)
+        const singleBrickVol = (brickLengthInches * brickWidthInches * brickHeightInches) / 1728;
+        // Brick volume with 0.5" mortar (CFT)
+        const singleBrickWithMortarVol = ((brickLengthInches + 0.5) * (brickWidthInches + 0.5) * (brickHeightInches + 0.5)) / 1728;
 
-        setSteelResults({
-            unitWeight: unitWeight.toFixed(3),
-            totalLength: totalLengthMeters.toFixed(2),
-            totalWeightKg: totalWeightKg.toFixed(2),
-            totalWeightTons: totalWeightTons.toFixed(3),
-            price: price,
-            totalCost: price > 0 ? (totalWeightKg * price).toFixed(2) : null
+        const baseBricks = wallVolumeCFT / singleBrickWithMortarVol;
+        const totalBricks = Math.ceil(baseBricks * (1 + wastagePercent / 100));
+
+        // Mortar volume calculation
+        const actualBricksVol = baseBricks * singleBrickVol;
+        const wetMortarVol = Math.max(0, wallVolumeCFT - actualBricksVol);
+        const dryMortarVol = wetMortarVol * 1.33;
+
+        let cementPart = 1, sandPart = 6;
+        if (brickMix === '1:4') {
+            cementPart = 1; sandPart = 4;
+        } else if (brickMix === '1:6') {
+            cementPart = 1; sandPart = 6;
+        }
+
+        const totalParts = cementPart + sandPart;
+        const cementCFT = dryMortarVol * (cementPart / totalParts);
+        const cementBags = Math.ceil(cementCFT / 1.226);
+        const sandCFT = dryMortarVol * (sandPart / totalParts);
+
+        const brickCost = totalBricks * bPrice;
+        const cementCost = cementBags * cPrice;
+        const totalCost = (brickCost > 0 || cementCost > 0) ? (brickCost + cementCost).toFixed(2) : null;
+
+        setBrickResults({
+            wallVolume: wallVolumeCFT.toFixed(2),
+            totalBricks: totalBricks,
+            cementBags: cementBags,
+            sandCFT: sandCFT.toFixed(2),
+            brickCost: brickCost > 0 ? brickCost.toFixed(2) : null,
+            cementCost: cementCost > 0 ? cementCost.toFixed(2) : null,
+            totalCost: totalCost,
+            brickPrice: bPrice,
+            cementPrice: cPrice
         });
     };
 
-    // 6. AC Load Calculation
-    const calculateAC = (e) => {
+    // 5. Electrical Load Calculation
+    const calculateElectrical = (e) => {
         e.preventDefault();
-        const length = parseFloat(acLength);
-        const width = parseFloat(acWidth);
-        const height = parseFloat(acHeight) || 10;
-        const sun = acSun;
-        const people = parseFloat(acPeople) || 2;
-        const appliances = parseFloat(acAppliances) || 1;
+        const lights = parseFloat(elecLights) || 0;
+        const fans = parseFloat(elecFans) || 0;
+        const acs = parseFloat(elecAcs) || 0;
+        const fridge = parseFloat(elecFridges) || 0;
+        const tv = parseFloat(elecTvs) || 0;
+        const geyser = parseFloat(elecGeysers) || 0;
+        const heavy = parseFloat(elecHeavy) || 0;
+        const volt = parseFloat(elecVoltage) || 220;
 
-        if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
-            alert("Please enter valid room dimensions.");
+        const totalWatts = (lights * 15) + (fans * 75) + (acs * 1500) + (fridge * 400) + (tv * 150) + (geyser * 2000) + (heavy * 1000);
+        const totalKW = totalWatts / 1000;
+        const totalKVA = totalKW / 0.8;
+        const amps = totalWatts / volt;
+        const mcb = Math.ceil(amps * 1.25);
+
+        let wireSize = '2.5';
+        if (totalKW <= 2) {
+            wireSize = '2.5';
+        } else if (totalKW <= 5) {
+            wireSize = '4.0';
+        } else if (totalKW <= 10) {
+            wireSize = '6.0';
+        } else {
+            wireSize = '10.0';
+        }
+
+        setElecResults({
+            totalWatts: totalWatts,
+            totalKW: totalKW.toFixed(2),
+            totalKVA: totalKVA.toFixed(2),
+            amps: amps.toFixed(1),
+            mcb: mcb,
+            wireSize: wireSize
+        });
+    };
+
+    // 6. Paint Calculation
+    const calculatePaint = (e) => {
+        e.preventDefault();
+        const length = parseFloat(paintWallLength);
+        const height = parseFloat(paintWallHeight);
+        const count = parseFloat(paintWallCount) || 4;
+        const doors = parseFloat(paintDoors) || 0;
+        const windows = parseFloat(paintWindows) || 0;
+        const coats = parseFloat(paintCoats) || 2;
+        const coverage = parseFloat(paintCoverage) || 100;
+        const price = parseFloat(paintPrice) || 0;
+
+        if (isNaN(length) || isNaN(height) || length <= 0 || height <= 0) {
+            alert("Please enter valid wall dimensions.");
             return;
         }
 
-        const area = length * width;
-        const volume = area * height;
-        let btu = area * 35;
+        const totalArea = length * height * count;
+        const deductionArea = (doors * 20) + (windows * 15);
+        const netArea = Math.max(0, totalArea - deductionArea);
+        const totalCoatsArea = netArea * coats;
+        const paintRequired = Math.ceil(totalCoatsArea / coverage);
 
-        if (sun === 'shade') {
-            btu = btu * 0.9;
-        } else if (sun === 'high') {
-            btu = btu * 1.2;
-        }
-
-        if (people > 2) {
-            btu += (people - 2) * 600;
-        }
-        btu += appliances * 1000;
-
-        const tonnage = btu / 12000;
-        let recommendedTonnage = '1.0';
-
-        if (tonnage <= 0.8) {
-            recommendedTonnage = '0.8';
-        } else if (tonnage <= 1.0) {
-            recommendedTonnage = '1.0';
-        } else if (tonnage <= 1.2) {
-            recommendedTonnage = '1.2';
-        } else if (tonnage <= 1.5) {
-            recommendedTonnage = '1.5';
-        } else if (tonnage <= 2.0) {
-            recommendedTonnage = '2.0';
-        } else {
-            recommendedTonnage = (Math.ceil(tonnage * 2) / 2).toFixed(1) + ' (Multiple units recommended)';
-        }
-
-        setAcResults({
-            area: area.toFixed(2),
-            volume: volume.toFixed(2),
-            btu: Math.round(btu),
-            tonnage: tonnage.toFixed(2),
-            recommendedTonnage: recommendedTonnage
+        setPaintResults({
+            totalArea: totalArea.toFixed(2),
+            deductionArea: deductionArea.toFixed(2),
+            netArea: netArea.toFixed(2),
+            coats: coats,
+            paintRequired: paintRequired,
+            totalCost: price > 0 ? (paintRequired * price).toFixed(2) : null
         });
     };
 
@@ -561,12 +567,12 @@ const CalculatorsMain = () => {
                                         className="btn-close-calc"
                                         onClick={() => {
                                             setActiveCalc(null);
-                                            setFlooringResults(null);
-                                            setPaintResults(null);
-                                            setElecResults(null);
-                                            setRmcResults(null);
+                                            setCementResults(null);
                                             setSteelResults(null);
-                                            setAcResults(null);
+                                            setRmcResults(null);
+                                            setBrickResults(null);
+                                            setElecResults(null);
+                                            setPaintResults(null);
                                         }}
                                     >
                                         <i className="fa-solid fa-xmark"></i>
@@ -579,72 +585,316 @@ const CalculatorsMain = () => {
                             </div>
                             
                             <div className="calc__form-body mt-30">
-                                {/* 1. Flooring Calculator Form */}
-                                {activeCalc === 'flooring' && (
-                                    <form onSubmit={calculateFlooring}>
-                                        <div className="row">
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Room Length (feet)*</label>
-                                                <input 
-                                                    type="number" 
-                                                    step="any"
-                                                    required
-                                                    placeholder="e.g., 10" 
-                                                    value={roomLength}
-                                                    onChange={(e) => setRoomLength(e.target.value)}
-                                                />
-                                            </div>
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Room Width (feet)*</label>
-                                                <input 
-                                                    type="number" 
-                                                    step="any"
-                                                    required
-                                                    placeholder="e.g., 12" 
-                                                    value={roomWidth}
-                                                    onChange={(e) => setRoomWidth(e.target.value)}
-                                                />
-                                            </div>
-                                        </div>
-
+                                {/* 1. Cement Calculator Form */}
+                                {activeCalc === 'cement' && (
+                                    <form onSubmit={calculateCement}>
                                         <div className="row mb-20">
                                             <div className="col-12">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Flooring Type*</label>
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Type of Work*</label>
                                                 <select 
                                                     className="form-select w-100" 
                                                     style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
-                                                    value={flooringType}
-                                                    onChange={(e) => setFlooringType(e.target.value)}
+                                                    value={cementType}
+                                                    onChange={(e) => {
+                                                        setCementType(e.target.value);
+                                                        setCementMixRatio(e.target.value === 'concrete' ? 'M20' : '1:6');
+                                                    }}
                                                 >
-                                                    <option value="ceramic">Ceramic/Porcelain Tile</option>
-                                                    <option value="vitrified">Vitrified Tiles</option>
-                                                    <option value="marble">Marble</option>
-                                                    <option value="granite">Granite</option>
-                                                    <option value="wooden">Wooden Flooring</option>
+                                                    <option value="concrete">Concrete Casting (Slabs, Beams, Columns)</option>
+                                                    <option value="plaster">Plastering & Brick Masonry Mortar</option>
                                                 </select>
                                             </div>
                                         </div>
 
-                                        {(flooringType === 'ceramic' || flooringType === 'vitrified') && (
+                                        <div className="row">
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Length / Area Length (feet)*</label>
+                                                <input 
+                                                    type="number" 
+                                                    step="any"
+                                                    required
+                                                    placeholder="e.g., 20" 
+                                                    value={cementLength}
+                                                    onChange={(e) => setCementLength(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Width / Area Width (feet)*</label>
+                                                <input 
+                                                    type="number" 
+                                                    step="any"
+                                                    required
+                                                    placeholder="e.g., 15" 
+                                                    value={cementWidth}
+                                                    onChange={(e) => setCementWidth(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="row">
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Thickness (inches)*</label>
+                                                <input 
+                                                    type="number" 
+                                                    step="any"
+                                                    required
+                                                    placeholder={cementType === 'concrete' ? 'e.g., 6' : 'e.g., 0.5'} 
+                                                    value={cementThick}
+                                                    onChange={(e) => setCementThick(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Mix Ratio*</label>
+                                                <select 
+                                                    className="form-select w-100" 
+                                                    style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
+                                                    value={cementMixRatio}
+                                                    onChange={(e) => setCementMixRatio(e.target.value)}
+                                                >
+                                                    {cementType === 'concrete' ? (
+                                                        <>
+                                                            <option value="M15">M15 (1 : 2 : 4) - General Works</option>
+                                                            <option value="M20">M20 (1 : 1.5 : 3) - Slabs & Beams</option>
+                                                            <option value="M25">M25 (1 : 1 : 2) - Columns & Foundations</option>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <option value="1:3">1:3 - Rich Mortar (Ceiling plaster)</option>
+                                                            <option value="1:4">1:4 - Standard Plaster (Inner Walls)</option>
+                                                            <option value="1:6">1:6 - Standard Brickwork Mortar</option>
+                                                        </>
+                                                    )}
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div className="row mb-30">
+                                            <div className="col-md-12 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Cement Price (₹ / Bag)</label>
+                                                <input 
+                                                    type="number" 
+                                                    step="any"
+                                                    placeholder="e.g., 420" 
+                                                    value={cementPrice}
+                                                    onChange={(e) => setCementPrice(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="row">
+                                            <div className="col-12">
+                                                <button type="submit" className="build_button w-100 justify-content-center" style={{ padding: '17px 40px', borderRadius: '6px' }}>
+                                                    Calculate Cement Requirements <i className="flaticon-right-up"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                )}
+
+                                {/* 2. Steel Calculator Form */}
+                                {activeCalc === 'steel' && (
+                                    <form onSubmit={calculateSteel}>
+                                        <div className="row">
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Bar Diameter (mm)*</label>
+                                                <select 
+                                                    className="form-select w-100" 
+                                                    style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
+                                                    value={steelDia}
+                                                    onChange={(e) => setSteelDia(e.target.value)}
+                                                >
+                                                    <option value="8">8 mm</option>
+                                                    <option value="10">10 mm</option>
+                                                    <option value="12">12 mm</option>
+                                                    <option value="16">16 mm</option>
+                                                    <option value="20">20 mm</option>
+                                                    <option value="25">25 mm</option>
+                                                    <option value="32">32 mm</option>
+                                                </select>
+                                            </div>
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Quantity Type*</label>
+                                                <select 
+                                                    className="form-select w-100" 
+                                                    style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
+                                                    value={steelUnit}
+                                                    onChange={(e) => setSteelUnit(e.target.value)}
+                                                >
+                                                    <option value="rods">Rods (approx. 12m each)</option>
+                                                    <option value="meters">Meters</option>
+                                                    <option value="feet">Feet</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div className="row mb-30">
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Total Quantity*</label>
+                                                <input 
+                                                    type="number" 
+                                                    step="any"
+                                                    required
+                                                    placeholder="e.g., 50" 
+                                                    value={steelQty}
+                                                    onChange={(e) => setSteelQty(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Steel Price (₹ / kg)</label>
+                                                <input 
+                                                    type="number" 
+                                                    step="any"
+                                                    placeholder="e.g., 65" 
+                                                    value={steelPrice}
+                                                    onChange={(e) => setSteelPrice(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="row">
+                                            <div className="col-12">
+                                                <button type="submit" className="build_button w-100 justify-content-center" style={{ padding: '17px 40px', borderRadius: '6px' }}>
+                                                    Calculate Steel Weight <i className="flaticon-right-up"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                )}
+
+                                {/* 3. RMC Calculator Form */}
+                                {activeCalc === 'rmc' && (
+                                    <form onSubmit={calculateRMC}>
+                                        <div className="row mb-20">
+                                            <div className="col-12">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Structure Shape*</label>
+                                                <select 
+                                                    className="form-select w-100" 
+                                                    style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
+                                                    value={rmcShape}
+                                                    onChange={(e) => setRmcShape(e.target.value)}
+                                                >
+                                                    <option value="slab">Slab (Rectangular Casting)</option>
+                                                    <option value="circular">Circular Columns</option>
+                                                    <option value="square">Square/Rectangular Columns or Beams</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        {rmcShape === 'slab' && (
                                             <div className="row">
-                                                <div className="col-md-6 mb-20">
-                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Tile Length (inches)</label>
+                                                <div className="col-md-4 mb-20">
+                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Slab Length (feet)*</label>
                                                     <input 
                                                         type="number" 
                                                         step="any"
-                                                        placeholder="12" 
-                                                        value={tileLength}
-                                                        onChange={(e) => setTileLength(e.target.value)}
+                                                        required
+                                                        placeholder="e.g., 50" 
+                                                        value={rmcSlabLength}
+                                                        onChange={(e) => setRmcSlabLength(e.target.value)}
                                                     />
                                                 </div>
-                                                <div className="col-md-6 mb-20">
-                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Tile Width (inches)</label>
+                                                <div className="col-md-4 mb-20">
+                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Slab Width (feet)*</label>
                                                     <input 
                                                         type="number" 
                                                         step="any"
-                                                        placeholder="12" 
-                                                        value={tileWidth}
-                                                        onChange={(e) => setTileWidth(e.target.value)}
+                                                        required
+                                                        placeholder="e.g., 30" 
+                                                        value={rmcSlabWidth}
+                                                        onChange={(e) => setRmcSlabWidth(e.target.value)}
+                                                    />
+                                                </div>
+                                                <div className="col-md-4 mb-20">
+                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Slab Thickness (inches)</label>
+                                                    <input 
+                                                        type="number" 
+                                                        step="any"
+                                                        placeholder="6" 
+                                                        value={rmcSlabThick}
+                                                        onChange={(e) => setRmcSlabThick(e.target.value)}
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {rmcShape === 'circular' && (
+                                            <div className="row">
+                                                <div className="col-md-4 mb-20">
+                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Column Diameter (feet)*</label>
+                                                    <input 
+                                                        type="number" 
+                                                        step="any"
+                                                        required
+                                                        placeholder="e.g., 1.5" 
+                                                        value={rmcColDia}
+                                                        onChange={(e) => setRmcColDia(e.target.value)}
+                                                    />
+                                                </div>
+                                                <div className="col-md-4 mb-20">
+                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Column Height (feet)*</label>
+                                                    <input 
+                                                        type="number" 
+                                                        step="any"
+                                                        required
+                                                        placeholder="e.g., 10" 
+                                                        value={rmcColHeight}
+                                                        onChange={(e) => setRmcColHeight(e.target.value)}
+                                                    />
+                                                </div>
+                                                <div className="col-md-4 mb-20">
+                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Number of Columns</label>
+                                                    <input 
+                                                        type="number" 
+                                                        placeholder="1" 
+                                                        value={rmcColCount}
+                                                        onChange={(e) => setRmcColCount(e.target.value)}
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {rmcShape === 'square' && (
+                                            <div className="row">
+                                                <div className="col-md-3 mb-20">
+                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Length (feet)*</label>
+                                                    <input 
+                                                        type="number" 
+                                                        step="any"
+                                                        required
+                                                        placeholder="e.g., 1.5" 
+                                                        value={rmcSqColLength}
+                                                        onChange={(e) => setRmcSqColLength(e.target.value)}
+                                                    />
+                                                </div>
+                                                <div className="col-md-3 mb-20">
+                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Width (feet)*</label>
+                                                    <input 
+                                                        type="number" 
+                                                        step="any"
+                                                        required
+                                                        placeholder="e.g., 1" 
+                                                        value={rmcSqColWidth}
+                                                        onChange={(e) => setRmcSqColWidth(e.target.value)}
+                                                    />
+                                                </div>
+                                                <div className="col-md-3 mb-20">
+                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Height / Span (feet)*</label>
+                                                    <input 
+                                                        type="number" 
+                                                        step="any"
+                                                        required
+                                                        placeholder="e.g., 12" 
+                                                        value={rmcSqColHeight}
+                                                        onChange={(e) => setRmcSqColHeight(e.target.value)}
+                                                    />
+                                                </div>
+                                                <div className="col-md-3 mb-20">
+                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Quantity</label>
+                                                    <input 
+                                                        type="number" 
+                                                        placeholder="1" 
+                                                        value={rmcSqColCount}
+                                                        onChange={(e) => setRmcSqColCount(e.target.value)}
                                                     />
                                                 </div>
                                             </div>
@@ -655,25 +905,19 @@ const CalculatorsMain = () => {
                                                 <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Wastage (%)</label>
                                                 <input 
                                                     type="number" 
-                                                    step="any"
                                                     placeholder="10" 
-                                                    value={wastage}
-                                                    onChange={(e) => setWastage(e.target.value)}
+                                                    value={rmcWastage}
+                                                    onChange={(e) => setRmcWastage(e.target.value)}
                                                 />
-                                                <span style={{ fontSize: '13px', color: '#888', marginTop: '5px', display: 'block' }}>
-                                                    Add extra for cuts, waste, and future repairs (usually 5-15%)
-                                                </span>
                                             </div>
                                             <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>
-                                                    {flooringType === 'ceramic' || flooringType === 'vitrified' ? 'Material Price (₹/box)' : 'Material Price (₹/sq ft)'}
-                                                </label>
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Concrete Price (₹ / Cubic Meter)</label>
                                                 <input 
                                                     type="number" 
                                                     step="any"
-                                                    placeholder="e.g., 1200" 
-                                                    value={materialPrice}
-                                                    onChange={(e) => setMaterialPrice(e.target.value)}
+                                                    placeholder="e.g., 4500" 
+                                                    value={rmcPrice}
+                                                    onChange={(e) => setRmcPrice(e.target.value)}
                                                 />
                                             </div>
                                         </div>
@@ -681,14 +925,226 @@ const CalculatorsMain = () => {
                                         <div className="row">
                                             <div className="col-12">
                                                 <button type="submit" className="build_button w-100 justify-content-center" style={{ padding: '17px 40px', borderRadius: '6px' }}>
-                                                    Calculate Flooring Requirements <i className="flaticon-right-up"></i>
+                                                    Calculate Concrete volume & bags <i className="flaticon-right-up"></i>
                                                 </button>
                                             </div>
                                         </div>
                                     </form>
                                 )}
 
-                                {/* 2. Paint Calculator Form */}
+                                {/* 4. Brick Calculator Form */}
+                                {activeCalc === 'brick' && (
+                                    <form onSubmit={calculateBrick}>
+                                        <div className="row">
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Wall Length (feet)*</label>
+                                                <input 
+                                                    type="number" 
+                                                    step="any"
+                                                    required
+                                                    placeholder="e.g., 50" 
+                                                    value={brickWallLength}
+                                                    onChange={(e) => setBrickWallLength(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Wall Height (feet)*</label>
+                                                <input 
+                                                    type="number" 
+                                                    step="any"
+                                                    required
+                                                    placeholder="e.g., 10" 
+                                                    value={brickWallHeight}
+                                                    onChange={(e) => setBrickWallHeight(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="row">
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Wall Thickness (inches)*</label>
+                                                <select 
+                                                    className="form-select w-100" 
+                                                    style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
+                                                    value={brickWallThick}
+                                                    onChange={(e) => setBrickWallThick(e.target.value)}
+                                                >
+                                                    <option value="5">5 Inch Wall (Single brick thickness)</option>
+                                                    <option value="10">10 Inch Wall (Double brick thickness)</option>
+                                                </select>
+                                            </div>
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Brick Type / Size*</label>
+                                                <select 
+                                                    className="form-select w-100" 
+                                                    style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
+                                                    value={brickSize}
+                                                    onChange={(e) => setBrickSize(e.target.value)}
+                                                >
+                                                    <option value="standard">Standard Red Clay Brick (9" x 4.5" x 3")</option>
+                                                    <option value="modular">Modular / Fly-Ash Brick (7.5" x 3.5" x 3.5")</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div className="row">
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Mortar Mix Ratio*</label>
+                                                <select 
+                                                    className="form-select w-100" 
+                                                    style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
+                                                    value={brickMix}
+                                                    onChange={(e) => setBrickMix(e.target.value)}
+                                                >
+                                                    <option value="1:4">1:4 Mix (Strong walls)</option>
+                                                    <option value="1:6">1:6 Mix (Standard walls)</option>
+                                                </select>
+                                            </div>
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Wastage (%)</label>
+                                                <input 
+                                                    type="number" 
+                                                    placeholder="10" 
+                                                    value={brickWastage}
+                                                    onChange={(e) => setBrickWastage(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="row mb-30">
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Brick Price (₹ / Piece)</label>
+                                                <input 
+                                                    type="number" 
+                                                    step="any"
+                                                    placeholder="e.g., 9" 
+                                                    value={brickPrice}
+                                                    onChange={(e) => setBrickPrice(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Cement Price (₹ / Bag)</label>
+                                                <input 
+                                                    type="number" 
+                                                    step="any"
+                                                    placeholder="e.g., 420" 
+                                                    value={brickCementPrice}
+                                                    onChange={(e) => setBrickCementPrice(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="row">
+                                            <div className="col-12">
+                                                <button type="submit" className="build_button w-100 justify-content-center" style={{ padding: '17px 40px', borderRadius: '6px' }}>
+                                                    Calculate Brick Requirements <i className="flaticon-right-up"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                )}
+
+                                {/* 5. Electrical Load Calculator Form */}
+                                {activeCalc === 'electrical' && (
+                                    <form onSubmit={calculateElectrical}>
+                                        <div className="row">
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Lights / LED Bulbs count (15W)</label>
+                                                <input 
+                                                    type="number" 
+                                                    placeholder="e.g., 10" 
+                                                    value={elecLights}
+                                                    onChange={(e) => setElecLights(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Fans count (75W)</label>
+                                                <input 
+                                                    type="number" 
+                                                    placeholder="e.g., 4" 
+                                                    value={elecFans}
+                                                    onChange={(e) => setElecFans(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="row">
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Air Conditioners count (1.5 Ton / 1500W)</label>
+                                                <input 
+                                                    type="number" 
+                                                    placeholder="e.g., 2" 
+                                                    value={elecAcs}
+                                                    onChange={(e) => setElecAcs(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Refrigerators count (400W)</label>
+                                                <input 
+                                                    type="number" 
+                                                    placeholder="e.g., 1" 
+                                                    value={elecFridges}
+                                                    onChange={(e) => setElecFridges(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="row">
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Televisions count (150W)</label>
+                                                <input 
+                                                    type="number" 
+                                                    placeholder="e.g., 2" 
+                                                    value={elecTvs}
+                                                    onChange={(e) => setElecTvs(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Geysers / Water Heaters count (2000W)</label>
+                                                <input 
+                                                    type="number" 
+                                                    placeholder="e.g., 1" 
+                                                    value={elecGeysers}
+                                                    onChange={(e) => setElecGeysers(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="row mb-30">
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Other Heavy Load count (Washing machine, pump - 1000W)</label>
+                                                <input 
+                                                    type="number" 
+                                                    placeholder="e.g., 1" 
+                                                    value={elecHeavy}
+                                                    onChange={(e) => setElecHeavy(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="col-md-6 mb-20">
+                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Voltage (Volts)</label>
+                                                <select 
+                                                    className="form-select w-100" 
+                                                    style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
+                                                    value={elecVoltage}
+                                                    onChange={(e) => setElecVoltage(e.target.value)}
+                                                >
+                                                    <option value="220">220V (Single Phase - Standard Residential)</option>
+                                                    <option value="415">415V (Three Phase - Commercial/Industrial)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div className="row">
+                                            <div className="col-12">
+                                                <button type="submit" className="build_button w-100 justify-content-center" style={{ padding: '17px 40px', borderRadius: '6px' }}>
+                                                    Calculate Electrical Load <i className="flaticon-right-up"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                )}
+
+                                {/* 6. Paint Calculator Form */}
                                 {activeCalc === 'paint' && (
                                     <form onSubmit={calculatePaint}>
                                         <div className="row">
@@ -791,611 +1247,330 @@ const CalculatorsMain = () => {
                                         </div>
                                     </form>
                                 )}
+                            </div>
 
-                                {/* 3. Electrical Load Calculator Form */}
-                                {activeCalc === 'electrical' && (
-                                    <form onSubmit={calculateElectrical}>
-                                        <div className="row">
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Lights / LED Bulbs count (15W)</label>
-                                                <input type="number" placeholder="0" value={elecLights} onChange={(e) => setElecLights(e.target.value)} />
-                                            </div>
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Ceiling Fans count (75W)</label>
-                                                <input type="number" placeholder="0" value={elecFans} onChange={(e) => setElecFans(e.target.value)} />
+                            {/* Cement Calculator Results Output */}
+                            {activeCalc === 'cement' && cementResults && (
+                                <div className="mt-40 p-30" style={{ background: '#f8f9fa', borderRadius: '12px', border: '1px dashed #ddd' }}>
+                                    <h4 className="mb-25" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                        <i className="fa-solid fa-square-poll-vertical text-warning"></i> Estimation Results
+                                    </h4>
+                                    <div className="row">
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Wet Volume</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{cementResults.netCFT} CFT</strong>
+                                                <span style={{ fontSize: '12px', color: '#999', display: 'block', marginTop: '2px' }}>({cementResults.netCUM} m³)</span>
                                             </div>
                                         </div>
-                                        <div className="row">
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Air Conditioners count (1.5 Ton, ~1500W)</label>
-                                                <input type="number" placeholder="0" value={elecAcs} onChange={(e) => setElecAcs(e.target.value)} />
-                                            </div>
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Refrigerators count (~400W)</label>
-                                                <input type="number" placeholder="0" value={elecFridges} onChange={(e) => setElecFridges(e.target.value)} />
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Dry Volume</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{cementResults.dryVolume} CFT</strong>
                                             </div>
                                         </div>
-                                        <div className="row">
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>TV / Computers count (~150W)</label>
-                                                <input type="number" placeholder="0" value={elecTvs} onChange={(e) => setElecTvs(e.target.value)} />
-                                            </div>
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Water Geysers / Microwave count (~2000W)</label>
-                                                <input type="number" placeholder="0" value={elecGeysers} onChange={(e) => setElecGeysers(e.target.value)} />
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Cement Required</span>
+                                                <strong style={{ fontSize: '22px', color: '#198754' }}>{cementResults.cementBags} Bags</strong>
                                             </div>
                                         </div>
-                                        <div className="row mb-30">
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Other heavy loads (Water Pumps, etc. ~1000W)</label>
-                                                <input type="number" placeholder="0" value={elecHeavy} onChange={(e) => setElecHeavy(e.target.value)} />
-                                            </div>
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Voltage Supply (V)</label>
-                                                <input type="number" placeholder="220" value={elecVoltage} onChange={(e) => setElecVoltage(e.target.value)} />
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <button type="submit" className="build_button w-100 justify-content-center" style={{ padding: '17px 40px', borderRadius: '6px' }}>
-                                                    Calculate Electrical Load <i className="flaticon-right-up"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                )}
-
-                                {/* 4. RMC Calculator Form */}
-                                {activeCalc === 'rmc' && (
-                                    <form onSubmit={calculateRMC}>
-                                        <div className="row mb-20">
-                                            <div className="col-12">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Structure Type*</label>
-                                                <select 
-                                                    className="form-select w-100" 
-                                                    style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
-                                                    value={rmcShape}
-                                                    onChange={(e) => setRmcShape(e.target.value)}
-                                                >
-                                                    <option value="slab">Slab / Plinth / Foundation (Rectangular)</option>
-                                                    <option value="circular">Circular Columns</option>
-                                                    <option value="square">Square / Rectangular Columns</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        {/* Slab inputs */}
-                                        {rmcShape === 'slab' && (
-                                            <div className="row">
-                                                <div className="col-md-4 mb-20">
-                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Slab Length (feet)*</label>
-                                                    <input type="number" step="any" required placeholder="e.g., 50" value={rmcSlabLength} onChange={(e) => setRmcSlabLength(e.target.value)} />
-                                                </div>
-                                                <div className="col-md-4 mb-20">
-                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Slab Width (feet)*</label>
-                                                    <input type="number" step="any" required placeholder="e.g., 30" value={rmcSlabWidth} onChange={(e) => setRmcSlabWidth(e.target.value)} />
-                                                </div>
-                                                <div className="col-md-4 mb-20">
-                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Thickness (inches)*</label>
-                                                    <input type="number" step="any" required placeholder="e.g., 6" value={rmcSlabThick} onChange={(e) => setRmcSlabThick(e.target.value)} />
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {/* Circular column inputs */}
-                                        {rmcShape === 'circular' && (
-                                            <div className="row">
-                                                <div className="col-md-4 mb-20">
-                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Diameter (feet)*</label>
-                                                    <input type="number" step="any" required placeholder="e.g., 1.5" value={rmcColDia} onChange={(e) => setRmcColDia(e.target.value)} />
-                                                </div>
-                                                <div className="col-md-4 mb-20">
-                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Height (feet)*</label>
-                                                    <input type="number" step="any" required placeholder="e.g., 10" value={rmcColHeight} onChange={(e) => setRmcColHeight(e.target.value)} />
-                                                </div>
-                                                <div className="col-md-4 mb-20">
-                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Number of Columns</label>
-                                                    <input type="number" placeholder="1" value={rmcColCount} onChange={(e) => setRmcColCount(e.target.value)} />
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {/* Square column inputs */}
-                                        {rmcShape === 'square' && (
-                                            <div className="row">
-                                                <div className="col-md-3 mb-20">
-                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Length (feet)*</label>
-                                                    <input type="number" step="any" required placeholder="e.g., 1" value={rmcSqColLength} onChange={(e) => setRmcSqColLength(e.target.value)} />
-                                                </div>
-                                                <div className="col-md-3 mb-20">
-                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Width (feet)*</label>
-                                                    <input type="number" step="any" required placeholder="e.g., 1" value={rmcSqColWidth} onChange={(e) => setRmcSqColWidth(e.target.value)} />
-                                                </div>
-                                                <div className="col-md-3 mb-20">
-                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Height (feet)*</label>
-                                                    <input type="number" step="any" required placeholder="e.g., 10" value={rmcSqColHeight} onChange={(e) => setRmcSqColHeight(e.target.value)} />
-                                                </div>
-                                                <div className="col-md-3 mb-20">
-                                                    <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Columns Count</label>
-                                                    <input type="number" placeholder="1" value={rmcSqColCount} onChange={(e) => setRmcSqColCount(e.target.value)} />
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        <div className="row mb-30">
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Wastage (%)</label>
-                                                <input type="number" placeholder="10" value={rmcWastage} onChange={(e) => setRmcWastage(e.target.value)} />
-                                            </div>
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>RMC Rate (₹ / Cubic Meter)</label>
-                                                <input type="number" step="any" placeholder="e.g., 4500" value={rmcPrice} onChange={(e) => setRmcPrice(e.target.value)} />
-                                            </div>
-                                        </div>
-
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <button type="submit" className="build_button w-100 justify-content-center" style={{ padding: '17px 40px', borderRadius: '6px' }}>
-                                                    Calculate RMC Requirements <i className="flaticon-right-up"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                )}
-
-                                {/* 5. Steel Calculator Form */}
-                                {activeCalc === 'steel' && (
-                                    <form onSubmit={calculateSteel}>
-                                        <div className="row">
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>TMT Bar Diameter*</label>
-                                                <select 
-                                                    className="form-select w-100" 
-                                                    style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
-                                                    value={steelDia}
-                                                    onChange={(e) => setSteelDia(e.target.value)}
-                                                >
-                                                    <option value="8">8 mm</option>
-                                                    <option value="10">10 mm</option>
-                                                    <option value="12">12 mm (Standard Column)</option>
-                                                    <option value="16">16 mm</option>
-                                                    <option value="20">20 mm</option>
-                                                    <option value="25">25 mm</option>
-                                                    <option value="32">32 mm</option>
-                                                </select>
-                                            </div>
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Steel Unit*</label>
-                                                <select 
-                                                    className="form-select w-100" 
-                                                    style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
-                                                    value={steelUnit}
-                                                    onChange={(e) => setSteelUnit(e.target.value)}
-                                                >
-                                                    <option value="rods">Number of Rods (12m / ~40ft each)</option>
-                                                    <option value="meters">Length in Meters</option>
-                                                    <option value="feet">Length in Feet</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div className="row mb-30">
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Quantity Required*</label>
-                                                <input type="number" required placeholder="e.g., 50" value={steelQty} onChange={(e) => setSteelQty(e.target.value)} />
-                                            </div>
-                                            <div className="col-md-6 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Steel Price (₹ / kg)</label>
-                                                <input type="number" step="any" placeholder="e.g., 65" value={steelPrice} onChange={(e) => setSteelPrice(e.target.value)} />
-                                            </div>
-                                        </div>
-
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <button type="submit" className="build_button w-100 justify-content-center" style={{ padding: '17px 40px', borderRadius: '6px' }}>
-                                                    Calculate Steel Weight <i className="flaticon-right-up"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                )}
-
-                                {/* 6. AC Load Calculator Form */}
-                                {activeCalc === 'ac' && (
-                                    <form onSubmit={calculateAC}>
-                                        <div className="row">
-                                            <div className="col-md-4 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Room Length (feet)*</label>
-                                                <input type="number" required placeholder="e.g., 15" value={acLength} onChange={(e) => setAcLength(e.target.value)} />
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Room Width (feet)*</label>
-                                                <input type="number" required placeholder="e.g., 12" value={acWidth} onChange={(e) => setAcWidth(e.target.value)} />
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Room Height (feet)</label>
-                                                <input type="number" placeholder="10" value={acHeight} onChange={(e) => setAcHeight(e.target.value)} />
-                                            </div>
-                                        </div>
-
-                                        <div className="row mb-30">
-                                            <div className="col-md-4 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Sun Exposure*</label>
-                                                <select 
-                                                    className="form-select w-100" 
-                                                    style={{ height: '60px', padding: '0 15px', borderRadius: '6px', border: '1px solid var(--border-color-1)', background: 'var(--bg-white)', color: 'var(--body-color)', outline: 'none' }}
-                                                    value={acSun}
-                                                    onChange={(e) => setAcSun(e.target.value)}
-                                                >
-                                                    <option value="shade">Shaded / Low Sun</option>
-                                                    <option value="medium">Normal / Medium Sun</option>
-                                                    <option value="high">Top Floor / Directly Under Sun</option>
-                                                </select>
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Occupants Count</label>
-                                                <input type="number" placeholder="2" value={acPeople} onChange={(e) => setAcPeople(e.target.value)} />
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <label className="form-label" style={{ fontWeight: '600', color: 'var(--text-heading-color)', display: 'block', marginBottom: '8px' }}>Appliances / PCs</label>
-                                                <input type="number" placeholder="1" value={acAppliances} onChange={(e) => setAcAppliances(e.target.value)} />
-                                            </div>
-                                        </div>
-
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <button type="submit" className="build_button w-100 justify-content-center" style={{ padding: '17px 40px', borderRadius: '6px' }}>
-                                                    Calculate AC Load & Tonnage <i className="flaticon-right-up"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                )}
-
-                                {/* Flooring Calculator Results Output */}
-                                {activeCalc === 'flooring' && flooringResults && (
-                                    <div className="mt-40 p-30" style={{ background: '#f8f9fa', borderRadius: '12px', border: '1px dashed #ddd' }}>
-                                        <h4 className="mb-25" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                            <i className="fa-solid fa-square-poll-vertical text-warning"></i> Estimation Results
-                                        </h4>
-                                        <div className="row">
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Area</span>
-                                                    <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{flooringResults.totalArea} sq ft</strong>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Wastage ({flooringResults.wastePercent}%)</span>
-                                                    <strong style={{ fontSize: '22px', color: '#dc3545' }}>+{flooringResults.wasteArea} sq ft</strong>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Area Required</span>
-                                                    <strong style={{ fontSize: '22px', color: '#198754' }}>{flooringResults.areaWithWaste} sq ft</strong>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {flooringResults.isTile ? (
-                                            <div className="row mt-10">
-                                                <div className="col-md-6 mb-20">
-                                                    <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                        <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Tiles Required</span>
-                                                        <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{flooringResults.totalTiles} pcs</strong>
-                                                        <span style={{ fontSize: '13px', color: '#888', display: 'block', marginTop: '5px' }}>
-                                                            Based on {flooringResults.tileLength}" x {flooringResults.tileWidth}" tile size
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-6 mb-20">
-                                                    <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                        <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Boxes Required</span>
-                                                        <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{flooringResults.totalBoxes} Boxes</strong>
-                                                        <span style={{ fontSize: '13px', color: '#888', display: 'block', marginTop: '5px' }}>
-                                                            Assuming standard packaging (~{flooringResults.boxCoverage} sq ft per box)
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ) : (
-                                            <div className="row mt-10">
-                                                <div className="col-md-12 mb-20">
-                                                    <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                        <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Material Amount</span>
-                                                        <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{flooringResults.areaWithWaste} sq ft</strong>
-                                                        <span style={{ fontSize: '13px', color: '#888', display: 'block', marginTop: '5px' }}>
-                                                            {flooringResults.flooringType.charAt(0).toUpperCase() + flooringResults.flooringType.slice(1)} is calculated directly by square foot area.
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {flooringResults.totalCost && (
-                                            <div className="row mt-10">
-                                                <div className="col-12">
-                                                    <div style={{ background: 'var(--color-1)', color: '#fff', padding: '25px', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                                        <div>
-                                                            <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'block', marginBottom: '5px' }}>Estimated Material Cost</span>
-                                                            <strong style={{ fontSize: '28px', color: 'var(--primary-color-1)' }}>₹{parseFloat(flooringResults.totalCost).toLocaleString('en-IN')}</strong>
-                                                        </div>
-                                                        <div style={{ fontSize: '32px', color: 'rgba(255,255,255,0.1)' }}>
-                                                            <i className="fa-solid fa-indian-rupee-sign"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )}
-                                        <LeadGenCTA />
                                     </div>
-                                )}
 
-                                {/* Paint Calculator Results Output */}
-                                {activeCalc === 'paint' && paintResults && (
-                                    <div className="mt-40 p-30" style={{ background: '#f8f9fa', borderRadius: '12px', border: '1px dashed #ddd' }}>
-                                        <h4 className="mb-25" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                            <i className="fa-solid fa-square-poll-vertical text-warning"></i> Estimation Results
-                                        </h4>
-                                        <div className="row">
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Wall Area</span>
-                                                    <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{paintResults.totalArea} sq ft</strong>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Deductions (Doors/Win)</span>
-                                                    <strong style={{ fontSize: '22px', color: '#dc3545' }}>-{paintResults.deductionArea} sq ft</strong>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Net Painting Area</span>
-                                                    <strong style={{ fontSize: '22px', color: '#198754' }}>{paintResults.netArea} sq ft</strong>
-                                                </div>
+                                    <div className="row mt-10">
+                                        <div className="col-md-6 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Sand Required</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{cementResults.sandCFT} CFT</strong>
                                             </div>
                                         </div>
-
-                                        <div className="row mt-10">
-                                            <div className="col-12 mb-20">
+                                        {cementResults.aggregateCFT && (
+                                            <div className="col-md-6 mb-20">
                                                 <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Required Paint Volume ({paintResults.coats} Coats)</span>
-                                                    <strong style={{ fontSize: '24px', color: 'var(--text-heading-color)' }}>{paintResults.paintRequired} Liters</strong>
-                                                    <span style={{ fontSize: '13px', color: '#888', display: 'block', marginTop: '5px' }}>
-                                                        Assuming paint coverage of {paintCoverage} sq.ft per Liter per coat.
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {paintResults.totalCost && (
-                                            <div className="row mt-10">
-                                                <div className="col-12">
-                                                    <div style={{ background: 'var(--color-1)', color: '#fff', padding: '25px', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                                        <div>
-                                                            <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'block', marginBottom: '5px' }}>Estimated Paint Cost</span>
-                                                            <strong style={{ fontSize: '28px', color: 'var(--primary-color-1)' }}>₹{parseFloat(paintResults.totalCost).toLocaleString('en-IN')}</strong>
-                                                        </div>
-                                                        <div style={{ fontSize: '32px', color: 'rgba(255,255,255,0.1)' }}>
-                                                            <i className="fa-solid fa-indian-rupee-sign"></i>
-                                                        </div>
-                                                    </div>
+                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Coarse Aggregate</span>
+                                                    <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{cementResults.aggregateCFT} CFT</strong>
                                                 </div>
                                             </div>
                                         )}
-                                        <LeadGenCTA />
                                     </div>
-                                )}
 
-                                {/* Electrical Calculator Results Output */}
-                                {activeCalc === 'electrical' && elecResults && (
-                                    <div className="mt-40 p-30" style={{ background: '#f8f9fa', borderRadius: '12px', border: '1px dashed #ddd' }}>
-                                        <h4 className="mb-25" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                            <i className="fa-solid fa-square-poll-vertical text-warning"></i> Estimation Results
-                                        </h4>
-                                        <div className="row">
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Load (Watts)</span>
-                                                    <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{elecResults.totalWatts} W</strong>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Load (kW)</span>
-                                                    <strong style={{ fontSize: '22px', color: '#198754' }}>{elecResults.totalKW} kW</strong>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Connected Load (kVA)</span>
-                                                    <strong style={{ fontSize: '22px', color: 'var(--primary-color-1)' }}>{elecResults.totalKVA} kVA</strong>
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                    {cementResults.totalCost && (
                                         <div className="row mt-10">
-                                            <div className="col-md-6 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Recommended MCB Rating</span>
-                                                    <strong style={{ fontSize: '22px', color: '#dc3545' }}>{elecResults.mcb} Amps</strong>
-                                                    <span style={{ fontSize: '13px', color: '#888', display: 'block', marginTop: '5px' }}>
-                                                        Calculated at {elecResults.amps} Amps current with safety buffer.
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-6 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Main Cable Copper Size</span>
-                                                    <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{elecResults.wireSize} sq.mm</strong>
-                                                    <span style={{ fontSize: '13px', color: '#888', display: 'block', marginTop: '5px' }}>
-                                                        Recommended thickness for main service line.
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <LeadGenCTA />
-                                    </div>
-                                )}
-
-                                {/* RMC Calculator Results Output */}
-                                {activeCalc === 'rmc' && rmcResults && (
-                                    <div className="mt-40 p-30" style={{ background: '#f8f9fa', borderRadius: '12px', border: '1px dashed #ddd' }}>
-                                        <h4 className="mb-25" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                            <i className="fa-solid fa-square-poll-vertical text-warning"></i> Estimation Results
-                                        </h4>
-                                        <div className="row">
-                                            <div className="col-md-6 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Net Concrete Volume</span>
-                                                    <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{rmcResults.netCUM} Cu.M <span style={{ fontSize: '15px', fontWeight: 'normal' }}>({rmcResults.netCFT} CFT)</span></strong>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-6 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Volume with Wastage ({rmcResults.wastagePercent}%)</span>
-                                                    <strong style={{ fontSize: '22px', color: '#198754' }}>{rmcResults.totalCUM} Cu.M <span style={{ fontSize: '15px', fontWeight: 'normal' }}>({rmcResults.totalCFT} CFT)</span></strong>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="row mt-10">
-                                            <div className="col-12 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Manual Mix Equivalent (M20 Grade 1:1.5:3)</span>
-                                                    <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>~{rmcResults.cementBags} Bags of Cement</strong>
-                                                    <span style={{ fontSize: '13px', color: '#888', display: 'block', marginTop: '5px' }}>
-                                                        Useful if you decide to mix on-site instead of using RMC trucks.
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {rmcResults.totalCost && (
-                                            <div className="row mt-10">
-                                                <div className="col-12">
-                                                    <div style={{ background: 'var(--color-1)', color: '#fff', padding: '25px', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                                        <div>
-                                                            <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'block', marginBottom: '5px' }}>Estimated RMC Cost</span>
-                                                            <strong style={{ fontSize: '28px', color: 'var(--primary-color-1)' }}>₹{parseFloat(rmcResults.totalCost).toLocaleString('en-IN')}</strong>
-                                                        </div>
-                                                        <div style={{ fontSize: '32px', color: 'rgba(255,255,255,0.1)' }}>
-                                                            <i className="fa-solid fa-indian-rupee-sign"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )}
-                                        <LeadGenCTA />
-                                    </div>
-                                )}
-
-                                {/* Steel Calculator Results Output */}
-                                {activeCalc === 'steel' && steelResults && (
-                                    <div className="mt-40 p-30" style={{ background: '#f8f9fa', borderRadius: '12px', border: '1px dashed #ddd' }}>
-                                        <h4 className="mb-25" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                            <i className="fa-solid fa-square-poll-vertical text-warning"></i> Estimation Results
-                                        </h4>
-                                        <div className="row">
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Length</span>
-                                                    <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{steelResults.totalLength} meters</strong>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Weight (kg)</span>
-                                                    <strong style={{ fontSize: '22px', color: '#198754' }}>{steelResults.totalWeightKg} kg</strong>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Weight (Metric Tons)</span>
-                                                    <strong style={{ fontSize: '22px', color: 'var(--primary-color-1)' }}>{steelResults.totalWeightTons} Tons</strong>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="row mt-10">
-                                            <div className="col-12 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Unit Weight of {steelDia}mm TMT Bar</span>
-                                                    <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{steelResults.unitWeight} kg / meter</strong>
-                                                    <span style={{ fontSize: '13px', color: '#888', display: 'block', marginTop: '5px' }}>
-                                                        Calculated using Indian Standard formula: D² / 162.
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {steelResults.totalCost && (
-                                            <div className="row mt-10">
-                                                <div className="col-12">
-                                                    <div style={{ background: 'var(--color-1)', color: '#fff', padding: '25px', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                                        <div>
-                                                            <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'block', marginBottom: '5px' }}>Estimated Steel Cost</span>
-                                                            <strong style={{ fontSize: '28px', color: 'var(--primary-color-1)' }}>₹{parseFloat(steelResults.totalCost).toLocaleString('en-IN')}</strong>
-                                                        </div>
-                                                        <div style={{ fontSize: '32px', color: 'rgba(255,255,255,0.1)' }}>
-                                                            <i className="fa-solid fa-indian-rupee-sign"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )}
-                                        <LeadGenCTA />
-                                    </div>
-                                )}
-
-                                {/* AC Load Calculator Results Output */}
-                                {activeCalc === 'ac' && acResults && (
-                                    <div className="mt-40 p-30" style={{ background: '#f8f9fa', borderRadius: '12px', border: '1px dashed #ddd' }}>
-                                        <h4 className="mb-25" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                            <i className="fa-solid fa-square-poll-vertical text-warning"></i> Estimation Results
-                                        </h4>
-                                        <div className="row">
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Room Area</span>
-                                                    <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{acResults.area} sq ft</strong>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Heat Load</span>
-                                                    <strong style={{ fontSize: '22px', color: '#dc3545' }}>{acResults.btu} BTU / hr</strong>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4 mb-20">
-                                                <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
-                                                    <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Required Tonnage</span>
-                                                    <strong style={{ fontSize: '22px', color: '#198754' }}>{acResults.tonnage} Tons</strong>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="row mt-10">
-                                            <div className="col-12 mb-20">
+                                            <div className="col-12">
                                                 <div style={{ background: 'var(--color-1)', color: '#fff', padding: '25px', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                                     <div>
-                                                        <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'block', marginBottom: '5px' }}>Recommended AC Capacity</span>
-                                                        <strong style={{ fontSize: '28px', color: 'var(--primary-color-1)' }}>{acResults.recommendedTonnage} Ton AC</strong>
+                                                        <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'block', marginBottom: '5px' }}>Estimated Cement Cost</span>
+                                                        <strong style={{ fontSize: '28px', color: 'var(--primary-color-1)' }}>₹{parseFloat(cementResults.totalCost).toLocaleString('en-IN')}</strong>
                                                     </div>
                                                     <div style={{ fontSize: '32px', color: 'rgba(255,255,255,0.1)' }}>
-                                                        <i className="fa-solid fa-snowflake"></i>
+                                                        <i className="fa-solid fa-indian-rupee-sign"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <LeadGenCTA />
+                                    )}
+                                    <LeadGenCTA />
+                                </div>
+                            )}
+
+                            {/* Steel Calculator Results Output */}
+                            {activeCalc === 'steel' && steelResults && (
+                                <div className="mt-40 p-30" style={{ background: '#f8f9fa', borderRadius: '12px', border: '1px dashed #ddd' }}>
+                                    <h4 className="mb-25" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                        <i className="fa-solid fa-square-poll-vertical text-warning"></i> Estimation Results
+                                    </h4>
+                                    <div className="row">
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Unit Weight</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{steelResults.unitWeight} kg/m</strong>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Weight (kg)</span>
+                                                <strong style={{ fontSize: '22px', color: '#198754' }}>{steelResults.totalWeightKg} kg</strong>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Weight (Tons)</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{steelResults.totalWeightTons} Tons</strong>
+                                            </div>
+                                        </div>
                                     </div>
-                                )}
-                            </div>
+
+                                    {steelResults.totalCost && (
+                                        <div className="row mt-10">
+                                            <div className="col-12">
+                                                <div style={{ background: 'var(--color-1)', color: '#fff', padding: '25px', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                                    <div>
+                                                        <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'block', marginBottom: '5px' }}>Estimated Steel Cost</span>
+                                                        <strong style={{ fontSize: '28px', color: 'var(--primary-color-1)' }}>₹{parseFloat(steelResults.totalCost).toLocaleString('en-IN')}</strong>
+                                                    </div>
+                                                    <div style={{ fontSize: '32px', color: 'rgba(255,255,255,0.1)' }}>
+                                                        <i className="fa-solid fa-indian-rupee-sign"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                    <LeadGenCTA />
+                                </div>
+                            )}
+
+                            {/* RMC Calculator Results Output */}
+                            {activeCalc === 'rmc' && rmcResults && (
+                                <div className="mt-40 p-30" style={{ background: '#f8f9fa', borderRadius: '12px', border: '1px dashed #ddd' }}>
+                                    <h4 className="mb-25" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                        <i className="fa-solid fa-square-poll-vertical text-warning"></i> Estimation Results
+                                    </h4>
+                                    <div className="row">
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Net Concrete Volume</span>
+                                                <strong style={{ fontSize: '20px', color: 'var(--text-heading-color)' }}>{rmcResults.netCUM} CUM</strong>
+                                                <span style={{ fontSize: '12px', color: '#888', display: 'block', marginTop: '5px' }}>{rmcResults.netCFT} CFT</span>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>With Wastage ({rmcResults.wastagePercent}%)</span>
+                                                <strong style={{ fontSize: '20px', color: 'var(--text-heading-color)' }}>{rmcResults.totalCUM} CUM</strong>
+                                                <span style={{ fontSize: '12px', color: '#888', display: 'block', marginTop: '5px' }}>{rmcResults.totalCFT} CFT</span>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Cement Bags (In Concrete)</span>
+                                                <strong style={{ fontSize: '20px', color: 'var(--text-heading-color)' }}>~{rmcResults.cementBags} Bags</strong>
+                                                <span style={{ fontSize: '12px', color: '#888', display: 'block', marginTop: '5px' }}>Based on M20 standard</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {rmcResults.totalCost && (
+                                        <div className="row mt-10">
+                                            <div className="col-12">
+                                                <div style={{ background: 'var(--color-1)', color: '#fff', padding: '25px', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                                    <div>
+                                                        <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'block', marginBottom: '5px' }}>Estimated Concrete Cost</span>
+                                                        <strong style={{ fontSize: '28px', color: 'var(--primary-color-1)' }}>₹{parseFloat(rmcResults.totalCost).toLocaleString('en-IN')}</strong>
+                                                    </div>
+                                                    <div style={{ fontSize: '32px', color: 'rgba(255,255,255,0.1)' }}>
+                                                        <i className="fa-solid fa-indian-rupee-sign"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                    <LeadGenCTA />
+                                </div>
+                            )}
+
+                            {/* Brick Calculator Results Output */}
+                            {activeCalc === 'brick' && brickResults && (
+                                <div className="mt-40 p-30" style={{ background: '#f8f9fa', borderRadius: '12px', border: '1px dashed #ddd' }}>
+                                    <h4 className="mb-25" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                        <i className="fa-solid fa-square-poll-vertical text-warning"></i> Estimation Results
+                                    </h4>
+                                    <div className="row">
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Wall Volume</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{brickResults.wallVolume} CFT</strong>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Bricks Required</span>
+                                                <strong style={{ fontSize: '22px', color: '#198754' }}>{brickResults.totalBricks} Pcs</strong>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Mortar Cement</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>~{brickResults.cementBags} Bags</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="row mt-10">
+                                        <div className="col-md-12 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Mortar Sand Required</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{brickResults.sandCFT} CFT</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {brickResults.totalCost && (
+                                        <div className="row mt-10">
+                                            <div className="col-12">
+                                                <div style={{ background: 'var(--color-1)', color: '#fff', padding: '25px', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                                    <div>
+                                                        <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'block', marginBottom: '5px' }}>Estimated Material Cost (Bricks + Cement)</span>
+                                                        <strong style={{ fontSize: '28px', color: 'var(--primary-color-1)' }}>₹{parseFloat(brickResults.totalCost).toLocaleString('en-IN')}</strong>
+                                                    </div>
+                                                    <div style={{ fontSize: '32px', color: 'rgba(255,255,255,0.1)' }}>
+                                                        <i className="fa-solid fa-indian-rupee-sign"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                    <LeadGenCTA />
+                                </div>
+                            )}
+
+                            {/* Electrical Calculator Results Output */}
+                            {activeCalc === 'electrical' && elecResults && (
+                                <div className="mt-40 p-30" style={{ background: '#f8f9fa', borderRadius: '12px', border: '1px dashed #ddd' }}>
+                                    <h4 className="mb-25" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                        <i className="fa-solid fa-square-poll-vertical text-warning"></i> Estimation Results
+                                    </h4>
+                                    <div className="row">
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Load (Watts)</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{elecResults.totalWatts} W</strong>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Load (kW)</span>
+                                                <strong style={{ fontSize: '22px', color: '#198754' }}>{elecResults.totalKW} kW</strong>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Apparent Load (kVA)</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{elecResults.totalKVA} kVA</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="row mt-10">
+                                        <div className="col-md-6 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Calculated Current</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{elecResults.amps} Amps</strong>
+                                                <span style={{ fontSize: '13px', color: '#888', display: 'block', marginTop: '5px' }}>
+                                                    Recommended MCB Rating: <strong>{elecResults.mcb}A</strong>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Recommended Main Cable Size</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{elecResults.wireSize} sq mm</strong>
+                                                <span style={{ fontSize: '13px', color: '#888', display: 'block', marginTop: '5px' }}>
+                                                    Copper multi-strand FR cable recommended.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <LeadGenCTA />
+                                </div>
+                            )}
+
+                            {/* Paint Calculator Results Output */}
+                            {activeCalc === 'paint' && paintResults && (
+                                <div className="mt-40 p-30" style={{ background: '#f8f9fa', borderRadius: '12px', border: '1px dashed #ddd' }}>
+                                    <h4 className="mb-25" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                        <i className="fa-solid fa-square-poll-vertical text-warning"></i> Estimation Results
+                                    </h4>
+                                    <div className="row">
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Wall Area</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{paintResults.totalArea} sq ft</strong>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Deductions (Openings)</span>
+                                                <strong style={{ fontSize: '22px', color: '#dc3545' }}>-{paintResults.deductionArea} sq ft</strong>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Net Area ({paintResults.coats} Coats)</span>
+                                                <strong style={{ fontSize: '22px', color: '#198754' }}>{paintResults.netArea} sq ft</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="row mt-10">
+                                        <div className="col-12 mb-20">
+                                            <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #eee' }}>
+                                                <span style={{ fontSize: '14px', color: '#777', display: 'block', marginBottom: '5px' }}>Total Paint Required</span>
+                                                <strong style={{ fontSize: '22px', color: 'var(--text-heading-color)' }}>{paintResults.paintRequired} Liters</strong>
+                                                <span style={{ fontSize: '13px', color: '#888', display: 'block', marginTop: '5px' }}>
+                                                    Calculated based on standard {paintResults.coats} coats.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {paintResults.totalCost && (
+                                        <div className="row mt-10">
+                                            <div className="col-12">
+                                                <div style={{ background: 'var(--color-1)', color: '#fff', padding: '25px', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                                    <div>
+                                                        <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'block', marginBottom: '5px' }}>Estimated Paint Cost</span>
+                                                        <strong style={{ fontSize: '28px', color: 'var(--primary-color-1)' }}>₹{parseFloat(paintResults.totalCost).toLocaleString('en-IN')}</strong>
+                                                    </div>
+                                                    <div style={{ fontSize: '32px', color: 'rgba(255,255,255,0.1)' }}>
+                                                        <i className="fa-solid fa-indian-rupee-sign"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                    <LeadGenCTA />
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

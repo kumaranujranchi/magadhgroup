@@ -40,6 +40,27 @@ const productsData = [
         ]
     },
     {
+        id: 'sand-chips-brick',
+        title: 'Sand, Chips & Brick',
+        subtitle: 'Premium Aggregates, Sand & Bricks',
+        icon: <i className="fa-solid fa-cubes"></i>,
+        variantCount: '8 Types',
+        variantLabel: 'Materials',
+        brands: ['Local Premium', 'Koel River Sand', 'Sone River Sand', 'Ganga River Sand', 'Pakur Stone Chips', 'Koderma Aggregates', 'Fly Ash Bricks', 'AAC Blocks'],
+        description: 'Premium quality Sone/Koel/Ganga river sand, Pakur/Koderma stone chips, fly-ash bricks, and AAC blocks.',
+        heroDescription: 'We supply high-grade construction aggregates, including premium river sand (Sone/Koel/Ganga), durable Pakur and Koderma stone chips, high-compressive strength bricks (Red clay & Fly ash), and modern lightweight AAC blocks. These materials are thoroughly tested for moisture content, purity, and durability to ensure the solid foundation of your structures.',
+        variants: [
+            { name: 'Sone River Sand', details: 'High-purity, coarse sand ideal for structural concrete and plastering work.' },
+            { name: 'Pakur Stone Chips (20mm)', details: 'High-strength black stone aggregates, perfect for heavy load-bearing concrete casting.' },
+            { name: 'Pakur Stone Chips (10mm)', details: 'Premium quality aggregates for fine concrete work, flooring, and lintels.' },
+            { name: 'Fly Ash Bricks', details: 'Eco-friendly bricks with uniform shape, high strength, and low water absorption.' },
+            { name: 'Red Clay Bricks (Class I)', details: 'Traditionally baked high-density clay bricks offering excellent thermal insulation and structural strength.' },
+            { name: 'Koderma Aggregates', details: 'Premium blue-metal stone aggregates sourced from Koderma, renowned for high load-bearing capacity and strength in concrete structures.' },
+            { name: 'Ganga River Sand', details: 'Fine-grained river sand from the Ganga river basin, highly preferred for smooth wall plastering and finishing work.' },
+            { name: 'AAC Blocks', details: 'Autoclaved Aerated Concrete blocks providing lightweight masonry, superior thermal insulation, soundproofing, and fire resistance.' }
+        ]
+    },
+    {
         id: 'rmc',
         title: 'RMC',
         subtitle: 'Precision-Mixed Ready Mix Concrete',
@@ -54,40 +75,6 @@ const productsData = [
             { name: 'M25 Grade', details: 'Standard structural concrete grade widely utilized for columns, beams, foundations, and residential slabs.' },
             { name: 'M30 Grade', details: 'High-strength structural concrete engineered for commercial complexes, high-load floors, and industrial yards.' },
             { name: 'M40 & Higher Grades', details: 'Super-strength concrete formulations designed for heavy civil projects, bridge decks, concrete highways, and high-rise structures.' }
-        ]
-    },
-    {
-        id: 'paints',
-        title: 'Paints',
-        subtitle: 'Interior & Exterior Wall Finishes',
-        icon: <i className="fa-solid fa-paint-roller"></i>,
-        variantCount: '4 Categories',
-        variantLabel: 'Categories',
-        brands: ['Asian Paints', 'Berger Paints', 'Dulux Paint', 'Nerolac Paints'],
-        description: 'Stunning aesthetics, weather protection, and anti-fungal properties for interior and exterior walls.',
-        heroDescription: 'Elevate the beauty of your residential or commercial projects with premium interior and exterior paints. Offering a rich palette of colors, superior washable finishes, dust-resistant tech, and environment-friendly low VOC formulations that keep your walls looking pristine for years.',
-        variants: [
-            { name: 'Interior Emulsions', details: 'Premium matte, satin, and luxury gloss finishes providing superior washability, stain-resistance, and long-lasting color richness.' },
-            { name: 'Exterior Emulsions', details: 'All-weather proof protection shields walls from rain, extreme heat, and UV rays, with anti-algal and high elasticity characteristics.' },
-            { name: 'Wall Primers & Putty', details: 'High-adhesion acrylic wall primers and waterproof acrylic putty to create perfectly smooth, uniform, moisture-resistant surfaces.' },
-            { name: 'Wood & Metal Coatings', details: 'Premium high-gloss and matte enamel paints and protective polyurethanes designed for wooden trims, doors, and metal railings.' }
-        ]
-    },
-    {
-        id: 'electrical-items',
-        title: 'Electrical Items',
-        subtitle: 'Wires, Switches & Distribution Boards',
-        icon: <i className="fa-solid fa-bolt"></i>,
-        variantCount: '4 Categories',
-        variantLabel: 'Categories',
-        brands: ['Havells', 'Polycab Wires', 'Finolex Cables', 'Legrand Switches', 'Anchor'],
-        description: 'Safe, durable FR cables, elegant modular switches, and reliable distribution systems for all construction needs.',
-        heroDescription: 'Ensure safety and performance in your electrical networks. We supply certified Flame Retardant (FR) copper wires, state-of-the-art modular switches, sleek glass frames, heavy-duty MCBs, and comprehensive distribution boards engineered to withstand high voltage swings and maximize electricity conservation.',
-        variants: [
-            { name: 'FR & FRLSH Copper Wires', details: 'Flame Retardant and Low Smoke Halogen-free copper wires offering high electrical conductivity and maximum fire safety in conduits.' },
-            { name: 'Modular Switches & Sockets', details: 'Designer modular switches, touch panels, and child-safe shutter sockets designed for smooth operations and premium interior aesthetics.' },
-            { name: 'Distribution Boards & MCBs', details: 'Heavy-duty Miniature Circuit Breakers (MCBs), Residual Current Circuit Breakers (RCCBs), and modular distribution boards for overload protection.' },
-            { name: 'Conduits & Concealed Boxes', details: 'High-impact heavy-duty PVC conduit pipes, bend joiners, and metal concealed boxes for safe, neat, long-lasting concealed wiring.' }
         ]
     },
     {
@@ -108,8 +95,42 @@ const productsData = [
         ]
     },
     {
+        id: 'electrical-items',
+        title: 'Electrical',
+        subtitle: 'Wires, Switches & Distribution Boards',
+        icon: <i className="fa-solid fa-bolt"></i>,
+        variantCount: '4 Categories',
+        variantLabel: 'Categories',
+        brands: ['Havells', 'Polycab Wires', 'Finolex Cables', 'Legrand Switches', 'Anchor'],
+        description: 'Safe, durable FR cables, elegant modular switches, and reliable distribution systems for all construction needs.',
+        heroDescription: 'Ensure safety and performance in your electrical networks. We supply certified Flame Retardant (FR) copper wires, state-of-the-art modular switches, sleek glass frames, heavy-duty MCBs, and comprehensive distribution boards engineered to withstand high voltage swings and maximize electricity conservation.',
+        variants: [
+            { name: 'FR & FRLSH Copper Wires', details: 'Flame Retardant and Low Smoke Halogen-free copper wires offering high electrical conductivity and maximum fire safety in conduits.' },
+            { name: 'Modular Switches & Sockets', details: 'Designer modular switches, touch panels, and child-safe shutter sockets designed for smooth operations and premium interior aesthetics.' },
+            { name: 'Distribution Boards & MCBs', details: 'Heavy-duty Miniature Circuit Breakers (MCBs), Residual Current Circuit Breakers (RCCBs), and modular distribution boards for overload protection.' },
+            { name: 'Conduits & Concealed Boxes', details: 'High-impact heavy-duty PVC conduit pipes, bend joiners, and metal concealed boxes for safe, neat, long-lasting concealed wiring.' }
+        ]
+    },
+    {
+        id: 'paints',
+        title: 'Paint',
+        subtitle: 'Interior & Exterior Wall Finishes',
+        icon: <i className="fa-solid fa-paint-roller"></i>,
+        variantCount: '4 Categories',
+        variantLabel: 'Categories',
+        brands: ['Asian Paints', 'Berger Paints', 'Dulux Paint', 'Nerolac Paints'],
+        description: 'Stunning aesthetics, weather protection, and anti-fungal properties for interior and exterior walls.',
+        heroDescription: 'Elevate the beauty of your residential or commercial projects with premium interior and exterior paints. Offering a rich palette of colors, superior washable finishes, dust-resistant tech, and environment-friendly low VOC formulations that keep your walls looking pristine for years.',
+        variants: [
+            { name: 'Interior Emulsions', details: 'Premium matte, satin, and luxury gloss finishes providing superior washability, stain-resistance, and long-lasting color richness.' },
+            { name: 'Exterior Emulsions', details: 'All-weather proof protection shields walls from rain, extreme heat, and UV rays, with anti-algal and high elasticity characteristics.' },
+            { name: 'Wall Primers & Putty', details: 'High-adhesion acrylic wall primers and waterproof acrylic putty to create perfectly smooth, uniform, moisture-resistant surfaces.' },
+            { name: 'Wood & Metal Coatings', details: 'Premium high-gloss and matte enamel paints and protective polyurethanes designed for wooden trims, doors, and metal railings.' }
+        ]
+    },
+    {
         id: 'lifts',
-        title: 'Lifts & Elevators',
+        title: 'Lift & Elevator',
         subtitle: 'Passenger & Goods Elevator Solutions',
         icon: <i className="fa-solid fa-elevator"></i>,
         variantCount: '4 Types',
@@ -125,8 +146,29 @@ const productsData = [
         ]
     },
     {
+        id: 'structure-iron',
+        title: 'Structure (Iron)',
+        subtitle: 'Structural Steel, I-Beams & Channels',
+        icon: <i className="fa-solid fa-industry"></i>,
+        variantCount: '8 Categories',
+        variantLabel: 'Types & Sections',
+        brands: ['TATA Structura', 'SAIL', 'JSW Steel', 'Jindal Steel', 'Vizag Steel', 'Magadh Fabrication'],
+        description: 'High-quality structural steel sections including I-Beams, H-Beams, Channels, Angles, gates, grills, and sitting structures.',
+        heroDescription: 'We provide premium quality structural iron and steel products sourced from top manufacturers like SAIL, TATA Structura, and JSW. Our structural steel members—including angles, channels, joists, and beams—are manufactured to withstand heavy structural loads, alongside custom gates, grills, and outdoor sitting structures fabricated to perfection.',
+        variants: [
+            { name: 'MS Angles (L-Section)', details: 'Equal and unequal angles ideal for structural framing, transmission towers, and industrial shelving.' },
+            { name: 'MS Channels (C-Section)', details: 'Heavy-duty steel channels used as purlins, joists, and support members in building frames.' },
+            { name: 'I-Beams & H-Beams', details: 'High bending-resistance structural steel beams designed to support heavy overhead loads in high-rises and bridges.' },
+            { name: 'Hollow Structural Sections (SHS/RHS)', details: 'Square and rectangular hollow steel tubes designed for premium framing, columns, and architectural steel works.' },
+            { name: 'MS Plates & Sheets', details: 'High-tensile steel plates used for structural connections, base plates, and heavy machinery fabrication.' },
+            { name: 'Iron Main Gate', details: 'Custom-designed premium iron main gates offering robust security, long-lasting durability, and elegant architectural designs.' },
+            { name: 'MS Grills', details: 'High-quality Mild Steel (MS) window and balcony safety grills, custom fabricated for maximum protection and ventilation.' },
+            { name: 'Iron Sitting Structure', details: 'Heavy-duty outdoor and garden iron sitting structures, benches, and gazebos fabricated for weather resistance and durability.' }
+        ]
+    },
+    {
         id: 'home-appliances',
-        title: 'Home Appliances',
+        title: 'Home Appliance',
         subtitle: 'TV, AC, Modular Kitchen & Smart Home Devices',
         icon: <i className="fa-solid fa-tv"></i>,
         variantCount: '6 Categories',
