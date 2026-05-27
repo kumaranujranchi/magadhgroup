@@ -9776,4 +9776,16 @@ Responsive Menu Css
   color: #fff;
 }
 
+/* Professionals section styling */
+.professional-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.professional-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+}
+.professional-card:hover img {
+  transform: scale(1.08);
+}
+
 /*# sourceMappingURL=style.css.map */

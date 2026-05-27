@@ -2,6 +2,7 @@ import SEO from "../../../data/seo";
 import HeaderTwo from "../../../layout/headers/header-two";
 import BreadCrumb from "../../common/breadcrumb";
 import ServicesMain from "./services";
+import ProfessionalsSection from "./professionals";
 import ChooseUs from "../../homes/home/choose-us";
 import WorkProcess from "../../homes/home-3/process";
 import ServicesFaq from "./services-faq";
@@ -14,6 +15,7 @@ const ServicePage = () => {
             <HeaderTwo />
             <BreadCrumb title="Services" innerTitle="Services" />
             <ServicesMain />
+            <ProfessionalsSection />
             <ChooseUs />
             <WorkProcess />
             <ServicesFaq />
