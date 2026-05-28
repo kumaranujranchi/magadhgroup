@@ -6,6 +6,7 @@ import HeaderTwo from "../../../layout/headers/header-two";
 import ProductDetailMain from "./product-detail-main";
 import FooterOne from "../../../layout/footers/footer-one";
 import productsData from '../../../data/products-data';
+import tmtBanner from '../../../../assets/img/banner/TMT-banner.png.webp';
 
 const ProductDetailPage = () => {
     const { slug } = useParams();
@@ -29,7 +30,7 @@ const ProductDetailPage = () => {
         <>
             <SEO pageTitle={`${product.title} - Product Portfolio`} />
             <HeaderTwo />
-            <BreadCrumb title={product.title} innerTitle={product.title} />
+            <BreadCrumb title={product.title} innerTitle={product.title} bgImage={product.id === 'tmt-bars' ? tmtBanner : undefined} />
             <ProductDetailMain product={product} />
             <FooterOne />
         </>
