@@ -1,5 +1,4 @@
 [build]
-  base = "main-file"
   command = "npm run build"
   publish = "build"
 
