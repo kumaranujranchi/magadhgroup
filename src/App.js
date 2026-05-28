@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ErrorPage from './components/pages/error';
 import HomeOne from './components/pages/homes/home';
-import HomeTwo from './components/pages/homes/home-2';
-import HomeThree from './components/pages/homes/home-3';
 import AboutUs from './components/pages/about';
 import ServicePage from './components/pages/services/service';
 import PricingPages from './components/pages/pricing-plans';
@@ -23,7 +21,6 @@ import ScrollToTopRoute from './components/pages/common/scroll/scroll-to-top-rou
 import { animationCreate } from '.';
 import CustomCursor from './components/pages/common/cursor';
 import SwitchTab from './components/pages/common/dark-light';
-import HomeFour from './components/pages/homes/home-4';
 import History from './components/pages/history';
 import ContactUs from './components/pages/contacts';
 import BlogStandardPage from './components/pages/blogs/blog-standard';
