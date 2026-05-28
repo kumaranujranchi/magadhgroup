@@ -24,6 +24,25 @@ import paintLogoBirlaOpus from '../../../../assets/img/brand-logo/paints-brand-l
 import paintLogoDulux from '../../../../assets/img/brand-logo/paints-brand-logo/Dulux.png';
 import paintLogoNerolac from '../../../../assets/img/brand-logo/paints-brand-logo/Nerolac.png';
 
+// Import Electrical Brand Logos
+import electricalLogoSchneider from '../../../../assets/img/brand-logo/electrical-brand-logo/Schneider Electric.webp';
+import electricalLogoSiemens from '../../../../assets/img/brand-logo/electrical-brand-logo/Siemens.webp';
+import electricalLogoABB from '../../../../assets/img/brand-logo/electrical-brand-logo/ABB.webp';
+import electricalLogoLegrand from '../../../../assets/img/brand-logo/electrical-brand-logo/Legrand.webp';
+import electricalLogoHavells from '../../../../assets/img/brand-logo/electrical-brand-logo/Havells.webp';
+import electricalLogoAnchor from '../../../../assets/img/brand-logo/electrical-brand-logo/Anchor by Panasonic.webp';
+import electricalLogoPolycab from '../../../../assets/img/brand-logo/electrical-brand-logo/Polycab.webp';
+import electricalLogoBajaj from '../../../../assets/img/brand-logo/electrical-brand-logo/Bajaj Electricals.webp';
+
+// Import Lift Brand Logos
+import liftLogoKone from '../../../../assets/img/brand-logo/lift-brand-logo/Kone.webp';
+import liftLogoOtis from '../../../../assets/img/brand-logo/lift-brand-logo/Otis.webp';
+import liftLogoSchindler from '../../../../assets/img/brand-logo/lift-brand-logo/Schindler.webp';
+import liftLogoJohnson from '../../../../assets/img/brand-logo/lift-brand-logo/Johnson Lifts.webp';
+import liftLogoTke from '../../../../assets/img/brand-logo/lift-brand-logo/TK Elevator.webp';
+import liftLogoMitsubishi from '../../../../assets/img/brand-logo/lift-brand-logo/Mitsubishi Electric.webp';
+import liftLogoHitachi from '../../../../assets/img/brand-logo/lift-brand-logo/Hitachi.webp';
+
 const brandDetailsData = {
     tata: {
         name: 'TATA Tiscon',
@@ -381,6 +400,42 @@ const brandDetailsData = {
             'Strongest anti-bacterial and anti-viral properties certified by independent labs.',
             'Highly durable formulations adapted from heavy-duty automotive paint technology.'
         ]
+    }
+};
+
+const getMarqueeLogos = (productId) => {
+    switch (productId) {
+        case 'tmt-bars':
+            return [tmtLogo1, tmtLogo2, tmtLogo3, tmtLogo5, tmtLogo6, tmtLogo7];
+        case 'cement':
+            return [cementLogoNuvoco, cementLogoUltraTech, cementLogoPrism, cementLogoBirlaShakti, cementLogoACC, cementLogoAmbuja];
+        case 'rmc':
+            return [cementLogoNuvoco, cementLogoUltraTech, cementLogoACC, cementLogoAmbuja];
+        case 'paints':
+            return [paintLogoAsian, paintLogoBerger, paintLogoBirlaOpus, paintLogoDulux, paintLogoNerolac];
+        case 'electrical-items':
+            return [
+                electricalLogoSchneider,
+                electricalLogoSiemens,
+                electricalLogoABB,
+                electricalLogoLegrand,
+                electricalLogoHavells,
+                electricalLogoAnchor,
+                electricalLogoPolycab,
+                electricalLogoBajaj
+            ];
+        case 'lifts':
+            return [
+                liftLogoKone,
+                liftLogoOtis,
+                liftLogoSchindler,
+                liftLogoJohnson,
+                liftLogoTke,
+                liftLogoMitsubishi,
+                liftLogoHitachi
+            ];
+        default:
+            return [];
     }
 };
 
@@ -798,37 +853,18 @@ const ProductDetailMain = ({ product }) => {
                 <div className="row justify-content-center">
                     <div className="col-lg-10 wow fadeInUp" data-wow-delay=".3s">
                         <h3 className="brand-showcase__title">Authorized Brands We Deal In</h3>
-                        
-                        {product.id === 'tmt-bars' || product.id === 'cement' || product.id === 'rmc' || product.id === 'paints' ? (
+                                            {getMarqueeLogos(product.id).length > 0 ? (
                             <div className="tmt-brand-marquee">
                                 <div className="tmt-brand-marquee__inner">
                                     <div className="tmt-brand-marquee__group">
-                                        {(product.id === 'tmt-bars' 
-                                            ? [tmtLogo1, tmtLogo2, tmtLogo3, tmtLogo5, tmtLogo6, tmtLogo7] 
-                                            : (product.id === 'cement'
-                                                ? [cementLogoNuvoco, cementLogoUltraTech, cementLogoPrism, cementLogoBirlaShakti, cementLogoACC, cementLogoAmbuja]
-                                                : (product.id === 'rmc'
-                                                    ? [cementLogoNuvoco, cementLogoUltraTech, cementLogoACC, cementLogoAmbuja]
-                                                    : [paintLogoAsian, paintLogoBerger, paintLogoBirlaOpus, paintLogoDulux, paintLogoNerolac]
-                                                  )
-                                              )
-                                        ).map((logo, idx) => (
+                                        {getMarqueeLogos(product.id).map((logo, idx) => (
                                             <div className="tmt-brand-marquee__item" key={idx}>
                                                 <img src={logo} alt={`Brand ${idx + 1}`} />
                                             </div>
                                         ))}
                                     </div>
                                     <div className="tmt-brand-marquee__group" aria-hidden="true">
-                                        {(product.id === 'tmt-bars' 
-                                            ? [tmtLogo1, tmtLogo2, tmtLogo3, tmtLogo5, tmtLogo6, tmtLogo7] 
-                                            : (product.id === 'cement'
-                                                ? [cementLogoNuvoco, cementLogoUltraTech, cementLogoPrism, cementLogoBirlaShakti, cementLogoACC, cementLogoAmbuja]
-                                                : (product.id === 'rmc'
-                                                    ? [cementLogoNuvoco, cementLogoUltraTech, cementLogoACC, cementLogoAmbuja]
-                                                    : [paintLogoAsian, paintLogoBerger, paintLogoBirlaOpus, paintLogoDulux, paintLogoNerolac]
-                                                  )
-                                              )
-                                        ).map((logo, idx) => (
+                                        {getMarqueeLogos(product.id).map((logo, idx) => (
                                             <div className="tmt-brand-marquee__item" key={`dup-${idx}`}>
                                                 <img src={logo} alt={`Brand ${idx + 1}`} />
                                             </div>

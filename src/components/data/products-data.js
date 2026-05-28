@@ -19,6 +19,33 @@ import paintLogoBerger from '../../assets/img/brand-logo/paints-brand-logo/Berge
 import paintLogoBirlaOpus from '../../assets/img/brand-logo/paints-brand-logo/Birla Opus.png';
 import paintLogoDulux from '../../assets/img/brand-logo/paints-brand-logo/Dulux.png';
 import paintLogoNerolac from '../../assets/img/brand-logo/paints-brand-logo/Nerolac.png';
+import soneRiverSandImg from '../../assets/img/Product/Sand, Chips & Brick/Sone River Sand.webp';
+import soneRiverSandImg1 from '../../assets/img/Product/Sand, Chips & Brick/sone river sand-1.webp';
+import pakurStoneChips20mm1 from '../../assets/img/Product/Sand, Chips & Brick/Pakur Stone Chips 20mm (1).webp';
+import pakurStoneChips20mm2 from '../../assets/img/Product/Sand, Chips & Brick/Pakur Stone Chips 20mm (2).webp';
+import pakurStoneChips20mm3 from '../../assets/img/Product/Sand, Chips & Brick/Pakur Stone Chips 20mm (3).webp';
+import pakurStoneChips10mm1 from '../../assets/img/Product/Sand, Chips & Brick/Pakur stone chips 10mm (1).webp';
+import pakurStoneChips10mm2 from '../../assets/img/Product/Sand, Chips & Brick/Pakur stone chips 10mm (2).webp';
+import flyAshBricks1 from '../../assets/img/Product/Sand, Chips & Brick/Fly ash bricks (1).webp';
+import flyAshBricks2 from '../../assets/img/Product/Sand, Chips & Brick/Fly ash bricks (2).webp';
+import redClayBricks1 from '../../assets/img/Product/Sand, Chips & Brick/Red Brick - 1.webp';
+import redClayBricks2 from '../../assets/img/Product/Sand, Chips & Brick/red brick-2.webp';
+import kodermaAggregates1 from '../../assets/img/Product/Sand, Chips & Brick/Koderma Agreegate-1.webp';
+import kodermaAggregates2 from '../../assets/img/Product/Sand, Chips & Brick/Koderma Agreegate-2.webp';
+import gangaRiverSandImg from '../../assets/img/Product/Sand, Chips & Brick/Ganga River Sand.webp';
+import aacBlocksImg from '../../assets/img/Product/Sand, Chips & Brick/AAC Blocks.webp';
+import upvcSlidingWindowsImg from '../../assets/img/Product/Doors & Windows/UPVC Sliding Windows.webp';
+import aluminiumCasementDoorsImg from '../../assets/img/Product/Doors & Windows/Aluminium Casement Doors.webp';
+import solidFlushWoodenDoorsImg from '../../assets/img/Product/Doors & Windows/Solid Flush Wooden Doors.webp';
+import bugMeshSecurityGrillsImg from '../../assets/img/Product/Doors & Windows/Bug Mesh & Security Grills.webp';
+import frCopperWiresImg from '../../assets/img/Product/Electrical/FR & FRLSH Copper Wires.webp';
+import modularSwitchesImg from '../../assets/img/Product/Electrical/Modular Switches & Sockets.webp';
+import distributionBoardsImg from '../../assets/img/Product/Electrical/Distribution Boards & MCBs.webp';
+import conduitsConcealedBoxesImg from '../../assets/img/Product/Electrical/Conduits & Concealed Boxes.webp';
+import passengerElevatorsImg from '../../assets/img/Product/Lifts/passanger lift.webp';
+import homeVillaLiftsImg from '../../assets/img/Product/Lifts/home lift.webp';
+import goodsServiceElevatorsImg from '../../assets/img/Product/Lifts/goods & service lift.webp';
+import hospitalBedElevatorsImg from '../../assets/img/Product/Lifts/Hospital Lift.webp';
 
 export const brandLogosMap = {
     'TATA TMT': brandLogo1,
@@ -178,64 +205,63 @@ const productsData = [
                 name: 'Sone River Sand', 
                 details: 'High-purity, coarse sand ideal for structural concrete and plastering work.',
                 images: [
-                    'https://images.unsplash.com/photo-1604147706283-d7119b5b822c?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80'
+                    soneRiverSandImg,
+                    soneRiverSandImg1
                 ]
             },
             { 
                 name: 'Pakur Stone Chips (20mm)', 
                 details: 'High-strength black stone aggregates, perfect for heavy load-bearing concrete casting.',
                 images: [
-                    'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80'
+                    pakurStoneChips20mm1,
+                    pakurStoneChips20mm2,
+                    pakurStoneChips20mm3
                 ]
             },
             { 
                 name: 'Pakur Stone Chips (10mm)', 
                 details: 'Premium quality aggregates for fine concrete work, flooring, and lintels.',
                 images: [
-                    'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80'
+                    pakurStoneChips10mm1,
+                    pakurStoneChips10mm2
                 ]
             },
             { 
                 name: 'Fly Ash Bricks', 
                 details: 'Eco-friendly bricks with uniform shape, high strength, and low water absorption.',
                 images: [
-                    'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=600&q=80'
+                    flyAshBricks1,
+                    flyAshBricks2
                 ]
             },
             { 
                 name: 'Red Clay Bricks (Class I)', 
                 details: 'Traditionally baked high-density clay bricks offering excellent thermal insulation and structural strength.',
                 images: [
-                    'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=600&q=80'
+                    redClayBricks1,
+                    redClayBricks2
                 ]
             },
             { 
                 name: 'Koderma Aggregates', 
                 details: 'Premium blue-metal stone aggregates sourced from Koderma, renowned for high load-bearing capacity and strength in concrete structures.',
                 images: [
-                    'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=600&q=80'
+                    kodermaAggregates1,
+                    kodermaAggregates2
                 ]
             },
             { 
                 name: 'Ganga River Sand', 
                 details: 'Fine-grained river sand from the Ganga river basin, highly preferred for smooth wall plastering and finishing work.',
                 images: [
-                    'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1604147706283-d7119b5b822c?auto=format&fit=crop&w=600&q=80'
+                    gangaRiverSandImg
                 ]
             },
             { 
                 name: 'AAC Blocks', 
                 details: 'Autoclaved Aerated Concrete blocks providing lightweight masonry, superior thermal insulation, soundproofing, and fire resistance.',
                 images: [
-                    'https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=600&q=80'
+                    aacBlocksImg
                 ]
             }
         ]
@@ -300,32 +326,28 @@ const productsData = [
                 name: 'UPVC Sliding Windows', 
                 details: 'Multi-chambered welded profiles with high-grade double glazing, providing exceptional sound insulation, dust protection, and thermal efficiency.',
                 images: [
-                    'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80'
+                    upvcSlidingWindowsImg
                 ]
             },
             { 
                 name: 'Aluminium Casement Doors', 
                 details: 'Premium architectural-grade, powder-coated structural aluminium frames fitted with multi-point high-security locking systems.',
                 images: [
-                    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'
+                    aluminiumCasementDoorsImg
                 ]
             },
             { 
                 name: 'Solid Flush Wooden Doors', 
                 details: 'High-density seasoned solid wood cores with boiling waterproof protection, perfect for designer main entries and heavy bedroom doors.',
                 images: [
-                    'https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80'
+                    solidFlushWoodenDoorsImg
                 ]
             },
             { 
                 name: 'Bug Mesh & Security Grills', 
                 details: 'Integrated robust fly-mesh sliders and heavy-duty steel safety grills for high ventilation without compromising security.',
                 images: [
-                    'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?auto=format&fit=crop&w=600&q=80'
+                    bugMeshSecurityGrillsImg
                 ]
             }
         ]
@@ -337,7 +359,7 @@ const productsData = [
         icon: <i className="fa-solid fa-bolt"></i>,
         variantCount: '4 Categories',
         variantLabel: 'Categories',
-        brands: ['Havells', 'Polycab Wires', 'Finolex Cables', 'Legrand Switches', 'Anchor'],
+        brands: ['Schneider Electric', 'Siemens', 'ABB', 'Legrand', 'Havells', 'Anchor by Panasonic', 'Polycab', 'Bajaj Electricals'],
         description: 'Safe, durable FR cables, elegant modular switches, and reliable distribution systems for all construction needs.',
         heroDescription: 'Ensure safety and performance in your electrical networks. We supply certified Flame Retardant (FR) copper wires, state-of-the-art modular switches, sleek glass frames, heavy-duty MCBs, and comprehensive distribution boards engineered to withstand high voltage swings and maximize electricity conservation.',
         variants: [
@@ -345,32 +367,28 @@ const productsData = [
                 name: 'FR & FRLSH Copper Wires', 
                 details: 'Flame Retardant and Low Smoke Halogen-free copper wires offering high electrical conductivity and maximum fire safety in conduits.',
                 images: [
-                    'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1558244661-d248897f7bc4?auto=format&fit=crop&w=600&q=80'
+                    frCopperWiresImg
                 ]
             },
             { 
                 name: 'Modular Switches & Sockets', 
                 details: 'Designer modular switches, touch panels, and child-safe shutter sockets designed for smooth operations and premium interior aesthetics.',
                 images: [
-                    'https://images.unsplash.com/photo-1558244661-d248897f7bc4?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80'
+                    modularSwitchesImg
                 ]
             },
             { 
                 name: 'Distribution Boards & MCBs', 
                 details: 'Heavy-duty Miniature Circuit Breakers (MCBs), Residual Current Circuit Breakers (RCCBs), and modular distribution boards for overload protection.',
                 images: [
-                    'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1558244661-d248897f7bc4?auto=format&fit=crop&w=600&q=80'
+                    distributionBoardsImg
                 ]
             },
             { 
                 name: 'Conduits & Concealed Boxes', 
                 details: 'High-impact heavy-duty PVC conduit pipes, bend joiners, and metal concealed boxes for safe, neat, long-lasting concealed wiring.',
                 images: [
-                    'https://images.unsplash.com/photo-1558244661-d248897f7bc4?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80'
+                    conduitsConcealedBoxesImg
                 ]
             }
         ]
@@ -427,41 +445,29 @@ const productsData = [
         icon: <i className="fa-solid fa-elevator"></i>,
         variantCount: '4 Types',
         variantLabel: 'Types',
-        brands: ['Otis Elevators', 'KONE Lifts', 'Schindler Lifts', 'Mitsubishi Electric'],
+        brands: ['KONE India', 'Otis India', 'Schindler India', 'Johnson Lifts', 'TK Elevator India', 'Mitsubishi Electric India', 'Hitachi Lift India'],
         description: 'Advanced, smooth-riding elevators utilizing smart gearless technology for commercial and high-rise structures.',
         heroDescription: 'We deliver state-of-the-art vertical transportation systems engineered for safety, speed, energy-efficiency, and smooth riding comfort. Incorporating smart gearless PM motors, regenerative drives, and modern cabin interiors for residential complexes, malls, and factories.',
         variants: [
             { 
                 name: 'Passenger Elevators', 
                 details: 'Modern gearless traction lifts offering ultra-smooth acceleration, silent operation, and sleek digital cabin designs for residential and office high-rises.',
-                images: [
-                    'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80'
-                ]
+                images: [passengerElevatorsImg]
             },
             { 
                 name: 'Home & Villa Lifts', 
                 details: 'Compact, low-overhead, pitless single-phase domestic elevators customized specifically for personal bungalows and low-rise villas.',
-                images: [
-                    'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80'
-                ]
+                images: [homeVillaLiftsImg]
             },
             { 
                 name: 'Goods & Service Elevators', 
                 details: 'Heavy-duty vertical transportation cabins engineered to safely move freight, heavy raw materials, and logistics personnel within industrial setups.',
-                images: [
-                    'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80'
-                ]
+                images: [goodsServiceElevatorsImg]
             },
             { 
                 name: 'Hospital Bed Elevators', 
                 details: 'Extra-deep elevators with micro-leveling precision, wider sliding doors, and ultra-gentle movement acceleration profiles specifically for hospital stretchers.',
-                images: [
-                    'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80'
-                ]
+                images: [hospitalBedElevatorsImg]
             }
         ]
     },

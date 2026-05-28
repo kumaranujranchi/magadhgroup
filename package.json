@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
-    "raw-loader": "^4.0.2"
+    "raw-loader": "^4.0.2",
+    "sharp": "^0.34.5"
   }
 }
