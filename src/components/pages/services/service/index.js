@@ -4,7 +4,7 @@ import BreadCrumb from "../../common/breadcrumb";
 import ServicesMain from "./services";
 import ProfessionalsSection from "./professionals";
 import ChooseUs from "../../homes/home/choose-us";
-import WorkProcess from "../../homes/home-3/process";
+import WorkProcess from "./process";
 import ServicesFaq from "./services-faq";
 import FooterOne from "../../../layout/footers/footer-one";
 

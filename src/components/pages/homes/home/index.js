@@ -9,7 +9,7 @@ import ChooseUs from "./choose-us";
 import Portfolio from "./portfolio";
 import CounterUp from "./counter";
 import Experience from "./experience";
-import TestimonialTwo from "../home-2/testimonial";
+import TestimonialTwo from "./testimonial-two";
 import Blog from "./blog";
 import FooterOne from "../../../layout/footers/footer-one";
 
