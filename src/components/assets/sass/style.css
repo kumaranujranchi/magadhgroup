@@ -9816,4 +9816,17 @@ Responsive Menu Css
   transform: scale(1.08);
 }
 
+/* Slightly round the corners of images on Homepage and About page, except banner/hero images */
+.about__one-left-image img,
+.about__one-right img,
+.choose__us-left img,
+.experience__area-image img,
+.portfolio__one-item img,
+.blog__one-item-image img,
+.about__five-image img,
+.certification-right img,
+.team__area-item img {
+  border-radius: 12px !important;
+}
+
 /*# sourceMappingURL=style.css.map */

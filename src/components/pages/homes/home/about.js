@@ -17,7 +17,7 @@ const About = () => {
                                 <div className="row al-center mt-45">
                                     <div className="col-md-4 md-mb-25">
                                         <div className="about__one-left-image wow fadeInLeft" data-wow-delay=".4s">
-                                            <img className="md_img_full" src={image2} alt="Construction Engineer" />
+                                            <img className="md_img_full" src={image2} alt="Construction Engineer" style={{ borderRadius: '12px' }} />
                                         </div>
                                     </div>
                                     <div className="col-md-8 pl-50 xl-pl-10">
@@ -46,7 +46,7 @@ const About = () => {
                         </div>
                         <div className="col-lg-5">
                             <div className="about__one-right t-right">
-                                <img className="wow img_right_animation lg_img_full" src={image1} alt="Building Construction" />
+                                <img className="wow img_right_animation lg_img_full" src={image1} alt="Building Construction" style={{ borderRadius: '12px' }} />
                             </div>
                         </div>
                     </div>
