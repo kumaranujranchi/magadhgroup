@@ -7,6 +7,10 @@ import ProductDetailMain from "./product-detail-main";
 import FooterOne from "../../../layout/footers/footer-one";
 import productsData from '../../../data/products-data';
 import tmtBanner from '../../../../assets/img/banner/TMT-banner.png.webp';
+import cementBanner from '../../../../assets/img/banner/products-portfolio-banner.png.webp';
+import sandChipsBanner from '../../../../assets/img/banner/sand-chips-bricks-banner.png.webp';
+import rmcBanner from '../../../../assets/img/banner/rmc-banner.png.webp';
+import doorWindowsBanner from '../../../../assets/img/banner/door-windows-banner.png.webp';
 
 const ProductDetailPage = () => {
     const { slug } = useParams();
@@ -30,7 +34,7 @@ const ProductDetailPage = () => {
         <>
             <SEO pageTitle={`${product.title} - Product Portfolio`} />
             <HeaderTwo />
-            <BreadCrumb title={product.title} innerTitle={product.title} bgImage={product.id === 'tmt-bars' ? tmtBanner : undefined} />
+            <BreadCrumb title={product.title} innerTitle={product.title} bgImage={product.id === 'tmt-bars' ? tmtBanner : product.id === 'cement' ? cementBanner : product.id === 'sand-chips-brick' ? sandChipsBanner : product.id === 'rmc' ? rmcBanner : product.id === 'doors-windows' ? doorWindowsBanner : undefined} />
             <ProductDetailMain product={product} />
             <FooterOne />
         </>

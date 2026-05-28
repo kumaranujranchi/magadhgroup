@@ -6,6 +6,7 @@ import SEO from "../../../data/seo";
 import HeaderTwo from "../../../layout/headers/header-two";
 import FooterOne from "../../../layout/footers/footer-one";
 import portfolioData from "../../../data/portfolio-data";
+import portfolioBanner from "../../../../assets/img/service/services-5.png.webp";
 
 const PortfolioDetails = () => {
     const params = useParams();
@@ -24,7 +25,7 @@ const PortfolioDetails = () => {
         <>
             <SEO pageTitle={singleData?.title} />
             <HeaderTwo />
-            <BreadCrumb title={firstThreeWords} innerTitle={singleData?.title} />
+            <BreadCrumb title={firstThreeWords} innerTitle={singleData?.title} bgImage={portfolioBanner} />
             <PortfolioDetailsMain singleData={singleData}/>
             <FooterOne />
         </>

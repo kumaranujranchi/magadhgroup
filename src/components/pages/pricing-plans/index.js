@@ -3,13 +3,14 @@ import HeaderTwo from "../../layout/headers/header-two";
 import BreadCrumb from "../common/breadcrumb";
 import PricingPlansMain from "./pricing-plans";
 import FooterOne from "../../layout/footers/footer-one";
+import pricingBanner from "../../../assets/img/service/services-6.png.webp";
 
 const PricingPages = () => {
     return (
         <>
             <SEO pageTitle="Price Plan" />
             <HeaderTwo />
-            <BreadCrumb title="Price Plan" innerTitle="Price Plan" />
+            <BreadCrumb title="Price Plan" innerTitle="Price Plan" bgImage={pricingBanner} />
             <PricingPlansMain />
             <FooterOne />
         </>

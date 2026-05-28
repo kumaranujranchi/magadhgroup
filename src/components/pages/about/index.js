@@ -1,5 +1,6 @@
 import BreadCrumb from "../common/breadcrumb";
 import SEO from "../../data/seo";
+import aboutBanner from "../../../assets/img/about/aboutuspage-1.png.webp";
 import HeaderTwo from "../../layout/headers/header-two";
 import AboutMain from "./about";
 import Video from "./video";
@@ -14,7 +15,7 @@ const AboutUs = () => {
         <>
             <SEO pageTitle="About Us" />
             <HeaderTwo />
-            <BreadCrumb title="About Us" innerTitle="About Us" />
+            <BreadCrumb title="About Us" innerTitle="About Us" bgImage={aboutBanner} />
             <AboutMain />
             <Video />
             <Certification />

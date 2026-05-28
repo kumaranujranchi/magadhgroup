@@ -6,6 +6,7 @@ import HeaderTwo from "../../../layout/headers/header-two";
 import FooterOne from "../../../layout/footers/footer-one";
 import { useParams, useNavigate } from "react-router-dom";
 import servicesData from "../../../data/services-data";
+import serviceSingleBanner from "../../../../assets/img/service/services-2.png.webp";
 
 const ServicesDetails = () => {
     const params = useParams();
@@ -24,7 +25,7 @@ const ServicesDetails = () => {
         <>
             <SEO pageTitle={singleData?.title} />
             <HeaderTwo />
-            <BreadCrumb title={firstThreeWords} innerTitle={singleData?.title} />
+            <BreadCrumb title={firstThreeWords} innerTitle={singleData?.title} bgImage={serviceSingleBanner} />
             <ServicesSingleMain singleData={singleData}/>
             <FooterOne />
         </>

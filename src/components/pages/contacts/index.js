@@ -3,13 +3,14 @@ import FooterOne from "../../layout/footers/footer-one";
 import HeaderTwo from "../../layout/headers/header-two";
 import BreadCrumb from "../common/breadcrumb";
 import ContactMain from "./contact";
+import contactBanner from "../../../assets/img/service/services-3.png.webp";
 
 const ContactUs = () => {
     return (
         <>
             <SEO pageTitle="Contact Us" />
             <HeaderTwo />
-            <BreadCrumb title="Contact Us" innerTitle="Contact Us" />
+            <BreadCrumb title="Contact Us" innerTitle="Contact Us" bgImage={contactBanner} />
             <ContactMain />
             <div className="map section-padding pt-0">
                 <div className="container">

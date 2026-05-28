@@ -6,6 +6,7 @@ import SEO from "../../../data/seo";
 import HeaderTwo from "../../../layout/headers/header-two";
 import FooterOne from "../../../layout/footers/footer-one";
 import blogData from '../../../data/blog-data';
+import blogDetailsBanner from "../../../../assets/img/service/services-2.png.webp";
 
 const BlogDetails = () => {
     const params = useParams();
@@ -24,7 +25,7 @@ const BlogDetails = () => {
         <>
             <SEO pageTitle={singleData?.title} />
             <HeaderTwo />
-            <BreadCrumb title={firstThreeWords} innerTitle={singleData?.title} />
+            <BreadCrumb title={firstThreeWords} innerTitle={singleData?.title} bgImage={blogDetailsBanner} />
             <BlogSingleMain singleData={singleData}/>
             <FooterOne />
         </>
