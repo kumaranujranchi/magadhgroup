@@ -11,6 +11,11 @@ import cementBanner from '../../../../assets/img/banner/products-portfolio-banne
 import sandChipsBanner from '../../../../assets/img/banner/sand-chips-bricks-banner.png.webp';
 import rmcBanner from '../../../../assets/img/banner/rmc-banner.png.webp';
 import doorWindowsBanner from '../../../../assets/img/banner/door-windows-banner.png.webp';
+import electricalBanner from '../../../../assets/img/banner/electrical-banner.png.webp';
+import paintBanner from '../../../../assets/img/banner/paint-banner.png.webp';
+import liftBanner from '../../../../assets/img/banner/lift-banner.png.webp';
+import structureBanner from '../../../../assets/img/banner/structure-banner.png.webp';
+import applianceBanner from '../../../../assets/img/banner/home-applincece-banner.png.webp';
 
 const ProductDetailPage = () => {
     const { slug } = useParams();
@@ -34,7 +39,23 @@ const ProductDetailPage = () => {
         <>
             <SEO pageTitle={`${product.title} - Product Portfolio`} />
             <HeaderTwo />
-            <BreadCrumb title={product.title} innerTitle={product.title} bgImage={product.id === 'tmt-bars' ? tmtBanner : product.id === 'cement' ? cementBanner : product.id === 'sand-chips-brick' ? sandChipsBanner : product.id === 'rmc' ? rmcBanner : product.id === 'doors-windows' ? doorWindowsBanner : undefined} />
+            <BreadCrumb 
+                title={product.title} 
+                innerTitle={product.title} 
+                bgImage={
+                    product.id === 'tmt-bars' ? tmtBanner : 
+                    product.id === 'cement' ? cementBanner : 
+                    product.id === 'sand-chips-brick' ? sandChipsBanner : 
+                    product.id === 'rmc' ? rmcBanner : 
+                    product.id === 'doors-windows' ? doorWindowsBanner : 
+                    product.id === 'electrical-items' ? electricalBanner : 
+                    product.id === 'paints' ? paintBanner : 
+                    product.id === 'lifts' ? liftBanner : 
+                    product.id === 'structure-iron' ? structureBanner : 
+                    product.id === 'home-appliances' ? applianceBanner : 
+                    undefined
+                } 
+            />
             <ProductDetailMain product={product} />
             <FooterOne />
         </>
