@@ -1,17 +1,30 @@
 import React from 'react';
-import brandLogo1 from '../../assets/img/brand-logo/1.png.webp';
-import brandLogo2 from '../../assets/img/brand-logo/2.png.webp';
-import brandLogo3 from '../../assets/img/brand-logo/3.png.webp';
-import brandLogo4 from '../../assets/img/brand-logo/4.png.webp';
-import brandLogo5 from '../../assets/img/brand-logo/5.png.webp';
-import brandLogo6 from '../../assets/img/brand-logo/6.png.webp';
-import brandLogo7 from '../../assets/img/brand-logo/7.png.webp';
-import brandLogo8 from '../../assets/img/brand-logo/8.png.webp';
-import brandLogo9 from '../../assets/img/brand-logo/9.png.webp';
-import brandLogo10 from '../../assets/img/brand-logo/10.png.webp';
-import brandLogo11 from '../../assets/img/brand-logo/11.png.webp';
-import brandLogo12 from '../../assets/img/brand-logo/12.png.webp';
-import brandLogo13 from '../../assets/img/brand-logo/13.png.webp';
+
+// Import TMT Brand Logos
+import tmtLogo1 from '../../assets/img/tmt-brand-logo/1.png';
+import tmtLogo2 from '../../assets/img/tmt-brand-logo/2.png';
+import tmtLogo3 from '../../assets/img/tmt-brand-logo/3.png';
+import tmtLogo5 from '../../assets/img/tmt-brand-logo/5.png';
+import tmtLogo6 from '../../assets/img/tmt-brand-logo/6.png';
+import tmtLogo7 from '../../assets/img/tmt-brand-logo/7.png';
+
+// Import Cement / Concrete Brand Logos
+import cementLogoNuvoco from '../../assets/img/brand-logo/cement-brand-logo/Nuvuco Cement.png';
+import cementLogoUltraTech from '../../assets/img/brand-logo/cement-brand-logo/UltraTech.png';
+import cementLogoPrism from '../../assets/img/brand-logo/cement-brand-logo/Prism Cement.png';
+import cementLogoBirlaShakti from '../../assets/img/brand-logo/cement-brand-logo/Birla Shakti.png';
+import cementLogoACC from '../../assets/img/brand-logo/cement-brand-logo/AAC Cement.png';
+import cementLogoAmbuja from '../../assets/img/brand-logo/cement-brand-logo/Ambuja Cement.png';
+
+// Import Electrical Brand Logos
+import electricalLogoSchneider from '../../assets/img/brand-logo/electrical-brand-logo/Schneider Electric.webp';
+import electricalLogoSiemens from '../../assets/img/brand-logo/electrical-brand-logo/Siemens.webp';
+import electricalLogoABB from '../../assets/img/brand-logo/electrical-brand-logo/ABB.webp';
+import electricalLogoLegrand from '../../assets/img/brand-logo/electrical-brand-logo/Legrand.webp';
+import electricalLogoHavells from '../../assets/img/brand-logo/electrical-brand-logo/Havells.webp';
+import electricalLogoAnchor from '../../assets/img/brand-logo/electrical-brand-logo/Anchor by Panasonic.webp';
+import electricalLogoPolycab from '../../assets/img/brand-logo/electrical-brand-logo/Polycab.webp';
+import electricalLogoBajaj from '../../assets/img/brand-logo/electrical-brand-logo/Bajaj Electricals.webp';
 
 // Import New Paints Brand Logos
 import paintLogoAsian from '../../assets/img/brand-logo/paints-brand-logo/Asian.png';
@@ -47,24 +60,91 @@ import homeVillaLiftsImg from '../../assets/img/Product/Lifts/home lift.webp';
 import goodsServiceElevatorsImg from '../../assets/img/Product/Lifts/goods & service lift.webp';
 import hospitalBedElevatorsImg from '../../assets/img/Product/Lifts/Hospital Lift.webp';
 
+// Import Structure (Iron) Images
+import msAnglesImg from '../../assets/img/Product/Structure/MS Angles (L-Section).png';
+import msChannelsImg from '../../assets/img/Product/Structure/MS Channels (C-Section).png';
+import iBeamsImg from '../../assets/img/Product/Structure/I-Beams & H-Beams.png';
+import hollowSectionsImg from '../../assets/img/Product/Structure/Hollow Structural Sections (SHS-RHS).png';
+import msPlatesImg from '../../assets/img/Product/Structure/MS Plates & Sheets.png';
+import ironGateImg from '../../assets/img/Product/Structure/Iron Main Gate.png';
+import msGrillsImg from '../../assets/img/Product/Structure/MS Grills.png';
+import ironSittingImg from '../../assets/img/Product/Structure/Iron Sitting Structure.png';
+
+// Import Home Appliance Images
+import inverterAcImg from '../../assets/img/Product/Home Appliance/Inverter Split & Cassette ACs.png';
+import smartTvImg from '../../assets/img/Product/Home Appliance/QLED - OLED Smart Displays.png';
+import kitchenHobImg from '../../assets/img/Product/Home Appliance/Modular Kitchen Chimneys & Hobs.png';
+import refrigeratorImg from '../../assets/img/Product/Home Appliance/Double-Door & French-Door Refrigerators.png';
+
+// Import Structural Brand Logos
+import structLogoTata from '../../assets/img/brand-logo/structural-brand-logo/TATA Structura.png';
+import structLogoSail from '../../assets/img/brand-logo/structural-brand-logo/SAIL.png';
+import structLogoJsw from '../../assets/img/brand-logo/structural-brand-logo/JSW Steel.png';
+import structLogoJindal from '../../assets/img/brand-logo/structural-brand-logo/Jindal Steel.png';
+import structLogoVizag from '../../assets/img/brand-logo/structural-brand-logo/Vizag Steel.png';
+
+// Import Home Appliance Brand Logos
+import applLogoSamsung from '../../assets/img/brand-logo/appliances-brand-logo/Samsung.svg';
+import applLogoLg from '../../assets/img/brand-logo/appliances-brand-logo/LG.svg';
+import applLogoWhirlpool from '../../assets/img/brand-logo/appliances-brand-logo/Whirlpool.svg';
+import applLogoVoltas from '../../assets/img/brand-logo/appliances-brand-logo/Voltas.svg';
+import applLogoBosch from '../../assets/img/brand-logo/appliances-brand-logo/Bosch.svg';
+
 export const brandLogosMap = {
-    'TATA TMT': brandLogo1,
-    'TATA Structura': brandLogo1,
-    'Ultratech': brandLogo2,
-    'UltraTech RMC': brandLogo2,
-    'ACC Cement': brandLogo3,
-    'ACC Concrete': brandLogo3,
-    'Ambuja Cement': brandLogo4,
-    'Birla Gold': brandLogo5,
-    'Dalmia Cement': brandLogo6,
+    // TMT Brands
+    'TATA TMT': tmtLogo7,
+    'TATA Tiscon': tmtLogo7,
+    'Jindal Panther': tmtLogo6,
+    'JSW Neosteel': tmtLogo5,
+    'Magadh TMT': tmtLogo3,
+    'Rungta Steel': tmtLogo2,
+    'SAIL TMT': tmtLogo1,
+
+    // Structural Brands
+    'TATA Structura': structLogoTata,
+    'SAIL': structLogoSail,
+    'JSW Steel': structLogoJsw,
+    'Jindal Steel': structLogoJindal,
+    'Vizag Steel': structLogoVizag,
+
+    // Home Appliances Brands
+    'Samsung Electronics': applLogoSamsung,
+    'LG Appliances': applLogoLg,
+    'Whirlpool': applLogoWhirlpool,
+    'Voltas AC': applLogoVoltas,
+    'Bosch Home': applLogoBosch,
+
+    // Cement / Concrete Brands
+    'Ultratech': cementLogoUltraTech,
+    'UltraTech Cement': cementLogoUltraTech,
+    'UltraTech RMC': cementLogoUltraTech,
+    'ACC Cement': cementLogoACC,
+    'ACC Concrete': cementLogoACC,
+    'Ambuja Cement': cementLogoAmbuja,
+    'Ambuja Concrete': cementLogoAmbuja,
+    'Prism Cement': cementLogoPrism,
+    'Birla Shakti Cement': cementLogoBirlaShakti,
+    'Birla Gold': cementLogoBirlaShakti,
+    'Nuvoco Cement': cementLogoNuvoco,
+    'Nuvoco RMC': cementLogoNuvoco,
+
+    // Paints Brands
     'Asian Paints': paintLogoAsian,
     'Berger Paints': paintLogoBerger,
     'Birla Opus': paintLogoBirlaOpus,
     'Dulux Paint': paintLogoDulux,
     'Nerolac Paints': paintLogoNerolac,
-    'Havells': brandLogo11,
-    'Polycab Wires': brandLogo12,
-    'Finolex Cables': brandLogo13,
+
+    // Electrical Brands
+    'Schneider Electric': electricalLogoSchneider,
+    'Siemens': electricalLogoSiemens,
+    'ABB': electricalLogoABB,
+    'Legrand': electricalLogoLegrand,
+    'Havells': electricalLogoHavells,
+    'Anchor by Panasonic': electricalLogoAnchor,
+    'Polycab': electricalLogoPolycab,
+    'Polycab Wires': electricalLogoPolycab,
+    'Bajaj Electricals': electricalLogoBajaj,
 };
 
 const productsData = [
@@ -486,64 +566,56 @@ const productsData = [
                 name: 'MS Angles (L-Section)', 
                 details: 'Equal and unequal angles ideal for structural framing, transmission towers, and industrial shelving.',
                 images: [
-                    'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1516216628859-9bccecad13fc?auto=format&fit=crop&w=600&q=80'
+                    msAnglesImg
                 ]
             },
             { 
                 name: 'MS Channels (C-Section)', 
                 details: 'Heavy-duty steel channels used as purlins, joists, and support members in building frames.',
                 images: [
-                    'https://images.unsplash.com/photo-1516216628859-9bccecad13fc?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80'
+                    msChannelsImg
                 ]
             },
             { 
                 name: 'I-Beams & H-Beams', 
                 details: 'High bending-resistance structural steel beams designed to support heavy overhead loads in high-rises and bridges.',
                 images: [
-                    'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1516216628859-9bccecad13fc?auto=format&fit=crop&w=600&q=80'
+                    iBeamsImg
                 ]
             },
             { 
                 name: 'Hollow Structural Sections (SHS/RHS)', 
                 details: 'Square and rectangular hollow steel tubes designed for premium framing, columns, and architectural steel works.',
                 images: [
-                    'https://images.unsplash.com/photo-1516216628859-9bccecad13fc?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80'
+                    hollowSectionsImg
                 ]
             },
             { 
                 name: 'MS Plates & Sheets', 
                 details: 'High-tensile steel plates used for structural connections, base plates, and heavy machinery fabrication.',
                 images: [
-                    'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1516216628859-9bccecad13fc?auto=format&fit=crop&w=600&q=80'
+                    msPlatesImg
                 ]
             },
             { 
                 name: 'Iron Main Gate', 
                 details: 'Custom-designed premium iron main gates offering robust security, long-lasting durability, and elegant architectural designs.',
                 images: [
-                    'https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80'
+                    ironGateImg
                 ]
             },
             { 
                 name: 'MS Grills', 
                 details: 'High-quality Mild Steel (MS) window and balcony safety grills, custom fabricated for maximum protection and ventilation.',
                 images: [
-                    'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1516216628859-9bccecad13fc?auto=format&fit=crop&w=600&q=80'
+                    msGrillsImg
                 ]
             },
             { 
                 name: 'Iron Sitting Structure', 
                 details: 'Heavy-duty outdoor and garden iron sitting structures, benches, and gazebos fabricated for weather resistance and durability.',
                 images: [
-                    'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?auto=format&fit=crop&w=600&q=80'
+                    ironSittingImg
                 ]
             }
         ]
@@ -563,48 +635,42 @@ const productsData = [
                 name: 'Inverter Split & Cassette ACs', 
                 details: '5-star energy efficient smart inverter cooling units with active PM2.5 filters, designed for quiet operations and fast cooling in extreme tropical weather.',
                 images: [
-                    'https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80'
+                    inverterAcImg
                 ]
             },
             { 
                 name: 'QLED / OLED Smart Displays', 
                 details: 'Stunning high-resolution ultra-narrow bezel smart screens, perfect for commercial boardrooms, luxury living halls, and home-theatre spaces.',
                 images: [
-                    'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=600&q=80'
+                    smartTvImg
                 ]
             },
             { 
                 name: 'Modular Kitchen Chimneys & Hobs', 
                 details: 'High-suction brushless auto-clean chimneys paired with toughened glass built-in multi-burner gas hobs for sleek kitchens.',
                 images: [
-                    'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=600&q=80'
+                    kitchenHobImg
                 ]
             },
             { 
                 name: 'Double-Door & French-Door Refrigerators', 
                 details: 'Smart inverter frost-free multi-door refrigerators featuring smart cooling sensors, digital touch interfaces, and energy-conserving operations.',
                 images: [
-                    'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=600&q=80'
+                    refrigeratorImg
                 ]
             },
             { 
                 name: 'Front-Load Washing Machines', 
                 details: 'Fully automatic high-capacity front-loading washers with steam hygiene cycles and silent direct-drive motors.',
                 images: [
-                    'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=600&q=80'
+                    'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=600&q=80'
                 ]
             },
             { 
                 name: 'Smart Dishwashers & Water Purifiers', 
                 details: 'Eco-friendly multi-cycle dish cleaning systems paired with multi-stage RO+UV copper water purifiers for advanced hygiene.',
                 images: [
-                    'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=600&q=80'
+                    'https://images.unsplash.com/photo-1581622558663-b2e33377dfb2?auto=format&fit=crop&w=600&q=80'
                 ]
             }
         ]

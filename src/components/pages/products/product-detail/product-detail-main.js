@@ -434,6 +434,22 @@ const getMarqueeLogos = (productId) => {
                 liftLogoMitsubishi,
                 liftLogoHitachi
             ];
+        case 'structure-iron':
+            return [
+                brandLogosMap['TATA Structura'],
+                brandLogosMap['SAIL'],
+                brandLogosMap['JSW Steel'],
+                brandLogosMap['Jindal Steel'],
+                brandLogosMap['Vizag Steel']
+            ].filter(Boolean);
+        case 'home-appliances':
+            return [
+                brandLogosMap['Samsung Electronics'],
+                brandLogosMap['LG Appliances'],
+                brandLogosMap['Whirlpool'],
+                brandLogosMap['Voltas AC'],
+                brandLogosMap['Bosch Home']
+            ].filter(Boolean);
         default:
             return [];
     }
@@ -835,7 +851,6 @@ const ProductDetailMain = ({ product }) => {
                                                         </div>
                                                     )}
                                                 </div>
-                                                <span className="variant__card-num">Option 0{idx + 1}</span>
                                                 <h4 className="variant__card-title">{v.name}</h4>
                                                 <p>{v.details}</p>
                                             </div>
